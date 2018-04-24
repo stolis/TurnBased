@@ -14,7 +14,7 @@ class TURNBASED_API ALasergun : public AHandgun
 {
 	GENERATED_BODY()
 	
-	
+protected:
 	
 	
 };

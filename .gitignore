@@ -12,3 +12,8 @@ Saved
 *.suo
 *.xcodeproj
 *.xcworkspace
+/Content/AnimStarterPack/UE4_Mannequin/Materials/MaterialLayers
+/Content/AnimStarterPack/UE4_Mannequin/Materials
+/Content/AnimStarterPack/UE4_Mannequin/Mesh
+/Content/AnimStarterPack/UE4_Mannequin/Textures
+/Content/AnimStarterPack

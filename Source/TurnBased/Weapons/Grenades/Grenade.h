@@ -14,7 +14,13 @@ class TURNBASED_API AGrenade : public AWeapon
 {
 	GENERATED_BODY()
 	
-	
-	
+public:
+	AGrenade() {
+		this->WeaponType = EWeaponTypeEnum::WTE_Grenade;
+	}
+protected:
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "HandgunProperty", meta = (AllowPrivateAcces = "true"))
+		int32 ImpactRadius;
 	
 };

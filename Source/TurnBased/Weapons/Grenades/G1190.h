@@ -15,6 +15,11 @@ class TURNBASED_API AG1190 : public AGrenade
 	GENERATED_BODY()
 	
 	
-	
+public:
+
+	AG1190() {
+		this->ModelName = "G1-190";
+		this->ImpactRadius = 4;
+	}
 	
 };
