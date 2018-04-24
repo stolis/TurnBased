@@ -19,6 +19,12 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	UPROPERTY(VisibleAnywhere, BluePrintReadWrite)
+		int32 AmmoCapacity;
+
+	UPROPERTY(VisibleAnywhere, BluePrintReadWrite)
+		int32 AmmoLeftInClip;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
