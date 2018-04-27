@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "../XMLParser/pugixml.hpp"
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "CityGenerator.generated.h"
@@ -21,6 +22,9 @@ protected:
 	
 	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
 		bool GenerateStreets;
+
+	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
+		int XMLNodes;
 
 public:	
 	// Called every frame

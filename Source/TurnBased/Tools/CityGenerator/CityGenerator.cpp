@@ -26,7 +26,17 @@ void ACityGenerator::Tick(float DeltaTime)
 
 void ACityGenerator::LoadMapXML() 
 {
-	
+	pugi::xml_document doc;
+	const char * mapFile = "Content/Data/OSM/Athens_Omonoia_Sample.OSM";
+
+
+	if (doc.load_file(mapFile)) {
+		for (pugi::xml_node node = node.child("node"); node; node = node.next_sibling("node")) {
+			XMLNodes++;
+		}
+	}
+
+	//Content\Data\OSM\Athens_Omonoia_Sample.OSM
 }
 
 void ACityGenerator::PostEditChangeProperty(struct FPropertyChangedEvent& e)
