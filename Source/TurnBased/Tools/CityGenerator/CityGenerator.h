@@ -1,9 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-#pragma once
-
 #include "../XMLParser/pugixml.hpp"
-#include "CoreMinimal.h"
+#include "Helpers/CoordinateTools.h"
+#include "Core.h"
 #include "GameFramework/Actor.h"
 #include "CityGenerator.generated.h"
 
@@ -20,11 +17,30 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	
+	UPROPERTY(EditAnywhere)
+		USceneComponent* Root;
+	
 	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
 		bool GenerateStreets;
 
 	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
-		int XMLNodes;
+		double minLat;
+
+	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
+		double minLon;
+
+	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
+		double maxLon;
+
+	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
+		double maxLat;
+
+	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
+		float streetDistance;
+
+	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
+		FString FilePath;
+
 
 public:	
 	// Called every frame
@@ -33,7 +49,6 @@ public:
 	virtual void LoadMapXML();
 
 	virtual void PostEditChangeProperty(struct FPropertyChangedEvent& e) override;
-
-	
 	
 };
+
