@@ -15,8 +15,9 @@ class TURNBASED_API CoordinateTools
 public:
 	CoordinateTools();
 	~CoordinateTools();
-	static double CoordinateTools::degreeToRadian(double degree);
-	static double CoordinateTools::radianToDegree(double radian);
-	static double CoordinateTools::CoordinatesToAngle(double latitude1, double longitude1, double latitude2, double longitude2);
-	static double CoordinateTools::CoordinatesToMeters(double latitude1, double longitude1, double latitude2, double longitude2);
+	static double degreeToRadian(const double degree);
+	static double radianToDegree(const double radian);
+	static double CoordinatesToAngle(double latitude1, const double longitude1, double latitude2, const double longitude2);
+	static double CoordinatesToMeters(double latitude1, double longitude1, double latitude2, double longitude2);
+	static void GeoDeticOffsetInv(double, double, double, double, double&, double&);
 };

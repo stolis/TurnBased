@@ -1,52 +1,72 @@
 #include "../XMLParser/pugixml.hpp"
 #include "Helpers/CoordinateTools.h"
+#include <vector>
 #include "Core.h"
+#include "Runtime/Engine/Classes/Components/SplineComponent.h"
+#include "Runtime/Engine/Classes/Components/SplineMeshComponent.h"
+#include "Runtime/Engine/Classes/Components/HierarchicalInstancedStaticMeshComponent.h"
 #include "GameFramework/Actor.h"
 #include "CityGenerator.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class TURNBASED_API ACityGenerator : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	ACityGenerator();
+	//void OnConstruction(const FTransform&);
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+public:
 	
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(VisibleAnywhere)
 		USceneComponent* Root;
-	
-	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Components, Meta = (AllowPrivateAccess = true))
+		USplineComponent* Street;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Rendering, Meta = (AllowPrivateAccess = true))
+		USplineMeshComponent* StreetMesh;
+
+	UPROPERTY(EditAnywhere)
+		UHierarchicalInstancedStaticMeshComponent* StreetNetwork;
+
+	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true, BlueprintProtected))
 		bool GenerateStreets;
 
-	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
+	UPROPERTY(EditAnywhere, Category = GeographicProperties, Meta = (MakeEditWidget = true))
 		double minLat;
 
-	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
+	UPROPERTY(EditAnywhere, Category = GeographicProperties, Meta = (MakeEditWidget = true))
 		double minLon;
 
-	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
+	UPROPERTY(EditAnywhere, Category = GeographicProperties, Meta = (MakeEditWidget = true))
 		double maxLon;
 
-	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
+	UPROPERTY(EditAnywhere, Category = GeographicProperties, Meta = (MakeEditWidget = true))
 		double maxLat;
 
-	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
+	UPROPERTY(EditAnywhere, Category = GeographicProperties, Meta = (MakeEditWidget = true))
 		float streetDistance;
 
-	UPROPERTY(EditAnywhere, Category = Actions, Meta = (MakeEditWidget = true))
+	UPROPERTY(EditAnywhere, Category = GeographicProperties, Meta = (MakeEditWidget = true))
+		float streetAngle;
+
+	UPROPERTY(EditAnywhere, Category = GeographicProperties, Meta = (MakeEditWidget = true))
+		FString streetName;
+
+	UPROPERTY(EditAnywhere, Category = GeographicProperties, Meta = (MakeEditWidget = true))
 		FString FilePath;
 
+	virtual void AddStreetSpline();
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	virtual void AddStreetSplineMesh();
 
 	virtual void LoadMapXML();
+
+	virtual std::vector<std::pair<double, double>> GetCoordNodes(pugi::xml_node, pugi::xml_node, double, double);
+
+	virtual FString GetAddress(pugi::xml_node);
 
 	virtual void PostEditChangeProperty(struct FPropertyChangedEvent& e) override;
 	
