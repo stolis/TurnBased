@@ -22,12 +22,9 @@ void ACityGenerator::PostEditChangeProperty(struct FPropertyChangedEvent& e)
 			LoadMapXML();
 		}
 		else {
-			ClearStreetSplineMeshComponents();
+			ACityGenerator::ClearStreetSplineMeshComponents();
 			Street->ClearSplinePoints(true);
 		}
-	}
-	else {
-		ToggleStreetAddressComponents();
 	}
 }
 
@@ -55,12 +52,19 @@ void ACityGenerator::GenerateStreetSplineMeshComponents(int32 index, FString add
 	USplineMeshComponent* streetMesh;
 	UTextRenderComponent* streetAddress;
 
-	streetMesh = NewObject<USplineMeshComponent>();
-	streetMesh->CreationMethod = EComponentCreationMethod::UserConstructionScript;
-	streetMesh->SetMobility(EComponentMobility::Static);
-	streetMesh->SetupAttachment(Root);
-	streetMesh->RegisterComponentWithWorld(GetWorld());
-	StreetMeshComponents.Add(streetMesh);
+	/*if (StreetMeshComponents.IsValidIndex(index)) {
+		streetMesh = StreetMeshComponents[index];
+		streetMesh->SetVisibility(true);
+	}
+	else {*/
+		streetMesh = NewObject<USplineMeshComponent>();
+		streetMesh->CreationMethod = EComponentCreationMethod::UserConstructionScript;
+		streetMesh->SetMobility(EComponentMobility::Static);
+		streetMesh->SetupAttachment(Root);
+		streetMesh->RegisterComponentWithWorld(GetWorld());
+		StreetMeshComponents.Add(streetMesh);
+	//}
+
 	FVector ptLocStart, ptTanStart, ptLocEnd, ptTanEnd;
 	Street->GetLocalLocationAndTangentAtSplinePoint(index - 1, ptLocStart, ptTanStart);
 	Street->GetLocalLocationAndTangentAtSplinePoint(index, ptLocEnd, ptTanEnd);
@@ -74,19 +78,12 @@ void ACityGenerator::GenerateStreetSplineMeshComponents(int32 index, FString add
 	streetAddress->SetMobility(EComponentMobility::Static);
 	streetAddress->SetupAttachment(Root);
 	streetAddress->RegisterComponentWithWorld(GetWorld());
-	streetAddress->SetText(FText::FromString(address));
+	streetAddress->Text = FText::FromString(address);
 	streetAddress->SetWorldLocation(ptLocStart);
 	streetAddress->SetWorldRotation(FQuat(0, -90, 90, 1));
 	streetAddress->SetWorldScale3D(FVector(10, 10, 10));
 	StreetAddressComponents.Add(streetAddress);
 	
-}
-
-void ACityGenerator::ToggleStreetAddressComponents() 
-{
-	for (UTextRenderComponent *s : StreetAddressComponents) {
-		s->ToggleVisibility();
-	}
 }
 
 void ACityGenerator::ClearStreetSplineMeshComponents()
@@ -99,12 +96,15 @@ void ACityGenerator::ClearStreetSplineMeshComponents()
 	}
 	StreetMeshComponents.Empty();
 	StreetAddressComponents.Empty();
+	/*for (USplineMeshComponent* streetMeshComponent : StreetMeshComponents) {
+		streetMeshComponent->SetVisibility(false);
+	}*/
 }
 void ACityGenerator::LoadMapXML()
 {
 	pugi::xml_document doc;
 	FString contentDir = FPaths::ProjectContentDir();
-	FString mapFile = contentDir + FString(TEXT("/Data/OSM/Athens_Omonoia_Sample4.osm"));
+	FString mapFile = contentDir + FString(TEXT("/Data/OSM/Athens_Omonoia_Sample.osm"));
 	const char * getFrom = TCHAR_TO_ANSI(*mapFile);
 	
 	if (doc.load_file(getFrom)) {
@@ -130,7 +130,7 @@ void ACityGenerator::LoadMapXML()
 std::vector<std::pair<double, double>> ACityGenerator::GetCoordNodes(pugi::xml_node root, pugi::xml_node way, double refLat, double refLon)
 {
 	std::vector<std::pair<double, double>> coords;
-	pugi::xpath_node_set nodesTags = way.select_nodes("//way/tag[@k='highway' and (@v='tertiary' or @v='secondary' or @v='secondary_link')]");
+	pugi::xpath_node_set nodesTags = way.select_nodes("//way/tag[@k='highway']");
 	double lat, lon, x, y;
 	int32 streetIndex = 0, pointIndex = 0;
 	
@@ -161,6 +161,8 @@ std::vector<std::pair<double, double>> ACityGenerator::GetCoordNodes(pugi::xml_n
 		}
 		Street->ClearSplinePoints(false);
 		streetIndex++;
+		if (streetIndex == 1)
+			return coords;
 	}
 	return coords;
 }

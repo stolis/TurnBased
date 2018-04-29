@@ -31,12 +31,6 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
 		USplineMeshComponent* StreetMesh;
 
-	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true, BlueprintProtected))
-		bool GenerateStreets = false;
-
-	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true, BlueprintProtected))
-		bool ShowAddress = true;
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
 		TArray<USplineMeshComponent*> StreetMeshComponents;
 
@@ -46,33 +40,32 @@ public:
 	UPROPERTY(EditAnywhere)
 		UHierarchicalInstancedStaticMeshComponent* StreetNetwork;
 
-#pragma region debugParms
-	//UPROPERTY(VisibleAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
-	double minLat;
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true, BlueprintProtected))
+		bool GenerateStreets = false;
 
-	//UPROPERTY(VisibleAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
-	double minLon;
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
+		double minLat;
 
-	//UPROPERTY(VisibleAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
-	double maxLon;
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
+		double minLon;
 
-	//UPROPERTY(VisibleAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
-	double maxLat;
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
+		double maxLon;
 
-	//UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
-	float streetDistance;
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
+		double maxLat;
 
-	//UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
-	float streetAngle;
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
+		float streetDistance;
 
-	//UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
-	FString streetName;
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
+		float streetAngle;
 
-	//UPROPERTY(VisibleAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
-	FString FilePath;
-#pragma endregion  
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
+		FString streetName;
 
-
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
+		FString FilePath;
 
 	virtual void AddStreetSplineComponent();
 
@@ -87,8 +80,6 @@ public:
 	virtual std::vector<std::pair<double, double>> GetCoordNodes(pugi::xml_node, pugi::xml_node, double, double);
 
 	virtual FString GetAddress(pugi::xml_node);
-
-	virtual void ToggleStreetAddressComponents();
 
 	virtual void PostEditChangeProperty(struct FPropertyChangedEvent& e) override;
 };

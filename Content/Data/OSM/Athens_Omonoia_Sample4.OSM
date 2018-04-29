@@ -1,0 +1,2537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="Overpass API 0.7.54.13 ff15392f">
+<note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
+<meta osm_base="2018-04-29T19:21:02Z"/>
+
+  <bounds minlat="37.9868400" minlon="23.7262600" maxlat="37.9875000" maxlon="23.7272200"/>
+
+  <node id="31179466" lat="37.9871790" lon="23.7266686" version="16" timestamp="2015-12-13T09:22:08Z" changeset="35922430" uid="23785" user="greecemapper"/>
+  <node id="95663404" lat="37.9869803" lon="23.7269994" version="6" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="95663426" lat="37.9868771" lon="23.7274607" version="7" timestamp="2018-04-20T21:57:48Z" changeset="58277546" uid="936280" user="beatnickgr"/>
+  <node id="95663428" lat="37.9867059" lon="23.7286495" version="4" timestamp="2010-10-23T22:39:50Z" changeset="6152374" uid="23785" user="greecemapper"/>
+  <node id="95663461" lat="37.9877165" lon="23.7276659" version="9" timestamp="2018-04-20T21:57:49Z" changeset="58277546" uid="936280" user="beatnickgr"/>
+  <node id="95663464" lat="37.9879141" lon="23.7279948" version="10" timestamp="2018-04-20T21:57:49Z" changeset="58277546" uid="936280" user="beatnickgr"/>
+  <node id="95663472" lat="37.9880837" lon="23.7266763" version="5" timestamp="2016-11-16T20:10:02Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="95663474" lat="37.9878886" lon="23.7258952" version="8" timestamp="2016-11-16T20:10:02Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="95663501" lat="37.9872328" lon="23.7254368" version="5" timestamp="2016-11-16T19:55:49Z" changeset="43709316" uid="411246" user="makmar"/>
+  <node id="95663527" lat="37.9868135" lon="23.7261353" version="9" timestamp="2013-03-14T20:31:43Z" changeset="15366843" uid="23785" user="greecemapper"/>
+  <node id="97834761" lat="37.9870236" lon="23.7264514" version="10" timestamp="2016-11-16T19:55:49Z" changeset="43709316" uid="411246" user="makmar"/>
+  <node id="300398465" lat="37.9863411" lon="23.7273305" version="8" timestamp="2013-03-14T20:31:41Z" changeset="15366843" uid="23785" user="greecemapper"/>
+  <node id="635132996" lat="37.9873282" lon="23.7269127" version="2" timestamp="2010-10-23T22:40:00Z" changeset="6152374" uid="23785" user="greecemapper">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="688786344" lat="37.9870356" lon="23.7269458" version="3" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="688786349" lat="37.9873202" lon="23.7266870" version="4" timestamp="2015-12-13T09:22:08Z" changeset="35922430" uid="23785" user="greecemapper">
+    <tag k="crossing" v="traffic_signals"/>
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="688786351" lat="37.9872861" lon="23.7268403" version="6" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar">
+    <tag k="crossing" v="traffic_signals"/>
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="688786354" lat="37.9864978" lon="23.7271706" version="5" timestamp="2018-04-20T21:57:49Z" changeset="58277546" uid="936280" user="beatnickgr">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="688786356" lat="37.9869629" lon="23.7269342" version="4" timestamp="2013-03-14T20:31:42Z" changeset="15366843" uid="23785" user="greecemapper"/>
+  <node id="844627792" lat="37.9856107" lon="23.7241543" version="5" timestamp="2016-11-14T20:06:59Z" changeset="43652674" uid="411246" user="makmar"/>
+  <node id="844627845" lat="37.9865438" lon="23.7257482" version="3" timestamp="2016-11-15T08:18:22Z" changeset="43663758" uid="411246" user="makmar"/>
+  <node id="962356514" lat="37.9890952" lon="23.7258357" version="2" timestamp="2016-11-16T20:10:02Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="962356523" lat="37.9870409" lon="23.7264077" version="2" timestamp="2013-02-08T06:19:13Z" changeset="14952461" uid="615749" user="mtraveller"/>
+  <node id="962356559" lat="37.9870466" lon="23.7265999" version="5" timestamp="2015-12-13T09:22:08Z" changeset="35922430" uid="23785" user="greecemapper">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="962356561" lat="37.9883013" lon="23.7289482" version="2" timestamp="2016-11-15T10:32:43Z" changeset="43666592" uid="411246" user="makmar"/>
+  <node id="962356583" lat="37.9865372" lon="23.7261057" version="2" timestamp="2016-11-15T08:18:22Z" changeset="43663758" uid="411246" user="makmar"/>
+  <node id="962356584" lat="37.9885396" lon="23.7291627" version="2" timestamp="2016-11-15T10:51:25Z" changeset="43667037" uid="411246" user="makmar"/>
+  <node id="962356600" lat="37.9865605" lon="23.7256304" version="2" timestamp="2013-02-08T06:19:13Z" changeset="14952461" uid="615749" user="mtraveller"/>
+  <node id="962356603" lat="37.9870997" lon="23.7268851" version="2" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="962356606" lat="37.9877635" lon="23.7276457" version="2" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="962356608" lat="37.9865524" lon="23.7271435" version="3" timestamp="2013-03-14T20:31:43Z" changeset="15366843" uid="23785" user="greecemapper"/>
+  <node id="962356628" lat="37.9876781" lon="23.7276873" version="3" timestamp="2016-11-15T10:32:43Z" changeset="43666592" uid="411246" user="makmar"/>
+  <node id="962356638" lat="37.9864817" lon="23.7270730" version="2" timestamp="2016-11-15T08:18:22Z" changeset="43663758" uid="411246" user="makmar"/>
+  <node id="962356651" lat="37.9869509" lon="23.7270470" version="2" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="962356657" lat="37.9872270" lon="23.7267463" version="4" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="962356663" lat="37.9891834" lon="23.7267824" version="2" timestamp="2016-11-17T07:37:32Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="962356665" lat="37.9871857" lon="23.7264911" version="4" timestamp="2015-12-13T09:22:08Z" changeset="35922430" uid="23785" user="greecemapper">
+    <tag k="crossing" v="traffic_signals"/>
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="962356667" lat="37.9872504" lon="23.7270447" version="1" timestamp="2010-10-23T22:39:14Z" changeset="6152374" uid="23785" user="greecemapper"/>
+  <node id="962356676" lat="37.9878241" lon="23.7259345" version="2" timestamp="2016-11-16T10:12:12Z" changeset="43694500" uid="411246" user="makmar"/>
+  <node id="962356680" lat="37.9871698" lon="23.7269427" version="4" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar">
+    <tag k="crossing" v="traffic_signals"/>
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="962356691" lat="37.9874222" lon="23.7266924" version="3" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="962356692" lat="37.9874531" lon="23.7273337" version="2" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="962356694" lat="37.9872623" lon="23.7265604" version="3" timestamp="2013-03-14T20:31:43Z" changeset="15366843" uid="23785" user="greecemapper">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="962356695" lat="37.9874253" lon="23.7265947" version="3" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="962356708" lat="37.9868803" lon="23.7269230" version="2" timestamp="2016-11-15T08:18:22Z" changeset="43663758" uid="411246" user="makmar"/>
+  <node id="962356711" lat="37.9864570" lon="23.7271929" version="3" timestamp="2013-03-14T20:31:43Z" changeset="15366843" uid="23785" user="greecemapper">
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="962356719" lat="37.9872396" lon="23.7265899" version="5" timestamp="2015-12-13T09:22:08Z" changeset="35922430" uid="23785" user="greecemapper">
+    <tag k="crossing" v="traffic_signals"/>
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="962356737" lat="37.9867229" lon="23.7285465" version="1" timestamp="2010-10-23T22:39:20Z" changeset="6152374" uid="23785" user="greecemapper">
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="962356738" lat="37.9872956" lon="23.7270115" version="1" timestamp="2010-10-23T22:39:20Z" changeset="6152374" uid="23785" user="greecemapper"/>
+  <node id="962356740" lat="37.9873255" lon="23.7265028" version="3" timestamp="2013-03-14T20:31:43Z" changeset="15366843" uid="23785" user="greecemapper"/>
+  <node id="962356744" lat="37.9886041" lon="23.7264011" version="2" timestamp="2016-11-16T20:10:03Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="962356761" lat="37.9888418" lon="23.7250906" version="3" timestamp="2016-11-16T20:10:03Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="962356763" lat="37.9871249" lon="23.7269383" version="2" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="962356774" lat="37.9865614" lon="23.7274074" version="2" timestamp="2016-11-15T08:18:22Z" changeset="43663758" uid="411246" user="makmar"/>
+  <node id="962356785" lat="37.9871727" lon="23.7268067" version="3" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="962356789" lat="37.9891701" lon="23.7266190" version="2" timestamp="2016-11-16T20:10:03Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="962356797" lat="37.9874547" lon="23.7263026" version="2" timestamp="2012-03-04T20:05:53Z" changeset="10873289" uid="653" user="aitolos"/>
+  <node id="962356810" lat="37.9870734" lon="23.7266438" version="6" timestamp="2015-12-13T09:22:08Z" changeset="35922430" uid="23785" user="greecemapper">
+    <tag k="crossing" v="traffic_signals"/>
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="962356816" lat="37.9861864" lon="23.7284700" version="2" timestamp="2016-11-15T08:18:22Z" changeset="43663758" uid="411246" user="makmar"/>
+  <node id="962356830" lat="37.9868203" lon="23.7260752" version="2" timestamp="2013-02-08T06:19:13Z" changeset="14952461" uid="615749" user="mtraveller"/>
+  <node id="962356835" lat="37.9873747" lon="23.7269577" version="2" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="962356844" lat="37.9878223" lon="23.7278420" version="4" timestamp="2018-04-20T21:57:49Z" changeset="58277546" uid="936280" user="beatnickgr">
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="962356853" lat="37.9868727" lon="23.7262259" version="2" timestamp="2015-12-05T22:36:10Z" changeset="35777504" uid="2700471" user="JayCBR"/>
+  <node id="962356855" lat="37.9883486" lon="23.7288843" version="2" timestamp="2016-11-15T10:32:44Z" changeset="43666592" uid="411246" user="makmar"/>
+  <node id="962356872" lat="37.9871514" lon="23.7269514" version="2" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="962356874" lat="37.9864090" lon="23.7269980" version="2" timestamp="2016-11-15T08:18:22Z" changeset="43663758" uid="411246" user="makmar"/>
+  <node id="962356876" lat="37.9870878" lon="23.7267887" version="5" timestamp="2015-12-13T09:22:08Z" changeset="35922430" uid="23785" user="greecemapper">
+    <tag k="crossing" v="traffic_signals"/>
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="962356887" lat="37.9866528" lon="23.7250750" version="3" timestamp="2016-11-16T10:12:12Z" changeset="43694500" uid="411246" user="makmar"/>
+  <node id="962356894" lat="37.9890042" lon="23.7279074" version="1" timestamp="2010-10-23T22:39:33Z" changeset="6152374" uid="23785" user="greecemapper"/>
+  <node id="962356899" lat="37.9892833" lon="23.7304219" version="2" timestamp="2016-11-15T10:51:25Z" changeset="43667037" uid="411246" user="makmar"/>
+  <node id="962356909" lat="37.9873913" lon="23.7276101" version="3" timestamp="2016-11-15T10:32:44Z" changeset="43666592" uid="411246" user="makmar"/>
+  <node id="962356911" lat="37.9874382" lon="23.7266501" version="1" timestamp="2010-10-23T22:39:34Z" changeset="6152374" uid="23785" user="greecemapper"/>
+  <node id="962356912" lat="37.9874426" lon="23.7263945" version="4" timestamp="2016-11-16T20:10:03Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="962356923" lat="37.9871278" lon="23.7267351" version="3" timestamp="2013-03-14T20:31:43Z" changeset="15366843" uid="23785" user="greecemapper"/>
+  <node id="962356928" lat="37.9865641" lon="23.7270763" version="2" timestamp="2016-11-15T08:18:22Z" changeset="43663758" uid="411246" user="makmar"/>
+  <node id="962356933" lat="37.9871309" lon="23.7268501" version="4" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar">
+    <tag k="crossing" v="traffic_signals"/>
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="962356940" lat="37.9867502" lon="23.7261463" version="2" timestamp="2016-11-15T08:18:22Z" changeset="43663758" uid="411246" user="makmar"/>
+  <node id="962356956" lat="37.9872310" lon="23.7269696" version="1" timestamp="2010-10-23T22:39:38Z" changeset="6152374" uid="23785" user="greecemapper"/>
+  <node id="962356958" lat="37.9885616" lon="23.7266692" version="3" timestamp="2016-11-16T20:10:03Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="962356962" lat="37.9869368" lon="23.7265164" version="1" timestamp="2010-10-23T22:39:39Z" changeset="6152374" uid="23785" user="greecemapper"/>
+  <node id="962356975" lat="37.9865113" lon="23.7271895" version="2" timestamp="2016-11-15T08:18:22Z" changeset="43663758" uid="411246" user="makmar"/>
+  <node id="962356989" lat="37.9872222" lon="23.7268930" version="5" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar">
+    <tag k="crossing" v="traffic_signals"/>
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="962356995" lat="37.9872306" lon="23.7264972" version="3" timestamp="2013-03-14T20:31:44Z" changeset="15366843" uid="23785" user="greecemapper">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="962356999" lat="37.9890402" lon="23.7266469" version="2" timestamp="2016-11-16T20:10:03Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="962357018" lat="37.9863625" lon="23.7273584" version="3" timestamp="2016-11-15T10:08:31Z" changeset="43666114" uid="411246" user="makmar"/>
+  <node id="1659513271" lat="37.9873122" lon="23.7264407" version="2" timestamp="2013-02-08T06:19:10Z" changeset="14952461" uid="615749" user="mtraveller"/>
+  <node id="1659513273" lat="37.9880334" lon="23.7258113" version="2" timestamp="2016-11-16T20:10:03Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="2146155923" lat="37.9871148" lon="23.7265175" version="1" timestamp="2013-02-08T06:19:03Z" changeset="14952461" uid="615749" user="mtraveller"/>
+  <node id="2146155925" lat="37.9872044" lon="23.7265583" version="1" timestamp="2013-02-08T06:19:03Z" changeset="14952461" uid="615749" user="mtraveller"/>
+  <node id="2146155926" lat="37.9875289" lon="23.7262859" version="3" timestamp="2016-11-16T10:12:12Z" changeset="43694500" uid="411246" user="makmar"/>
+  <node id="2202284263" lat="37.9871795" lon="23.7264231" version="2" timestamp="2016-11-16T19:55:49Z" changeset="43709316" uid="411246" user="makmar"/>
+  <node id="2410761237" lat="37.9870247" lon="23.7266959" version="3" timestamp="2015-12-13T09:22:08Z" changeset="35922430" uid="23785" user="greecemapper"/>
+  <node id="2410761241" lat="37.9871711" lon="23.7269974" version="2" timestamp="2016-11-15T10:22:21Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="2410761243" lat="37.9871828" lon="23.7269286" version="1" timestamp="2013-08-08T08:59:18Z" changeset="17263798" uid="23785" user="greecemapper"/>
+  <node id="2410761245" lat="37.9871851" lon="23.7265243" version="1" timestamp="2013-08-08T08:59:18Z" changeset="17263798" uid="23785" user="greecemapper"/>
+  <node id="2410761247" lat="37.9873500" lon="23.7268081" version="1" timestamp="2013-08-08T08:59:18Z" changeset="17263798" uid="23785" user="greecemapper"/>
+  <node id="2410761249" lat="37.9873851" lon="23.7267651" version="1" timestamp="2013-08-08T08:59:18Z" changeset="17263798" uid="23785" user="greecemapper"/>
+  <node id="2425856882" lat="37.9871743" lon="23.7257090" version="2" timestamp="2016-11-16T19:55:49Z" changeset="43709316" uid="411246" user="makmar"/>
+  <node id="2701870356" lat="37.9893477" lon="23.7305668" version="3" timestamp="2016-10-22T14:18:02Z" changeset="43082167" uid="4763179" user="ika-chan!"/>
+  <node id="2748495191" lat="37.9874283" lon="23.7268168" version="3" timestamp="2016-11-17T07:37:32Z" changeset="43720521" uid="411246" user="makmar">
+    <tag k="amenity" v="bank"/>
+    <tag k="atm" v="yes"/>
+    <tag k="name" v="Εθνική Τράπεζα της Ελλάδος"/>
+    <tag k="name:en" v="National Bank of Greece"/>
+  </node>
+  <node id="2786681834" lat="37.9869746" lon="23.7263976" version="3" timestamp="2015-12-05T22:36:10Z" changeset="35777504" uid="2700471" user="JayCBR">
+    <tag k="bus" v="yes"/>
+    <tag k="highway" v="bus_stop"/>
+    <tag k="name" v="ΒΑΘΗ"/>
+  </node>
+  <node id="2850438680" lat="37.9871698" lon="23.7267527" version="1" timestamp="2014-05-11T13:35:44Z" changeset="22271137" uid="2063365" user="athinaios">
+    <tag k="name" v="Βάθη"/>
+    <tag k="place" v="neighbourhood"/>
+  </node>
+  <node id="3749411768" lat="37.9893278" lon="23.7308429" version="1" timestamp="2015-09-18T15:55:34Z" changeset="34106015" uid="1016290" user="ika-chan! UK"/>
+  <node id="3879024939" lat="37.9874643" lon="23.7272461" version="4" timestamp="2018-04-20T21:57:48Z" changeset="58277546" uid="936280" user="beatnickgr"/>
+  <node id="3879024940" lat="37.9873404" lon="23.7270814" version="1" timestamp="2015-12-05T22:36:08Z" changeset="35777504" uid="2700471" user="JayCBR"/>
+  <node id="3879024941" lat="37.9870097" lon="23.7265371" version="1" timestamp="2015-12-05T22:36:08Z" changeset="35777504" uid="2700471" user="JayCBR"/>
+  <node id="3879024942" lat="37.9873851" lon="23.7270161" version="1" timestamp="2015-12-05T22:36:08Z" changeset="35777504" uid="2700471" user="JayCBR"/>
+  <node id="3879024943" lat="37.9874066" lon="23.7271499" version="2" timestamp="2018-04-20T21:57:49Z" changeset="58277546" uid="936280" user="beatnickgr"/>
+  <node id="3890053138" lat="37.9871277" lon="23.7265857" version="1" timestamp="2015-12-13T09:22:03Z" changeset="35922430" uid="23785" user="greecemapper">
+    <tag k="crossing" v="traffic_signals"/>
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="3921059687" lat="37.9864746" lon="23.7271123" version="1" timestamp="2015-12-31T18:26:16Z" changeset="36287912" uid="2063365" user="athinaios"/>
+  <node id="4459174253" lat="37.9857182" lon="23.7243270" version="2" timestamp="2016-11-14T20:06:59Z" changeset="43652674" uid="411246" user="makmar"/>
+  <node id="4459174258" lat="37.9860865" lon="23.7249871" version="3" timestamp="2016-11-15T09:47:49Z" changeset="43665690" uid="411246" user="makmar"/>
+  <node id="4459174259" lat="37.9862153" lon="23.7252459" version="2" timestamp="2016-11-15T09:47:49Z" changeset="43665690" uid="411246" user="makmar"/>
+  <node id="4459174263" lat="37.9893603" lon="23.7306297" version="1" timestamp="2016-10-22T14:17:54Z" changeset="43082167" uid="4763179" user="ika-chan!"/>
+  <node id="4501961004" lat="37.9869167" lon="23.7270181" version="1" timestamp="2016-11-15T08:18:22Z" changeset="43663758" uid="411246" user="makmar"/>
+  <node id="4502157380" lat="37.9867792" lon="23.7272923" version="1" timestamp="2016-11-15T10:08:29Z" changeset="43666114" uid="411246" user="makmar"/>
+  <node id="4502157381" lat="37.9868300" lon="23.7273983" version="1" timestamp="2016-11-15T10:08:29Z" changeset="43666114" uid="411246" user="makmar"/>
+  <node id="4502157382" lat="37.9868405" lon="23.7273513" version="1" timestamp="2016-11-15T10:08:29Z" changeset="43666114" uid="411246" user="makmar"/>
+  <node id="4502157383" lat="37.9868765" lon="23.7273621" version="1" timestamp="2016-11-15T10:08:29Z" changeset="43666114" uid="411246" user="makmar"/>
+  <node id="4502157384" lat="37.9869124" lon="23.7271394" version="1" timestamp="2016-11-15T10:08:29Z" changeset="43666114" uid="411246" user="makmar"/>
+  <node id="4502157385" lat="37.9868839" lon="23.7271354" version="1" timestamp="2016-11-15T10:08:29Z" changeset="43666114" uid="411246" user="makmar"/>
+  <node id="4502157386" lat="37.9868606" lon="23.7270630" version="1" timestamp="2016-11-15T10:08:29Z" changeset="43666114" uid="411246" user="makmar"/>
+  <node id="4502157388" lat="37.9867634" lon="23.7273781" version="1" timestamp="2016-11-15T10:08:29Z" changeset="43666114" uid="411246" user="makmar"/>
+  <node id="4502158092" lat="37.9867877" lon="23.7272186" version="1" timestamp="2016-11-15T10:08:29Z" changeset="43666114" uid="411246" user="makmar"/>
+  <node id="4502158093" lat="37.9867898" lon="23.7271528" version="1" timestamp="2016-11-15T10:08:29Z" changeset="43666114" uid="411246" user="makmar"/>
+  <node id="4502158094" lat="37.9867697" lon="23.7271032" version="1" timestamp="2016-11-15T10:08:29Z" changeset="43666114" uid="411246" user="makmar"/>
+  <node id="4502163192" lat="37.9869103" lon="23.7265178" version="1" timestamp="2016-11-15T10:12:35Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163193" lat="37.9867592" lon="23.7264950" version="1" timestamp="2016-11-15T10:12:35Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163194" lat="37.9867835" lon="23.7265004" version="1" timestamp="2016-11-15T10:12:35Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163195" lat="37.9867951" lon="23.7265192" version="1" timestamp="2016-11-15T10:12:35Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163196" lat="37.9869093" lon="23.7264910" version="1" timestamp="2016-11-15T10:12:35Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163197" lat="37.9867655" lon="23.7264468" version="1" timestamp="2016-11-15T10:12:35Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163198" lat="37.9868543" lon="23.7263904" version="1" timestamp="2016-11-15T10:12:35Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163202" lat="37.9867274" lon="23.7262684" version="1" timestamp="2016-11-15T10:12:35Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163203" lat="37.9867655" lon="23.7262349" version="1" timestamp="2016-11-15T10:12:35Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163208" lat="37.9866758" lon="23.7263817" version="1" timestamp="2016-11-15T10:12:35Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163209" lat="37.9866906" lon="23.7262942" version="1" timestamp="2016-11-15T10:12:35Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163224" lat="37.9867385" lon="23.7264046" version="1" timestamp="2016-11-15T10:12:35Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163225" lat="37.9866889" lon="23.7263907" version="1" timestamp="2016-11-15T10:12:35Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163264" lat="37.9867142" lon="23.7269168" version="1" timestamp="2016-11-15T10:12:36Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163276" lat="37.9867888" lon="23.7266037" version="1" timestamp="2016-11-15T10:12:36Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163277" lat="37.9867518" lon="23.7268075" version="1" timestamp="2016-11-15T10:12:36Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163278" lat="37.9867327" lon="23.7267995" version="1" timestamp="2016-11-15T10:12:36Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163279" lat="37.9867053" lon="23.7269738" version="1" timestamp="2016-11-15T10:12:36Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163280" lat="37.9868543" lon="23.7269027" version="1" timestamp="2016-11-15T10:12:36Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502163281" lat="37.9868987" lon="23.7266426" version="1" timestamp="2016-11-15T10:12:36Z" changeset="43666192" uid="411246" user="makmar"/>
+  <node id="4502179361" lat="37.9872718" lon="23.7273044" version="1" timestamp="2016-11-15T10:22:18Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179362" lat="37.9871883" lon="23.7271971" version="1" timestamp="2016-11-15T10:22:18Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179363" lat="37.9871392" lon="23.7270653" version="1" timestamp="2016-11-15T10:22:18Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179364" lat="37.9872729" lon="23.7271032" version="1" timestamp="2016-11-15T10:22:18Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179365" lat="37.9874261" lon="23.7273486" version="1" timestamp="2016-11-15T10:22:18Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179366" lat="37.9874050" lon="23.7274921" version="1" timestamp="2016-11-15T10:22:18Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179367" lat="37.9873796" lon="23.7274881" version="1" timestamp="2016-11-15T10:22:18Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179368" lat="37.9873712" lon="23.7275190" version="1" timestamp="2016-11-15T10:22:18Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179369" lat="37.9870807" lon="23.7272458" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179370" lat="37.9870176" lon="23.7272910" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179374" lat="37.9870614" lon="23.7273695" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179375" lat="37.9870508" lon="23.7274429" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179379" lat="37.9870904" lon="23.7271760" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179380" lat="37.9870729" lon="23.7273028" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179381" lat="37.9869373" lon="23.7272723" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179382" lat="37.9871238" lon="23.7271837" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179383" lat="37.9869551" lon="23.7271460" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179384" lat="37.9869695" lon="23.7270643" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179385" lat="37.9869832" lon="23.7270348" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179386" lat="37.9870002" lon="23.7270147" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179387" lat="37.9871016" lon="23.7269705" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502179388" lat="37.9871502" lon="23.7269798" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502180189" lat="37.9870012" lon="23.7269490" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4502180190" lat="37.9873416" lon="23.7267753" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar"/>
+  <node id="4504025968" lat="37.9873955" lon="23.7263663" version="1" timestamp="2016-11-16T10:12:12Z" changeset="43694500" uid="411246" user="makmar"/>
+  <node id="4504025969" lat="37.9878152" lon="23.7258755" version="1" timestamp="2016-11-16T10:12:12Z" changeset="43694500" uid="411246" user="makmar"/>
+  <node id="4504025971" lat="37.9872972" lon="23.7255013" version="1" timestamp="2016-11-16T10:12:12Z" changeset="43694500" uid="411246" user="makmar"/>
+  <node id="4504991008" lat="37.9873268" lon="23.7263623" version="1" timestamp="2016-11-16T19:55:48Z" changeset="43709316" uid="411246" user="makmar"/>
+  <node id="4504991009" lat="37.9872412" lon="23.7264132" version="1" timestamp="2016-11-16T19:55:48Z" changeset="43709316" uid="411246" user="makmar"/>
+  <node id="4504991010" lat="37.9871408" lon="23.7264226" version="1" timestamp="2016-11-16T19:55:48Z" changeset="43709316" uid="411246" user="makmar"/>
+  <node id="4504991011" lat="37.9870985" lon="23.7264079" version="1" timestamp="2016-11-16T19:55:48Z" changeset="43709316" uid="411246" user="makmar"/>
+  <node id="4504991012" lat="37.9870763" lon="23.7263851" version="1" timestamp="2016-11-16T19:55:48Z" changeset="43709316" uid="411246" user="makmar"/>
+  <node id="4504991013" lat="37.9870668" lon="23.7263421" version="1" timestamp="2016-11-16T19:55:48Z" changeset="43709316" uid="411246" user="makmar"/>
+  <node id="4504991014" lat="37.9871080" lon="23.7261678" version="1" timestamp="2016-11-16T19:55:48Z" changeset="43709316" uid="411246" user="makmar"/>
+  <node id="4504991015" lat="37.9874399" lon="23.7262697" version="1" timestamp="2016-11-16T19:55:48Z" changeset="43709316" uid="411246" user="makmar"/>
+  <node id="4505016839" lat="37.9877205" lon="23.7263173" version="1" timestamp="2016-11-16T20:10:01Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="4505016840" lat="37.9876962" lon="23.7263414" version="1" timestamp="2016-11-16T20:10:01Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="4505016841" lat="37.9877269" lon="23.7263964" version="1" timestamp="2016-11-16T20:10:01Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="4505016842" lat="37.9877438" lon="23.7263830" version="1" timestamp="2016-11-16T20:10:01Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="4505016843" lat="37.9877840" lon="23.7264983" version="1" timestamp="2016-11-16T20:10:01Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="4505016844" lat="37.9877818" lon="23.7265895" version="1" timestamp="2016-11-16T20:10:01Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="4505016845" lat="37.9874510" lon="23.7265614" version="1" timestamp="2016-11-16T20:10:01Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="4505016846" lat="37.9874817" lon="23.7263924" version="1" timestamp="2016-11-16T20:10:01Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="4505016847" lat="37.9876709" lon="23.7262113" version="1" timestamp="2016-11-16T20:10:01Z" changeset="43709656" uid="411246" user="makmar"/>
+  <node id="4505791600" lat="37.9882252" lon="23.7267130" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791614" lat="37.9876323" lon="23.7271006" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791615" lat="37.9876767" lon="23.7271797" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791616" lat="37.9875815" lon="23.7272655" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791617" lat="37.9875521" lon="23.7268606" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791618" lat="37.9875403" lon="23.7269503" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791619" lat="37.9875530" lon="23.7270214" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791620" lat="37.9874716" lon="23.7270818" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791621" lat="37.9873818" lon="23.7269316" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791622" lat="37.9878225" lon="23.7270415" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791623" lat="37.9877919" lon="23.7270375" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791624" lat="37.9877919" lon="23.7270925" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791625" lat="37.9875784" lon="23.7270751" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791626" lat="37.9875805" lon="23.7268632" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791627" lat="37.9873881" lon="23.7268457" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791628" lat="37.9873987" lon="23.7267572" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791629" lat="37.9874653" lon="23.7267680" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791630" lat="37.9874727" lon="23.7267291" version="1" timestamp="2016-11-17T07:37:30Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791641" lat="37.9878246" lon="23.7270214" version="1" timestamp="2016-11-17T07:37:31Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791646" lat="37.9878511" lon="23.7267532" version="1" timestamp="2016-11-17T07:37:31Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4505791647" lat="37.9878405" lon="23.7268565" version="1" timestamp="2016-11-17T07:37:31Z" changeset="43720521" uid="411246" user="makmar"/>
+  <node id="4843071925" lat="37.9870299" lon="23.7270622" version="1" timestamp="2017-05-09T06:07:29Z" changeset="48521560" uid="5246484" user="Vladislav Podpalov">
+    <tag k="addr:housenumber" v="54"/>
+    <tag k="addr:postcode" v="10432"/>
+    <tag k="addr:street" v="Καποδιστρίου"/>
+    <tag k="name:en" v="Lozanni"/>
+    <tag k="tourism" v="hostel"/>
+  </node>
+  <node id="4991326417" lat="37.9871091" lon="23.7270359" version="1" timestamp="2017-07-24T22:45:11Z" changeset="50541776" uid="96446" user="radiobuzzer">
+    <tag k="addr:housenumber" v="33"/>
+    <tag k="addr:street" v="Μάρνη"/>
+  </node>
+  <node id="5102457426" lat="37.9868822" lon="23.7269546" version="5" timestamp="2018-04-20T21:57:49Z" changeset="58277546" uid="936280" user="beatnickgr"/>
+  <node id="5102457427" lat="37.9865805" lon="23.7271001" version="3" timestamp="2018-04-20T21:57:49Z" changeset="58277546" uid="936280" user="beatnickgr"/>
+  <node id="5102457428" lat="37.9864906" lon="23.7271108" version="2" timestamp="2017-09-13T05:43:41Z" changeset="51992992" uid="6640334" user="Christos Beretas">
+    <tag k="access" v="customers"/>
+    <tag k="amenity" v="parking_space"/>
+    <tag k="fee" v="yes"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxstay" v="90"/>
+    <tag k="name" v="Πάρκινγκ με κάρτα στάθμευσης – άσπρη γραμμή"/>
+    <tag k="operator" v="Δήμος Αθηνών"/>
+    <tag k="parking" v="surface"/>
+    <tag k="ref" v="1"/>
+    <tag k="smoothness" v="good"/>
+    <tag k="supervised" v="yes"/>
+    <tag k="surface" v="asphalt"/>
+  </node>
+  <node id="5239351022" lat="37.9870662" lon="23.7270092" version="1" timestamp="2017-11-20T12:16:54Z" changeset="53947807" uid="3984556" user="Олег Рассказов">
+    <tag k="name:en" v="Vodafone"/>
+    <tag k="office" v="telecommunication"/>
+  </node>
+  <node id="5245459321" lat="37.9874056" lon="23.7269199" version="1" timestamp="2017-11-24T10:06:38Z" changeset="54045807" uid="3984556" user="Олег Рассказов">
+    <tag k="name:en" v="Vodafone"/>
+    <tag k="office" v="telecommunication"/>
+  </node>
+  <node id="5252374422" lat="37.9869029" lon="23.7269762" version="1" timestamp="2017-11-28T17:02:41Z" changeset="54154292" uid="474183" user="ratrun"/>
+  <node id="5530672191" lat="37.9872000" lon="23.7265000" version="1" timestamp="2018-04-05T12:14:45Z" changeset="57833383" uid="934988" user="124millionpixels">
+    <tag k="name" v="050096083001"/>
+  </node>
+  <way id="10741734" version="18" timestamp="2016-06-06T18:41:47Z" changeset="39845772" uid="1016290" user="ika-chan! UK">
+    <nd ref="31179466"/>
+    <nd ref="962356923"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="int_name" v="Kamaterou"/>
+    <tag k="name" v="Καματερού"/>
+    <tag k="name:en" v="Kamaterou Street"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="reg_ref" v="ΕΠ1"/>
+    <tag k="source:reg_ref" v="ΦΕΚ 47 Α/8.2.1956"/>
+  </way>
+  <way id="10741762" version="13" timestamp="2016-11-16T19:55:49Z" changeset="43709316" uid="411246" user="makmar">
+    <nd ref="97834761"/>
+    <nd ref="2425856882"/>
+    <nd ref="95663501"/>
+    <tag k="foot" v="designated"/>
+    <tag k="highway" v="pedestrian"/>
+    <tag k="motor_vehicle" v="delivery"/>
+    <tag k="name" v="Μαιζώνος"/>
+  </way>
+  <way id="50004618" version="10" timestamp="2016-05-18T09:07:56Z" changeset="39395415" uid="2700471" user="JayCBR">
+    <nd ref="688786344"/>
+    <nd ref="962356763"/>
+    <nd ref="962356680"/>
+    <nd ref="962356956"/>
+    <nd ref="962356738"/>
+    <tag k="highway" v="secondary_link"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="54700033" version="15" timestamp="2016-09-06T09:10:05Z" changeset="41949748" uid="1016290" user="ika-chan! UK">
+    <nd ref="962356657"/>
+    <nd ref="688786349"/>
+    <nd ref="962356911"/>
+    <nd ref="95663472"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="int_name" v="Acharnon"/>
+    <tag k="is_in" v="Αθήνα"/>
+    <tag k="lit" v="yes"/>
+    <tag k="name" v="Αχαρνών"/>
+    <tag k="name:fr" v="Acharnón"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="82682784" version="1" timestamp="2010-10-23T22:39:42Z" changeset="6152374" uid="23785" user="greecemapper">
+    <nd ref="962356940"/>
+    <nd ref="962356583"/>
+    <nd ref="962356874"/>
+    <nd ref="962356638"/>
+    <nd ref="962356928"/>
+    <nd ref="962356708"/>
+    <nd ref="962356962"/>
+    <nd ref="962356940"/>
+    <tag k="landuse" v="residential"/>
+  </way>
+  <way id="82682785" version="15" timestamp="2016-05-18T09:08:01Z" changeset="39395415" uid="2700471" user="JayCBR">
+    <nd ref="3879024943"/>
+    <nd ref="3879024939"/>
+    <nd ref="95663461"/>
+    <nd ref="962356844"/>
+    <nd ref="95663464"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="int_name" v="Marni"/>
+    <tag k="lanes" v="4"/>
+    <tag k="name" v="Μάρνη"/>
+    <tag k="name:el" v="Μάρνη"/>
+    <tag k="name:en" v="Marni street"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="82682788" version="11" timestamp="2016-05-18T09:08:01Z" changeset="39395415" uid="2700471" user="JayCBR">
+    <nd ref="962356740"/>
+    <nd ref="962356995"/>
+    <nd ref="962356665"/>
+    <nd ref="97834761"/>
+    <tag k="highway" v="secondary_link"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="82682791" version="3" timestamp="2016-11-17T07:37:33Z" changeset="43720521" uid="411246" user="makmar">
+    <nd ref="962356691"/>
+    <nd ref="4502180190"/>
+    <nd ref="962356835"/>
+    <nd ref="962356606"/>
+    <nd ref="962356894"/>
+    <nd ref="962356663"/>
+    <nd ref="4505791600"/>
+    <nd ref="962356691"/>
+    <tag k="landuse" v="residential"/>
+  </way>
+  <way id="82682796" version="14" timestamp="2016-05-18T09:08:01Z" changeset="39395415" uid="2700471" user="JayCBR">
+    <nd ref="95663527"/>
+    <nd ref="962356853"/>
+    <nd ref="2786681834"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="int_name" v="Marni"/>
+    <tag k="lanes" v="4"/>
+    <tag k="name" v="Μάρνη"/>
+    <tag k="name:el" v="Μάρνη"/>
+    <tag k="name:en" v="Marni"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="82682797" version="4" timestamp="2016-11-15T10:22:21Z" changeset="43666378" uid="411246" user="makmar">
+    <nd ref="962356872"/>
+    <nd ref="4502180189"/>
+    <nd ref="4501961004"/>
+    <nd ref="962356975"/>
+    <nd ref="962356774"/>
+    <nd ref="962357018"/>
+    <nd ref="962356816"/>
+    <nd ref="962356561"/>
+    <nd ref="962356855"/>
+    <nd ref="962356628"/>
+    <nd ref="962356909"/>
+    <nd ref="962356692"/>
+    <nd ref="962356667"/>
+    <nd ref="962356872"/>
+    <tag k="landuse" v="residential"/>
+  </way>
+  <way id="82682798" version="4" timestamp="2016-11-16T10:12:12Z" changeset="43694500" uid="411246" user="makmar">
+    <nd ref="962356676"/>
+    <nd ref="962356797"/>
+    <nd ref="4504025968"/>
+    <nd ref="1659513271"/>
+    <nd ref="2146155925"/>
+    <nd ref="2146155923"/>
+    <nd ref="962356523"/>
+    <nd ref="962356830"/>
+    <nd ref="962356600"/>
+    <nd ref="962356887"/>
+    <nd ref="4504025971"/>
+    <nd ref="4504025969"/>
+    <nd ref="962356676"/>
+    <tag k="landuse" v="residential"/>
+  </way>
+  <way id="82682805" version="2" timestamp="2012-03-04T20:05:51Z" changeset="10873289" uid="653" user="aitolos">
+    <nd ref="962356761"/>
+    <nd ref="1659513273"/>
+    <nd ref="962356912"/>
+    <nd ref="962356695"/>
+    <nd ref="962356958"/>
+    <nd ref="962356744"/>
+    <nd ref="962356999"/>
+    <nd ref="962356789"/>
+    <nd ref="962356514"/>
+    <nd ref="962356761"/>
+    <tag k="landuse" v="residential"/>
+  </way>
+  <way id="210103168" version="7" timestamp="2016-05-18T09:08:11Z" changeset="39395415" uid="2700471" user="JayCBR">
+    <nd ref="962356785"/>
+    <nd ref="962356657"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="int_name" v="Marni"/>
+    <tag k="name" v="Μάρνη"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="222897513" version="10" timestamp="2016-05-18T09:08:02Z" changeset="39395415" uid="2700471" user="JayCBR">
+    <nd ref="95663428"/>
+    <nd ref="962356737"/>
+    <nd ref="95663426"/>
+    <nd ref="962356651"/>
+    <nd ref="95663404"/>
+    <nd ref="688786344"/>
+    <nd ref="962356603"/>
+    <nd ref="962356933"/>
+    <nd ref="962356785"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="int_name" v="Kapodistriou"/>
+    <tag k="name" v="Καποδιστρίου"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="222899032" version="9" timestamp="2016-06-06T18:41:57Z" changeset="39845772" uid="1016290" user="ika-chan! UK">
+    <nd ref="95663474"/>
+    <nd ref="2146155926"/>
+    <nd ref="962356740"/>
+    <nd ref="962356694"/>
+    <nd ref="962356719"/>
+    <nd ref="31179466"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="int_name" v="Liosion"/>
+    <tag k="is_in" v="Αθήνα"/>
+    <tag k="name" v="Λιοσίων"/>
+    <tag k="name:en" v="Liosion Street"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="reg_ref" v="ΕΠ1"/>
+    <tag k="source:reg_ref" v="ΦΕΚ 47 Α/8.2.1956"/>
+  </way>
+  <way id="232751129" version="1" timestamp="2013-08-08T08:59:18Z" changeset="17263798" uid="23785" user="greecemapper">
+    <nd ref="2410761247"/>
+    <nd ref="2410761249"/>
+    <tag k="highway" v="footway"/>
+  </way>
+  <way id="232751130" version="1" timestamp="2013-08-08T08:59:18Z" changeset="17263798" uid="23785" user="greecemapper">
+    <nd ref="2410761243"/>
+    <nd ref="962356680"/>
+    <nd ref="2410761241"/>
+    <tag k="footway" v="sidewalk"/>
+    <tag k="highway" v="footway"/>
+  </way>
+  <way id="232751131" version="1" timestamp="2013-08-08T08:59:18Z" changeset="17263798" uid="23785" user="greecemapper">
+    <nd ref="2202284263"/>
+    <nd ref="962356665"/>
+    <nd ref="2410761245"/>
+    <tag k="highway" v="footway"/>
+  </way>
+  <way id="232751132" version="3" timestamp="2015-12-13T09:22:05Z" changeset="35922430" uid="23785" user="greecemapper">
+    <nd ref="2410761245"/>
+    <nd ref="3890053138"/>
+    <nd ref="962356810"/>
+    <nd ref="2410761237"/>
+    <tag k="highway" v="footway"/>
+  </way>
+  <way id="232751133" version="1" timestamp="2013-08-08T08:59:18Z" changeset="17263798" uid="23785" user="greecemapper">
+    <nd ref="2410761243"/>
+    <nd ref="962356989"/>
+    <nd ref="688786351"/>
+    <nd ref="2410761247"/>
+    <tag k="highway" v="footway"/>
+  </way>
+  <way id="232751134" version="1" timestamp="2013-08-08T08:59:18Z" changeset="17263798" uid="23785" user="greecemapper">
+    <nd ref="2410761249"/>
+    <nd ref="688786349"/>
+    <nd ref="962356719"/>
+    <nd ref="2410761245"/>
+    <tag k="highway" v="footway"/>
+  </way>
+  <way id="232751135" version="1" timestamp="2013-08-08T08:59:18Z" changeset="17263798" uid="23785" user="greecemapper">
+    <nd ref="2410761237"/>
+    <nd ref="962356876"/>
+    <nd ref="962356933"/>
+    <nd ref="2410761243"/>
+    <tag k="highway" v="footway"/>
+  </way>
+  <way id="261671454" version="7" timestamp="2016-05-18T09:08:06Z" changeset="39395415" uid="2700471" user="JayCBR">
+    <nd ref="962356785"/>
+    <nd ref="962356989"/>
+    <nd ref="962356738"/>
+    <nd ref="3879024940"/>
+    <nd ref="3879024943"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="int_name" v="Marni"/>
+    <tag k="name" v="Μάρνη"/>
+    <tag k="name:el" v="Μάρνη"/>
+    <tag k="name:en" v="Marni street"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="284503673" version="6" timestamp="2016-05-18T09:08:22Z" changeset="39395415" uid="2700471" user="JayCBR">
+    <nd ref="962356923"/>
+    <nd ref="962356785"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="int_name" v="Marni"/>
+    <tag k="name" v="Μάρνη"/>
+    <tag k="name:el" v="Μάρνη"/>
+    <tag k="name:en" v="Marni"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="284503674" version="10" timestamp="2018-04-20T21:57:53Z" changeset="58277546" uid="936280" user="beatnickgr">
+    <nd ref="962356923"/>
+    <nd ref="962356876"/>
+    <nd ref="688786356"/>
+    <nd ref="5252374422"/>
+    <nd ref="962356608"/>
+    <nd ref="688786354"/>
+    <nd ref="962356711"/>
+    <nd ref="300398465"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="int_name" v="Kamaterou"/>
+    <tag k="name" v="Καματερού"/>
+    <tag k="name:en" v="Kamaterou Street"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="reg_ref" v="ΕΠ1"/>
+    <tag k="source:reg_ref" v="ΦΕΚ 47 Α/8.2.1956"/>
+  </way>
+  <way id="384593007" version="3" timestamp="2016-05-18T09:08:18Z" changeset="39395415" uid="2700471" user="JayCBR">
+    <nd ref="2786681834"/>
+    <nd ref="3879024941"/>
+    <nd ref="962356559"/>
+    <nd ref="962356810"/>
+    <nd ref="962356923"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="int_name" v="Marni"/>
+    <tag k="lanes" v="2"/>
+    <tag k="name" v="Μάρνη"/>
+    <tag k="name:el" v="Μάρνη"/>
+    <tag k="name:en" v="Marni"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="384593008" version="4" timestamp="2016-05-18T09:08:17Z" changeset="39395415" uid="2700471" user="JayCBR">
+    <nd ref="31179466"/>
+    <nd ref="3890053138"/>
+    <nd ref="97834761"/>
+    <nd ref="2786681834"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="int_name" v="Marni"/>
+    <tag k="lanes" v="2"/>
+    <tag k="name" v="Μάρνη"/>
+    <tag k="name:el" v="Μάρνη"/>
+    <tag k="name:en" v="Marni"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="384593009" version="3" timestamp="2016-05-18T09:08:21Z" changeset="39395415" uid="2700471" user="JayCBR">
+    <nd ref="3879024943"/>
+    <nd ref="3879024942"/>
+    <nd ref="635132996"/>
+    <nd ref="688786351"/>
+    <nd ref="962356657"/>
+    <nd ref="31179466"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="int_name" v="Marni"/>
+    <tag k="lanes" v="2"/>
+    <tag k="name" v="Μάρνη"/>
+    <tag k="name:el" v="Μάρνη"/>
+    <tag k="name:en" v="Marni"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="448949622" version="2" timestamp="2016-10-22T23:09:53Z" changeset="43091033" uid="4763179" user="ika-chan!">
+    <nd ref="844627792"/>
+    <nd ref="4459174253"/>
+    <nd ref="4459174258"/>
+    <nd ref="4459174259"/>
+    <nd ref="844627845"/>
+    <nd ref="962356940"/>
+    <nd ref="962356962"/>
+    <nd ref="962356667"/>
+    <nd ref="962356692"/>
+    <nd ref="962356628"/>
+    <nd ref="962356855"/>
+    <nd ref="962356584"/>
+    <nd ref="962356899"/>
+    <nd ref="2701870356"/>
+    <nd ref="4459174263"/>
+    <nd ref="3749411768"/>
+    <tag k="boundary" v="low_emission_zone"/>
+    <tag k="int_name" v="Marni"/>
+    <tag k="name" v="Μάρνη"/>
+  </way>
+  <way id="453486308" version="1" timestamp="2016-11-15T10:08:30Z" changeset="43666114" uid="411246" user="makmar">
+    <nd ref="4502158094"/>
+    <nd ref="4502157386"/>
+    <nd ref="4502157385"/>
+    <nd ref="4502157384"/>
+    <nd ref="4502157383"/>
+    <nd ref="4502157382"/>
+    <nd ref="4502157381"/>
+    <nd ref="4502157388"/>
+    <nd ref="4502157380"/>
+    <nd ref="4502158092"/>
+    <nd ref="4502158093"/>
+    <nd ref="4502158094"/>
+    <tag k="building" v="yes"/>
+  </way>
+  <way id="453486885" version="1" timestamp="2016-11-15T10:12:36Z" changeset="43666192" uid="411246" user="makmar">
+    <nd ref="4502163198"/>
+    <nd ref="4502163196"/>
+    <nd ref="4502163192"/>
+    <nd ref="4502163281"/>
+    <nd ref="4502163276"/>
+    <nd ref="4502163195"/>
+    <nd ref="4502163194"/>
+    <nd ref="4502163193"/>
+    <nd ref="4502163197"/>
+    <nd ref="4502163198"/>
+    <tag k="building" v="yes"/>
+  </way>
+  <way id="453486886" version="1" timestamp="2016-11-15T10:12:36Z" changeset="43666192" uid="411246" user="makmar">
+    <nd ref="4502163203"/>
+    <nd ref="4502163198"/>
+    <nd ref="4502163197"/>
+    <nd ref="4502163224"/>
+    <nd ref="4502163225"/>
+    <nd ref="4502163208"/>
+    <nd ref="4502163209"/>
+    <nd ref="4502163202"/>
+    <nd ref="4502163203"/>
+    <tag k="building" v="yes"/>
+  </way>
+  <way id="453486893" version="1" timestamp="2016-11-15T10:12:36Z" changeset="43666192" uid="411246" user="makmar">
+    <nd ref="4502163281"/>
+    <nd ref="4502163280"/>
+    <nd ref="4502163279"/>
+    <nd ref="4502163264"/>
+    <nd ref="4502163278"/>
+    <nd ref="4502163277"/>
+    <nd ref="4502163276"/>
+    <nd ref="4502163281"/>
+    <tag k="building" v="yes"/>
+  </way>
+  <way id="453489458" version="1" timestamp="2016-11-15T10:22:19Z" changeset="43666378" uid="411246" user="makmar">
+    <nd ref="4502179369"/>
+    <nd ref="4502179380"/>
+    <nd ref="4502179374"/>
+    <nd ref="4502179375"/>
+    <nd ref="4502179368"/>
+    <nd ref="4502179367"/>
+    <nd ref="4502179366"/>
+    <nd ref="4502179365"/>
+    <nd ref="4502179364"/>
+    <nd ref="4502179363"/>
+    <nd ref="4502179382"/>
+    <nd ref="4502179362"/>
+    <nd ref="4502179361"/>
+    <nd ref="4502179369"/>
+    <tag k="building" v="yes"/>
+  </way>
+  <way id="453489460" version="1" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar">
+    <nd ref="4502179383"/>
+    <nd ref="4502179381"/>
+    <nd ref="4502179370"/>
+    <nd ref="4502179380"/>
+    <nd ref="4502179369"/>
+    <nd ref="4502179379"/>
+    <nd ref="4502179383"/>
+    <tag k="building" v="yes"/>
+  </way>
+  <way id="453489461" version="1" timestamp="2016-11-15T10:22:20Z" changeset="43666378" uid="411246" user="makmar">
+    <nd ref="4502179388"/>
+    <nd ref="4502179387"/>
+    <nd ref="4502179386"/>
+    <nd ref="4502179385"/>
+    <nd ref="4502179384"/>
+    <nd ref="4502179383"/>
+    <nd ref="4502179379"/>
+    <nd ref="4502179382"/>
+    <nd ref="4502179363"/>
+    <nd ref="4502179388"/>
+    <tag k="building" v="yes"/>
+  </way>
+  <way id="453815510" version="1" timestamp="2016-11-16T19:55:49Z" changeset="43709316" uid="411246" user="makmar">
+    <nd ref="4504991015"/>
+    <nd ref="4504991014"/>
+    <nd ref="4504991013"/>
+    <nd ref="4504991012"/>
+    <nd ref="4504991011"/>
+    <nd ref="4504991010"/>
+    <nd ref="2202284263"/>
+    <nd ref="4504991009"/>
+    <nd ref="4504991008"/>
+    <nd ref="4504991015"/>
+    <tag k="leisure" v="park"/>
+    <tag k="name" v="Πλατεία Βάθης"/>
+  </way>
+  <way id="453818582" version="1" timestamp="2016-11-16T20:10:01Z" changeset="43709656" uid="411246" user="makmar">
+    <nd ref="4505016847"/>
+    <nd ref="4505016846"/>
+    <nd ref="4505016845"/>
+    <nd ref="4505016844"/>
+    <nd ref="4505016843"/>
+    <nd ref="4505016842"/>
+    <nd ref="4505016841"/>
+    <nd ref="4505016840"/>
+    <nd ref="4505016839"/>
+    <nd ref="4505016847"/>
+  </way>
+  <way id="453914285" version="1" timestamp="2016-11-17T07:37:31Z" changeset="43720521" uid="411246" user="makmar">
+    <nd ref="4505791620"/>
+    <nd ref="4505791616"/>
+    <nd ref="4505791615"/>
+    <nd ref="4505791614"/>
+    <nd ref="4505791625"/>
+    <nd ref="4505791619"/>
+    <nd ref="4505791620"/>
+    <tag k="building" v="yes"/>
+  </way>
+  <way id="453914286" version="1" timestamp="2016-11-17T07:37:31Z" changeset="43720521" uid="411246" user="makmar">
+    <nd ref="4505791627"/>
+    <nd ref="4505791621"/>
+    <nd ref="4505791620"/>
+    <nd ref="4505791619"/>
+    <nd ref="4505791618"/>
+    <nd ref="4505791617"/>
+    <nd ref="4505791627"/>
+    <tag k="building" v="yes"/>
+  </way>
+  <way id="453914287" version="1" timestamp="2016-11-17T07:37:31Z" changeset="43720521" uid="411246" user="makmar">
+    <nd ref="4505791646"/>
+    <nd ref="4505791630"/>
+    <nd ref="4505791629"/>
+    <nd ref="4505791628"/>
+    <nd ref="4505791627"/>
+    <nd ref="4505791617"/>
+    <nd ref="4505791626"/>
+    <nd ref="4505791625"/>
+    <nd ref="4505791624"/>
+    <nd ref="4505791623"/>
+    <nd ref="4505791622"/>
+    <nd ref="4505791641"/>
+    <nd ref="4505791647"/>
+    <nd ref="4505791646"/>
+  </way>
+  <way id="524296136" version="3" timestamp="2017-11-28T17:02:41Z" changeset="54154292" uid="474183" user="ratrun">
+    <nd ref="5252374422"/>
+    <nd ref="5102457426"/>
+    <nd ref="5102457427"/>
+    <nd ref="5102457428"/>
+    <nd ref="3921059687"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Πάρκινγκ με κάρτα στάθμευσης – άσπρη γραμμή"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <relation id="3008302" version="54" timestamp="2018-04-20T21:57:55Z" changeset="58277546" uid="936280" user="beatnickgr">
+    <member type="way" ref="100486302" role=""/>
+    <member type="way" ref="135114631" role=""/>
+    <member type="way" ref="452635382" role=""/>
+    <member type="way" ref="452635380" role=""/>
+    <member type="way" ref="135114632" role=""/>
+    <member type="way" ref="452614040" role=""/>
+    <member type="way" ref="100485758" role=""/>
+    <member type="way" ref="68679964" role=""/>
+    <member type="way" ref="423200903" role=""/>
+    <member type="way" ref="452614043" role=""/>
+    <member type="way" ref="452614044" role=""/>
+    <member type="way" ref="224029171" role=""/>
+    <member type="way" ref="135049402" role=""/>
+    <member type="way" ref="260824607" role=""/>
+    <member type="way" ref="260824606" role=""/>
+    <member type="way" ref="123650644" role=""/>
+    <member type="way" ref="123650643" role=""/>
+    <member type="way" ref="51926080" role=""/>
+    <member type="way" ref="260824598" role=""/>
+    <member type="way" ref="25752248" role=""/>
+    <member type="way" ref="222636354" role=""/>
+    <member type="way" ref="222903026" role=""/>
+    <member type="way" ref="222903025" role=""/>
+    <member type="way" ref="182462718" role=""/>
+    <member type="way" ref="222901297" role="forward"/>
+    <member type="way" ref="423200900" role="backward"/>
+    <member type="way" ref="43248082" role="forward"/>
+    <member type="way" ref="423200899" role="forward"/>
+    <member type="way" ref="360128634" role=""/>
+    <member type="way" ref="360128641" role="forward"/>
+    <member type="way" ref="360128640" role="forward"/>
+    <member type="way" ref="360128643" role="forward"/>
+    <member type="way" ref="375903564" role="forward"/>
+    <member type="way" ref="217406531" role="forward"/>
+    <member type="way" ref="217406530" role="forward"/>
+    <member type="way" ref="375903570" role="forward"/>
+    <member type="way" ref="571028488" role="forward"/>
+    <member type="way" ref="375903568" role="forward"/>
+    <member type="way" ref="375903565" role="forward"/>
+    <member type="way" ref="217406583" role="forward"/>
+    <member type="way" ref="217406584" role="forward"/>
+    <member type="way" ref="360128639" role="forward"/>
+    <member type="way" ref="360128642" role="forward"/>
+    <member type="way" ref="454602450" role=""/>
+    <member type="way" ref="375903555" role="forward"/>
+    <member type="way" ref="375903560" role="forward"/>
+    <member type="way" ref="375903562" role="forward"/>
+    <member type="way" ref="375903561" role="forward"/>
+    <member type="way" ref="375903567" role="forward"/>
+    <member type="way" ref="375903566" role="forward"/>
+    <member type="way" ref="375903563" role=""/>
+    <member type="way" ref="454602451" role="forward"/>
+    <member type="way" ref="375903569" role="forward"/>
+    <member type="way" ref="454602452" role="forward"/>
+    <member type="way" ref="42921868" role="forward"/>
+    <member type="way" ref="42921866" role=""/>
+    <member type="way" ref="195758487" role="forward"/>
+    <member type="way" ref="195758486" role="forward"/>
+    <member type="way" ref="97748403" role=""/>
+    <member type="way" ref="97748389" role=""/>
+    <member type="way" ref="42769976" role="forward"/>
+    <member type="way" ref="42769973" role="forward"/>
+    <member type="way" ref="42769970" role=""/>
+    <member type="way" ref="136879898" role=""/>
+    <member type="way" ref="423208730" role="forward"/>
+    <member type="way" ref="51510723" role="forward"/>
+    <member type="way" ref="302476273" role="forward"/>
+    <member type="way" ref="222900158" role="forward"/>
+    <member type="way" ref="284197348" role="forward"/>
+    <member type="way" ref="261671456" role="forward"/>
+    <member type="way" ref="284197347" role="forward"/>
+    <member type="way" ref="319362396" role="forward"/>
+    <member type="way" ref="284195579" role="forward"/>
+    <member type="way" ref="561491205" role="forward"/>
+    <member type="way" ref="284175258" role="forward"/>
+    <member type="way" ref="52074052" role="forward"/>
+    <member type="way" ref="260994689" role="backward"/>
+    <member type="way" ref="561491206" role=""/>
+    <member type="way" ref="582056594" role=""/>
+    <member type="way" ref="284175260" role=""/>
+    <member type="way" ref="48820562" role="backward"/>
+    <member type="way" ref="10741754" role="forward"/>
+    <member type="way" ref="222899032" role="forward"/>
+    <member type="way" ref="10741734" role="forward"/>
+    <member type="way" ref="284503674" role="forward"/>
+    <member type="way" ref="32245113" role="forward"/>
+    <member type="way" ref="32295798" role="forward"/>
+    <member type="way" ref="281121185" role="forward"/>
+    <member type="way" ref="222941081" role="forward"/>
+    <member type="way" ref="10971763" role="forward"/>
+    <member type="way" ref="361500811" role="link"/>
+    <member type="way" ref="371353258" role="link"/>
+    <member type="way" ref="43170261" role="link"/>
+    <member type="way" ref="43170267" role="link"/>
+    <member type="way" ref="23184527" role="link"/>
+    <member type="way" ref="304760458" role="forward"/>
+    <member type="way" ref="304760280" role="forward"/>
+    <member type="way" ref="413880674" role="forward"/>
+    <member type="way" ref="304758826" role="forward"/>
+    <member type="way" ref="28647527" role="forward"/>
+    <member type="way" ref="114036664" role=""/>
+    <member type="way" ref="284589527" role=""/>
+    <member type="way" ref="566457650" role=""/>
+    <member type="way" ref="566457651" role=""/>
+    <member type="way" ref="51571148" role=""/>
+    <member type="way" ref="562888961" role="forward"/>
+    <member type="way" ref="304760279" role="link"/>
+    <member type="way" ref="304760978" role="link"/>
+    <member type="way" ref="32071969" role="link"/>
+    <member type="way" ref="243485969" role="forward"/>
+    <member type="way" ref="284175259" role="forward"/>
+    <member type="way" ref="284175465" role="forward"/>
+    <member type="way" ref="304761005" role="forward"/>
+    <member type="way" ref="32071974" role="link"/>
+    <member type="way" ref="45341379" role="link"/>
+    <member type="way" ref="114036667" role="forward"/>
+    <member type="way" ref="250323836" role="forward"/>
+    <member type="way" ref="413880695" role="forward"/>
+    <member type="way" ref="423200901" role="forward"/>
+    <member type="way" ref="304240846" role="link"/>
+    <member type="way" ref="51510716" role="forward"/>
+    <member type="way" ref="413880688" role="forward"/>
+    <member type="way" ref="413880679" role="forward"/>
+    <member type="way" ref="304240845" role="forward"/>
+    <member type="way" ref="243485972" role="forward"/>
+    <member type="way" ref="413880683" role="forward"/>
+    <member type="way" ref="250323835" role=""/>
+    <member type="way" ref="32077334" role="forward"/>
+    <member type="way" ref="32071921" role="forward"/>
+    <member type="way" ref="261150170" role="forward"/>
+    <member type="way" ref="42268230" role="forward"/>
+    <member type="way" ref="250323834" role="forward"/>
+    <member type="way" ref="32071949" role="forward"/>
+    <member type="way" ref="45341381" role="forward"/>
+    <member type="way" ref="423200902" role="forward"/>
+    <member type="way" ref="51510722" role="link"/>
+    <member type="way" ref="319362393" role="link"/>
+    <tag k="description" v="Αθήνα - Αχαρνές - Πάρνηθα"/>
+    <tag k="name" v="Αττική Επαρχιακή Οδός 1 (Αθήνα - Πάρνηθα)"/>
+    <tag k="name:en" v="Attica Provincial Road 1 (Athens - Parnitha)"/>
+    <tag k="name:fr" v="Route Provinciale 1 (Athènes - Parnès)"/>
+    <tag k="network" v="GR:provincial:A1"/>
+    <tag k="ref" v="A101"/>
+    <tag k="reg_ref" v="ΕΠ1"/>
+    <tag k="route" v="road"/>
+    <tag k="source" v="ΦΕΚ 47 Α/8.2.1956"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="3501442" version="35" timestamp="2018-04-26T22:43:35Z" changeset="58459344" uid="936280" user="beatnickgr">
+    <member type="node" ref="2663907323" role=""/>
+    <member type="node" ref="1997456424" role=""/>
+    <member type="node" ref="2663907342" role=""/>
+    <member type="node" ref="2560172094" role=""/>
+    <member type="node" ref="2560172136" role=""/>
+    <member type="node" ref="1997456425" role=""/>
+    <member type="node" ref="2560172135" role=""/>
+    <member type="node" ref="1997456426" role=""/>
+    <member type="node" ref="2560172134" role=""/>
+    <member type="node" ref="1997456427" role=""/>
+    <member type="node" ref="2560172133" role=""/>
+    <member type="node" ref="2181376842" role=""/>
+    <member type="node" ref="2560172132" role=""/>
+    <member type="node" ref="2560172095" role=""/>
+    <member type="node" ref="2560172131" role=""/>
+    <member type="node" ref="2560172096" role=""/>
+    <member type="node" ref="2560172130" role=""/>
+    <member type="node" ref="2560172129" role=""/>
+    <member type="node" ref="2560172097" role=""/>
+    <member type="node" ref="2560172128" role=""/>
+    <member type="node" ref="2560172098" role=""/>
+    <member type="node" ref="2560172099" role=""/>
+    <member type="node" ref="2560172126" role=""/>
+    <member type="node" ref="2560172100" role=""/>
+    <member type="node" ref="2560172125" role=""/>
+    <member type="node" ref="2560172124" role=""/>
+    <member type="node" ref="2560172101" role=""/>
+    <member type="node" ref="2560172102" role=""/>
+    <member type="node" ref="2560172123" role=""/>
+    <member type="node" ref="2560172103" role=""/>
+    <member type="node" ref="2560172122" role=""/>
+    <member type="node" ref="2560172104" role=""/>
+    <member type="node" ref="2514283294" role=""/>
+    <member type="node" ref="2514283293" role=""/>
+    <member type="node" ref="2514283341" role=""/>
+    <member type="node" ref="2514283292" role=""/>
+    <member type="node" ref="2514283342" role=""/>
+    <member type="node" ref="2514283291" role=""/>
+    <member type="node" ref="2560172105" role=""/>
+    <member type="node" ref="2660373616" role=""/>
+    <member type="node" ref="2514283290" role=""/>
+    <member type="node" ref="2660373709" role=""/>
+    <member type="node" ref="2660373621" role=""/>
+    <member type="node" ref="2663907350" role=""/>
+    <member type="node" ref="2663907360" role=""/>
+    <member type="node" ref="2663907370" role=""/>
+    <member type="node" ref="2663907377" role=""/>
+    <member type="node" ref="2663907386" role=""/>
+    <member type="node" ref="2663907393" role=""/>
+    <member type="node" ref="2663907403" role=""/>
+    <member type="node" ref="2663907426" role=""/>
+    <member type="node" ref="2663907434" role=""/>
+    <member type="node" ref="2663907444" role=""/>
+    <member type="node" ref="2663907451" role=""/>
+    <member type="node" ref="2663907460" role=""/>
+    <member type="node" ref="2663907467" role=""/>
+    <member type="node" ref="2663907477" role=""/>
+    <member type="node" ref="2663907485" role=""/>
+    <member type="node" ref="2663907498" role=""/>
+    <member type="node" ref="2663907508" role=""/>
+    <member type="node" ref="2663907517" role=""/>
+    <member type="node" ref="2663907526" role=""/>
+    <member type="node" ref="2663907533" role=""/>
+    <member type="node" ref="2663907572" role=""/>
+    <member type="node" ref="2663907582" role=""/>
+    <member type="node" ref="2663907590" role=""/>
+    <member type="node" ref="2663907597" role=""/>
+    <member type="node" ref="2663907605" role=""/>
+    <member type="node" ref="2663907611" role=""/>
+    <member type="node" ref="2663907617" role=""/>
+    <member type="node" ref="2663907620" role=""/>
+    <member type="node" ref="2663907624" role=""/>
+    <member type="node" ref="2663907631" role=""/>
+    <member type="node" ref="2663907637" role=""/>
+    <member type="node" ref="2663907642" role=""/>
+    <member type="node" ref="2663907648" role=""/>
+    <member type="node" ref="2663907651" role=""/>
+    <member type="node" ref="2663907654" role=""/>
+    <member type="node" ref="2663907657" role=""/>
+    <member type="node" ref="2663907660" role=""/>
+    <member type="node" ref="2663907665" role=""/>
+    <member type="node" ref="2663907671" role=""/>
+    <member type="node" ref="2663907676" role=""/>
+    <member type="node" ref="2663907682" role=""/>
+    <member type="node" ref="2663907687" role=""/>
+    <member type="node" ref="2663907693" role=""/>
+    <member type="node" ref="2663907698" role=""/>
+    <member type="node" ref="2663907704" role=""/>
+    <member type="node" ref="2663907711" role=""/>
+    <member type="node" ref="2663907718" role=""/>
+    <member type="node" ref="2663907727" role=""/>
+    <member type="node" ref="2663907734" role=""/>
+    <member type="node" ref="2663907742" role=""/>
+    <member type="node" ref="2663907750" role=""/>
+    <member type="node" ref="2663907758" role=""/>
+    <member type="node" ref="2663907768" role=""/>
+    <member type="node" ref="2663907776" role=""/>
+    <member type="node" ref="2663907798" role=""/>
+    <member type="node" ref="2663907806" role=""/>
+    <member type="node" ref="2663907815" role=""/>
+    <member type="node" ref="2663907824" role=""/>
+    <member type="node" ref="2663907832" role=""/>
+    <member type="node" ref="2663907840" role=""/>
+    <member type="node" ref="2663907848" role=""/>
+    <member type="node" ref="2663907857" role=""/>
+    <member type="node" ref="2663907866" role=""/>
+    <member type="node" ref="2663907874" role=""/>
+    <member type="node" ref="2663907882" role=""/>
+    <member type="node" ref="2663907892" role=""/>
+    <member type="node" ref="2663907900" role=""/>
+    <member type="node" ref="2663907906" role=""/>
+    <member type="node" ref="2663907914" role=""/>
+    <member type="node" ref="2663907922" role=""/>
+    <member type="node" ref="2663907932" role=""/>
+    <member type="node" ref="2663907940" role=""/>
+    <member type="node" ref="2663907949" role=""/>
+    <member type="way" ref="10741734" role=""/>
+    <member type="way" ref="284503674" role=""/>
+    <member type="way" ref="32245113" role=""/>
+    <member type="way" ref="260824573" role=""/>
+    <member type="way" ref="189099792" role=""/>
+    <member type="way" ref="10741751" role=""/>
+    <member type="way" ref="189099791" role=""/>
+    <member type="way" ref="10741760" role=""/>
+    <member type="way" ref="222899032" role=""/>
+    <member type="way" ref="11031680" role=""/>
+    <member type="way" ref="261150166" role=""/>
+    <member type="way" ref="249412139" role=""/>
+    <member type="way" ref="583812864" role=""/>
+    <member type="way" ref="583812863" role=""/>
+    <member type="way" ref="281121184" role=""/>
+    <member type="way" ref="583812865" role=""/>
+    <member type="way" ref="583812866" role=""/>
+    <member type="way" ref="583812868" role=""/>
+    <member type="way" ref="583812867" role=""/>
+    <member type="way" ref="43470527" role=""/>
+    <member type="way" ref="43470523" role=""/>
+    <member type="way" ref="249412136" role=""/>
+    <member type="way" ref="440912302" role=""/>
+    <member type="way" ref="440912301" role=""/>
+    <member type="way" ref="42163750" role=""/>
+    <member type="way" ref="284180385" role=""/>
+    <member type="way" ref="42163739" role=""/>
+    <member type="way" ref="284180087" role=""/>
+    <member type="way" ref="565176337" role=""/>
+    <member type="way" ref="565176336" role=""/>
+    <member type="way" ref="230140862" role=""/>
+    <member type="way" ref="42137793" role=""/>
+    <member type="way" ref="103338810" role=""/>
+    <member type="way" ref="423873623" role=""/>
+    <member type="way" ref="101817179" role=""/>
+    <member type="way" ref="103338800" role=""/>
+    <member type="way" ref="103338798" role=""/>
+    <member type="way" ref="311725059" role=""/>
+    <member type="way" ref="423708584" role=""/>
+    <member type="way" ref="249412142" role=""/>
+    <member type="way" ref="42163738" role=""/>
+    <member type="way" ref="284196995" role=""/>
+    <member type="way" ref="42163748" role=""/>
+    <member type="way" ref="565176334" role=""/>
+    <member type="way" ref="565176340" role=""/>
+    <member type="way" ref="284197073" role=""/>
+    <member type="way" ref="42163745" role=""/>
+    <member type="way" ref="427750204" role=""/>
+    <member type="way" ref="427750205" role=""/>
+    <member type="way" ref="284180382" role=""/>
+    <member type="way" ref="284182503" role=""/>
+    <member type="way" ref="304772576" role=""/>
+    <member type="way" ref="284182382" role=""/>
+    <member type="way" ref="42163736" role=""/>
+    <member type="way" ref="249412134" role=""/>
+    <member type="way" ref="103338807" role=""/>
+    <member type="way" ref="388772941" role=""/>
+    <member type="way" ref="388772940" role=""/>
+    <member type="way" ref="371475279" role=""/>
+    <member type="way" ref="371475278" role=""/>
+    <member type="way" ref="309568145" role=""/>
+    <member type="way" ref="309568146" role=""/>
+    <member type="way" ref="244075055" role=""/>
+    <member type="way" ref="249412143" role=""/>
+    <member type="way" ref="317206705" role=""/>
+    <member type="way" ref="260535590" role=""/>
+    <member type="way" ref="154354491" role=""/>
+    <member type="way" ref="154352039" role=""/>
+    <member type="way" ref="423873619" role=""/>
+    <member type="way" ref="225273028" role=""/>
+    <member type="way" ref="225271880" role=""/>
+    <member type="way" ref="51039835" role=""/>
+    <member type="way" ref="371478766" role=""/>
+    <member type="way" ref="83051930" role=""/>
+    <member type="way" ref="221152401" role=""/>
+    <member type="way" ref="83036470" role=""/>
+    <member type="way" ref="32070019" role=""/>
+    <member type="way" ref="545635403" role=""/>
+    <member type="way" ref="219120761" role=""/>
+    <member type="way" ref="254205490" role=""/>
+    <member type="way" ref="32070309" role=""/>
+    <member type="way" ref="82976522" role=""/>
+    <member type="way" ref="50257930" role=""/>
+    <member type="way" ref="219120109" role=""/>
+    <member type="way" ref="219120972" role=""/>
+    <member type="way" ref="361504199" role=""/>
+    <member type="way" ref="171609171" role=""/>
+    <member type="way" ref="371478767" role=""/>
+    <member type="way" ref="361504198" role=""/>
+    <member type="way" ref="253810606" role=""/>
+    <member type="way" ref="163609387" role=""/>
+    <member type="way" ref="219120104" role=""/>
+    <member type="way" ref="575113216" role=""/>
+    <member type="way" ref="253811767" role=""/>
+    <member type="way" ref="43548909" role=""/>
+    <member type="way" ref="217443855" role=""/>
+    <member type="way" ref="217443803" role=""/>
+    <member type="way" ref="204585072" role=""/>
+    <member type="way" ref="260824590" role=""/>
+    <member type="way" ref="43548510" role=""/>
+    <member type="way" ref="253811781" role=""/>
+    <member type="way" ref="83517224" role=""/>
+    <member type="way" ref="135663410" role=""/>
+    <member type="way" ref="25648938" role=""/>
+    <member type="way" ref="366271434" role=""/>
+    <member type="way" ref="361500823" role=""/>
+    <member type="way" ref="25648913" role=""/>
+    <member type="way" ref="423461915" role=""/>
+    <member type="way" ref="260824579" role=""/>
+    <member type="way" ref="25648954" role=""/>
+    <member type="way" ref="226606026" role=""/>
+    <member type="way" ref="32085395" role=""/>
+    <member type="way" ref="217408294" role=""/>
+    <member type="way" ref="32085664" role=""/>
+    <member type="way" ref="137841736" role=""/>
+    <member type="way" ref="43548908" role=""/>
+    <member type="way" ref="260824587" role=""/>
+    <member type="way" ref="83517167" role=""/>
+    <member type="way" ref="260824588" role=""/>
+    <member type="way" ref="83517216" role=""/>
+    <member type="way" ref="260824589" role=""/>
+    <member type="way" ref="260824592" role=""/>
+    <member type="way" ref="225271881" role=""/>
+    <member type="way" ref="423873618" role=""/>
+    <member type="way" ref="30041971" role=""/>
+    <tag k="name" v="Β9 ΧΑΛΚΟΚΟΝΔΥΛΗ - ΜΕΤΑΜΟΡΦΩΣΗ - ΝΕΑ ΚΗΦΙΣΙΑ"/>
+    <tag k="network" v="ΟΣΥ"/>
+    <tag k="operator" v="ΟΑΣΑ"/>
+    <tag k="ref" v="Β9"/>
+    <tag k="route" v="bus"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="3501443" version="39" timestamp="2018-04-26T22:43:36Z" changeset="58459344" uid="936280" user="beatnickgr">
+    <member type="node" ref="2663907334" role=""/>
+    <member type="node" ref="1997456424" role=""/>
+    <member type="node" ref="2663907342" role=""/>
+    <member type="node" ref="2560172094" role=""/>
+    <member type="node" ref="2560172136" role=""/>
+    <member type="node" ref="1997456425" role=""/>
+    <member type="node" ref="2560172135" role=""/>
+    <member type="node" ref="1997456426" role=""/>
+    <member type="node" ref="2560172134" role=""/>
+    <member type="node" ref="1997456427" role=""/>
+    <member type="node" ref="2560172133" role=""/>
+    <member type="node" ref="2181376842" role=""/>
+    <member type="node" ref="2560172132" role=""/>
+    <member type="node" ref="2560172095" role=""/>
+    <member type="node" ref="2560172131" role=""/>
+    <member type="node" ref="2560172096" role=""/>
+    <member type="node" ref="2560172130" role=""/>
+    <member type="node" ref="2560172129" role=""/>
+    <member type="node" ref="2560172097" role=""/>
+    <member type="node" ref="2560172128" role=""/>
+    <member type="node" ref="2560172098" role=""/>
+    <member type="node" ref="2560172099" role=""/>
+    <member type="node" ref="2560172126" role=""/>
+    <member type="node" ref="2560172100" role=""/>
+    <member type="node" ref="2560172125" role=""/>
+    <member type="node" ref="2560172124" role=""/>
+    <member type="node" ref="2560172101" role=""/>
+    <member type="node" ref="2560172102" role=""/>
+    <member type="node" ref="2560172123" role=""/>
+    <member type="node" ref="2560172103" role=""/>
+    <member type="node" ref="2560172122" role=""/>
+    <member type="node" ref="2560172104" role=""/>
+    <member type="node" ref="2514283341" role=""/>
+    <member type="node" ref="2514283342" role=""/>
+    <member type="node" ref="2560172105" role=""/>
+    <member type="node" ref="2560172121" role=""/>
+    <member type="node" ref="2560172106" role=""/>
+    <member type="node" ref="2560172120" role=""/>
+    <member type="node" ref="2560172107" role=""/>
+    <member type="node" ref="2560172119" role=""/>
+    <member type="node" ref="2560172108" role=""/>
+    <member type="node" ref="2560172109" role=""/>
+    <member type="node" ref="2560172118" role=""/>
+    <member type="node" ref="2663907957" role=""/>
+    <member type="node" ref="2663907967" role=""/>
+    <member type="node" ref="2663907976" role=""/>
+    <member type="node" ref="2663907982" role=""/>
+    <member type="node" ref="2663907997" role=""/>
+    <member type="node" ref="2663908005" role=""/>
+    <member type="node" ref="2663908011" role=""/>
+    <member type="node" ref="2663908021" role=""/>
+    <member type="node" ref="2663908031" role=""/>
+    <member type="node" ref="2663908040" role=""/>
+    <member type="node" ref="2663908051" role=""/>
+    <member type="node" ref="1950680362" role=""/>
+    <member type="node" ref="2663908061" role=""/>
+    <member type="node" ref="1950680364" role=""/>
+    <member type="node" ref="2663908072" role=""/>
+    <member type="node" ref="2663908083" role=""/>
+    <member type="node" ref="2663908108" role=""/>
+    <member type="node" ref="2663908119" role=""/>
+    <member type="node" ref="2268572082" role=""/>
+    <member type="node" ref="2663908129" role=""/>
+    <member type="node" ref="2663908140" role=""/>
+    <member type="node" ref="2663908150" role=""/>
+    <member type="node" ref="2663908158" role=""/>
+    <member type="node" ref="2663908167" role=""/>
+    <member type="node" ref="2663908175" role=""/>
+    <member type="node" ref="2663908184" role=""/>
+    <member type="node" ref="2663908194" role=""/>
+    <member type="node" ref="2663908204" role=""/>
+    <member type="node" ref="2663908209" role=""/>
+    <member type="node" ref="2663908216" role=""/>
+    <member type="node" ref="2663908292" role=""/>
+    <member type="node" ref="2663908301" role=""/>
+    <member type="node" ref="2663908311" role=""/>
+    <member type="node" ref="2663908328" role=""/>
+    <member type="node" ref="2663908337" role=""/>
+    <member type="node" ref="2663908345" role=""/>
+    <member type="node" ref="2663908354" role=""/>
+    <member type="node" ref="2663908361" role=""/>
+    <member type="node" ref="2268572081" role=""/>
+    <member type="node" ref="2268574074" role=""/>
+    <member type="node" ref="2663908367" role=""/>
+    <member type="node" ref="2663908374" role=""/>
+    <member type="node" ref="2663908380" role=""/>
+    <member type="node" ref="1972433867" role=""/>
+    <member type="node" ref="1972433864" role=""/>
+    <member type="node" ref="1968830589" role=""/>
+    <member type="node" ref="2663908389" role=""/>
+    <member type="node" ref="2663908398" role=""/>
+    <member type="node" ref="2663908406" role=""/>
+    <member type="node" ref="2663908416" role=""/>
+    <member type="node" ref="2663908425" role=""/>
+    <member type="node" ref="2663908432" role=""/>
+    <member type="node" ref="2663908439" role=""/>
+    <member type="node" ref="2663908445" role=""/>
+    <member type="node" ref="2663908452" role=""/>
+    <member type="node" ref="2663908461" role=""/>
+    <member type="node" ref="2663908468" role=""/>
+    <member type="node" ref="2663908475" role=""/>
+    <member type="node" ref="2663908483" role=""/>
+    <member type="node" ref="2663908492" role=""/>
+    <member type="node" ref="2663908503" role=""/>
+    <member type="node" ref="2663908515" role=""/>
+    <member type="node" ref="2663908525" role=""/>
+    <member type="node" ref="2663908538" role=""/>
+    <member type="node" ref="2663907988" role=""/>
+    <member type="node" ref="2786690873" role=""/>
+    <member type="node" ref="2786690876" role=""/>
+    <member type="way" ref="244075055" role=""/>
+    <member type="way" ref="152462885" role=""/>
+    <member type="way" ref="309568146" role=""/>
+    <member type="way" ref="309568145" role=""/>
+    <member type="way" ref="371475278" role=""/>
+    <member type="way" ref="371475279" role=""/>
+    <member type="way" ref="388772940" role=""/>
+    <member type="way" ref="388772941" role=""/>
+    <member type="way" ref="103338807" role=""/>
+    <member type="way" ref="101817179" role=""/>
+    <member type="way" ref="103338810" role=""/>
+    <member type="way" ref="42137793" role=""/>
+    <member type="way" ref="43470527" role=""/>
+    <member type="way" ref="284180385" role=""/>
+    <member type="way" ref="43470523" role=""/>
+    <member type="way" ref="440912301" role=""/>
+    <member type="way" ref="10741734" role=""/>
+    <member type="way" ref="42163745" role=""/>
+    <member type="way" ref="284197073" role=""/>
+    <member type="way" ref="565176340" role=""/>
+    <member type="way" ref="565176334" role=""/>
+    <member type="way" ref="42163748" role=""/>
+    <member type="way" ref="284196995" role=""/>
+    <member type="way" ref="284503674" role=""/>
+    <member type="way" ref="32245113" role=""/>
+    <member type="way" ref="260824573" role=""/>
+    <member type="way" ref="189099792" role=""/>
+    <member type="way" ref="10741751" role=""/>
+    <member type="way" ref="189099791" role=""/>
+    <member type="way" ref="10741760" role=""/>
+    <member type="way" ref="222899032" role=""/>
+    <member type="way" ref="42137818" role=""/>
+    <member type="way" ref="531626212" role=""/>
+    <member type="way" ref="42097393" role=""/>
+    <member type="way" ref="151529096" role=""/>
+    <member type="way" ref="51512303" role=""/>
+    <member type="way" ref="51512304" role=""/>
+    <member type="way" ref="51512305" role=""/>
+    <member type="way" ref="100528804" role=""/>
+    <member type="way" ref="249412134" role=""/>
+    <member type="way" ref="42163736" role=""/>
+    <member type="way" ref="284182382" role=""/>
+    <member type="way" ref="304772576" role=""/>
+    <member type="way" ref="284182503" role=""/>
+    <member type="way" ref="284180382" role=""/>
+    <member type="way" ref="427750205" role=""/>
+    <member type="way" ref="427750204" role=""/>
+    <member type="way" ref="42163750" role=""/>
+    <member type="way" ref="230140862" role=""/>
+    <member type="way" ref="440912302" role=""/>
+    <member type="way" ref="249412136" role=""/>
+    <member type="way" ref="423873623" role=""/>
+    <member type="way" ref="42163738" role=""/>
+    <member type="way" ref="249412142" role=""/>
+    <member type="way" ref="565176327" role=""/>
+    <member type="way" ref="565176325" role=""/>
+    <member type="way" ref="260824612" role=""/>
+    <member type="way" ref="565176336" role=""/>
+    <member type="way" ref="565176337" role=""/>
+    <member type="way" ref="284180087" role=""/>
+    <member type="way" ref="583812867" role=""/>
+    <member type="way" ref="583812868" role=""/>
+    <member type="way" ref="583812866" role=""/>
+    <member type="way" ref="583812865" role=""/>
+    <member type="way" ref="281121184" role=""/>
+    <member type="way" ref="583812863" role=""/>
+    <member type="way" ref="583812864" role=""/>
+    <member type="way" ref="249412139" role=""/>
+    <member type="way" ref="261150166" role=""/>
+    <member type="way" ref="11031680" role=""/>
+    <member type="way" ref="42163739" role=""/>
+    <member type="way" ref="30033782" role=""/>
+    <member type="way" ref="426428859" role=""/>
+    <member type="way" ref="426428858" role=""/>
+    <member type="way" ref="222914001" role=""/>
+    <member type="way" ref="309608317" role=""/>
+    <member type="way" ref="35154193" role=""/>
+    <member type="way" ref="51444519" role=""/>
+    <member type="way" ref="51444518" role=""/>
+    <member type="way" ref="97131208" role=""/>
+    <member type="way" ref="51750139" role=""/>
+    <member type="way" ref="51750140" role=""/>
+    <member type="way" ref="43719962" role=""/>
+    <member type="way" ref="80509562" role=""/>
+    <member type="way" ref="80509541" role=""/>
+    <member type="way" ref="571028099" role=""/>
+    <member type="way" ref="571028097" role=""/>
+    <member type="way" ref="265055307" role=""/>
+    <member type="way" ref="452670355" role=""/>
+    <member type="way" ref="452670353" role=""/>
+    <member type="way" ref="186805545" role=""/>
+    <member type="way" ref="184571275" role=""/>
+    <member type="way" ref="184571276" role=""/>
+    <member type="way" ref="222913739" role=""/>
+    <member type="way" ref="419246867" role=""/>
+    <member type="way" ref="225274891" role=""/>
+    <member type="way" ref="25729959" role=""/>
+    <member type="way" ref="361500809" role=""/>
+    <member type="way" ref="25729949" role=""/>
+    <member type="way" ref="25649026" role=""/>
+    <member type="way" ref="394107494" role=""/>
+    <member type="way" ref="25751962" role=""/>
+    <member type="way" ref="260824597" role=""/>
+    <member type="way" ref="260824596" role=""/>
+    <member type="way" ref="188607643" role=""/>
+    <member type="way" ref="260824598" role=""/>
+    <member type="way" ref="135049397" role=""/>
+    <member type="way" ref="42052262" role=""/>
+    <member type="way" ref="42052260" role=""/>
+    <member type="way" ref="100531621" role=""/>
+    <member type="way" ref="309608316" role=""/>
+    <member type="way" ref="100633378" role=""/>
+    <member type="way" ref="41957727" role=""/>
+    <member type="way" ref="194740086" role=""/>
+    <member type="way" ref="124701899" role=""/>
+    <member type="way" ref="260824600" role=""/>
+    <member type="way" ref="51926088" role=""/>
+    <member type="way" ref="51926089" role=""/>
+    <member type="way" ref="260994691" role=""/>
+    <member type="way" ref="105081420" role=""/>
+    <member type="way" ref="260824606" role=""/>
+    <member type="way" ref="260824608" role=""/>
+    <member type="way" ref="123650675" role=""/>
+    <member type="way" ref="260824604" role=""/>
+    <member type="way" ref="25752028" role=""/>
+    <member type="way" ref="25730047" role=""/>
+    <member type="way" ref="225274892" role=""/>
+    <member type="way" ref="260824611" role=""/>
+    <member type="way" ref="397605503" role=""/>
+    <member type="way" ref="180472972" role=""/>
+    <member type="way" ref="424341862" role=""/>
+    <member type="way" ref="419246868" role=""/>
+    <member type="way" ref="83175388" role=""/>
+    <member type="way" ref="44049788" role=""/>
+    <member type="way" ref="43719963" role=""/>
+    <tag k="name" v="Γ9 ΧΑΛΚΟΚΟΝΔΥΛΗ - ΚΟΚΚΙΝΟΣ ΜΥΛΟΣ - ΑΧΑΡΝΑΙ"/>
+    <tag k="network" v="ΟΣΥ"/>
+    <tag k="operator" v="ΟΑΣΑ"/>
+    <tag k="ref" v="Γ9"/>
+    <tag k="route" v="bus"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="3648294" version="27" timestamp="2018-02-15T10:11:44Z" changeset="56379413" uid="4785031" user="George_ath">
+    <member type="node" ref="2786681600" role="platform"/>
+    <member type="node" ref="2786686343" role="platform"/>
+    <member type="node" ref="2786680013" role="platform"/>
+    <member type="node" ref="2786685682" role="platform"/>
+    <member type="node" ref="2786686391" role="platform"/>
+    <member type="node" ref="2786681118" role="platform"/>
+    <member type="node" ref="2786687794" role="platform"/>
+    <member type="node" ref="2786690816" role="platform"/>
+    <member type="node" ref="2786680832" role="platform"/>
+    <member type="node" ref="2786685711" role="platform"/>
+    <member type="node" ref="2786685328" role="platform"/>
+    <member type="node" ref="2786685713" role=""/>
+    <member type="node" ref="2786679999" role=""/>
+    <member type="node" ref="2786680831" role=""/>
+    <member type="node" ref="2786686347" role=""/>
+    <member type="node" ref="2786687833" role=""/>
+    <member type="node" ref="2786685681" role=""/>
+    <member type="node" ref="2786685326" role=""/>
+    <member type="node" ref="2786681116" role=""/>
+    <member type="node" ref="2561873109" role=""/>
+    <member type="node" ref="2561873108" role=""/>
+    <member type="node" ref="2561873110" role=""/>
+    <member type="node" ref="2786681834" role=""/>
+    <member type="node" ref="2786684112" role=""/>
+    <member type="node" ref="2509191496" role=""/>
+    <member type="way" ref="24259036" role=""/>
+    <member type="way" ref="296185108" role=""/>
+    <member type="way" ref="299656748" role=""/>
+    <member type="way" ref="342455837" role=""/>
+    <member type="way" ref="234440705" role=""/>
+    <member type="way" ref="286070637" role=""/>
+    <member type="way" ref="286070639" role=""/>
+    <member type="way" ref="32077250" role=""/>
+    <member type="way" ref="561480116" role=""/>
+    <member type="way" ref="44463542" role=""/>
+    <member type="way" ref="44463550" role=""/>
+    <member type="way" ref="561480125" role=""/>
+    <member type="way" ref="220518200" role=""/>
+    <member type="way" ref="561480122" role=""/>
+    <member type="way" ref="44463549" role=""/>
+    <member type="way" ref="44463543" role=""/>
+    <member type="way" ref="399305900" role=""/>
+    <member type="way" ref="279194443" role=""/>
+    <member type="way" ref="249601206" role=""/>
+    <member type="way" ref="23199927" role=""/>
+    <member type="way" ref="296660364" role=""/>
+    <member type="way" ref="10741736" role=""/>
+    <member type="way" ref="51216548" role=""/>
+    <member type="way" ref="286069432" role=""/>
+    <member type="way" ref="31768203" role=""/>
+    <member type="way" ref="224816475" role=""/>
+    <member type="way" ref="250756987" role=""/>
+    <member type="way" ref="10976960" role=""/>
+    <member type="way" ref="284503674" role=""/>
+    <member type="way" ref="384593007" role=""/>
+    <member type="way" ref="82682796" role=""/>
+    <member type="way" ref="261671453" role=""/>
+    <member type="way" ref="306249835" role=""/>
+    <member type="way" ref="261671451" role=""/>
+    <member type="way" ref="31768510" role=""/>
+    <member type="way" ref="31768513" role=""/>
+    <member type="way" ref="273759049" role=""/>
+    <member type="way" ref="250326672" role=""/>
+    <member type="way" ref="436317691" role=""/>
+    <member type="way" ref="286069435" role=""/>
+    <member type="way" ref="250329780" role=""/>
+    <member type="way" ref="249601205" role=""/>
+    <member type="way" ref="243527759" role=""/>
+    <member type="way" ref="243527763" role=""/>
+    <member type="way" ref="286069430" role=""/>
+    <member type="way" ref="49747552" role=""/>
+    <member type="way" ref="286067897" role=""/>
+    <member type="way" ref="49756844" role=""/>
+    <member type="way" ref="220518201" role=""/>
+    <member type="way" ref="556144181" role=""/>
+    <member type="way" ref="286067895" role=""/>
+    <member type="way" ref="31767653" role=""/>
+    <member type="way" ref="338762705" role=""/>
+    <tag k="from" v="-61605"/>
+    <tag k="name" v="051 ΟΜΟΝΟΙΑ - ΣΤΑΘ. ΥΠΕΡ. ΛΕΩΦ. ΚΗΦΙΣΟΥ [μέσω ΑΚΑΔ.ΠΛΑΤΩΝΟΣ]"/>
+    <tag k="network" v="ΟΣΥ"/>
+    <tag k="operator" v="ΟΑΣΑ"/>
+    <tag k="public_transport:version" v="1"/>
+    <tag k="ref" v="051"/>
+    <tag k="route" v="bus"/>
+    <tag k="to" v="-60228"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="3648304" version="56" timestamp="2018-03-28T00:26:07Z" changeset="57584476" uid="936280" user="beatnickgr">
+    <member type="node" ref="2786690528" role="platform"/>
+    <member type="node" ref="2786680047" role="platform"/>
+    <member type="node" ref="2786684319" role="platform"/>
+    <member type="node" ref="2786688864" role="platform"/>
+    <member type="node" ref="2786684335" role="platform"/>
+    <member type="node" ref="2786686099" role="platform"/>
+    <member type="node" ref="2786686278" role="platform"/>
+    <member type="node" ref="2786683835" role="platform"/>
+    <member type="node" ref="2786685141" role="platform"/>
+    <member type="node" ref="2786685954" role="platform"/>
+    <member type="node" ref="2786685184" role="platform"/>
+    <member type="node" ref="2786681583" role=""/>
+    <member type="node" ref="2786684678" role=""/>
+    <member type="node" ref="2786685510" role=""/>
+    <member type="node" ref="2786685633" role=""/>
+    <member type="node" ref="2786687151" role=""/>
+    <member type="node" ref="2786687454" role=""/>
+    <member type="node" ref="2786680760" role=""/>
+    <member type="node" ref="2786681210" role=""/>
+    <member type="node" ref="2786686441" role=""/>
+    <member type="node" ref="2786688224" role=""/>
+    <member type="node" ref="2786681834" role=""/>
+    <member type="node" ref="1613240806" role=""/>
+    <member type="node" ref="2181358913" role=""/>
+    <member type="node" ref="2663907334" role=""/>
+    <member type="node" ref="1799562372" role=""/>
+    <member type="node" ref="1792445584" role=""/>
+    <member type="node" ref="1792445592" role=""/>
+    <member type="node" ref="4415579669" role=""/>
+    <member type="node" ref="4969232782" role="bus_stop"/>
+    <member type="way" ref="286067598" role=""/>
+    <member type="way" ref="227212920" role=""/>
+    <member type="way" ref="10976954" role=""/>
+    <member type="way" ref="23199949" role=""/>
+    <member type="way" ref="296185108" role=""/>
+    <member type="way" ref="299643492" role=""/>
+    <member type="way" ref="338770292" role=""/>
+    <member type="way" ref="243527763" role=""/>
+    <member type="way" ref="10976432" role=""/>
+    <member type="way" ref="10976433" role=""/>
+    <member type="way" ref="10976435" role=""/>
+    <member type="way" ref="261671453" role=""/>
+    <member type="way" ref="82682796" role=""/>
+    <member type="way" ref="384593007" role=""/>
+    <member type="way" ref="284503674" role=""/>
+    <member type="way" ref="32245113" role=""/>
+    <member type="way" ref="32295798" role=""/>
+    <member type="way" ref="23182806" role=""/>
+    <member type="way" ref="52493441" role=""/>
+    <member type="way" ref="52493436" role=""/>
+    <member type="way" ref="260124786" role=""/>
+    <member type="way" ref="168914459" role=""/>
+    <member type="way" ref="167907737" role=""/>
+    <member type="way" ref="316770031" role=""/>
+    <member type="way" ref="168914458" role=""/>
+    <member type="way" ref="299510529" role=""/>
+    <member type="way" ref="23182796" role=""/>
+    <member type="way" ref="299657353" role=""/>
+    <member type="way" ref="299645306" role=""/>
+    <member type="way" ref="295059515" role=""/>
+    <member type="way" ref="295059514" role=""/>
+    <member type="way" ref="391433166" role=""/>
+    <member type="way" ref="573760699" role=""/>
+    <member type="way" ref="23184151" role=""/>
+    <member type="way" ref="299645496" role=""/>
+    <member type="way" ref="224026881" role=""/>
+    <member type="way" ref="52493494" role=""/>
+    <member type="way" ref="52493497" role=""/>
+    <member type="way" ref="295056180" role=""/>
+    <member type="way" ref="295056184" role=""/>
+    <member type="way" ref="259803253" role=""/>
+    <member type="way" ref="170993800" role=""/>
+    <member type="way" ref="5728492" role=""/>
+    <member type="way" ref="87082472" role=""/>
+    <member type="way" ref="87082462" role=""/>
+    <member type="way" ref="23182726" role=""/>
+    <member type="way" ref="86351768" role=""/>
+    <member type="way" ref="219362016" role=""/>
+    <member type="way" ref="66868013" role=""/>
+    <member type="way" ref="299654833" role=""/>
+    <member type="way" ref="10976967" role=""/>
+    <member type="way" ref="64094578" role=""/>
+    <member type="way" ref="86378180" role=""/>
+    <member type="way" ref="299656282" role=""/>
+    <member type="way" ref="303921719" role=""/>
+    <member type="way" ref="298296034" role=""/>
+    <member type="way" ref="296181857" role=""/>
+    <member type="way" ref="23216679" role=""/>
+    <member type="way" ref="10741759" role=""/>
+    <tag k="from" v="-61273"/>
+    <tag k="name" v="100 ΠΛΑΤΕΙΑ ΚΟΥΜΟΥΝΔΟΥΡΟΥ - ΚΟΛΩΝΑΚΙ - ΑΓΟΡΑ (κυκλική)"/>
+    <tag k="network" v="ΟΣΥ"/>
+    <tag k="operator" v="ΟΑΣΑ"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="100"/>
+    <tag k="route" v="bus"/>
+    <tag k="to" v="-61273"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="3648524" version="123" timestamp="2018-04-20T21:58:01Z" changeset="58277546" uid="936280" user="beatnickgr">
+    <member type="node" ref="2786680422" role="platform"/>
+    <member type="node" ref="2786680438" role="platform"/>
+    <member type="node" ref="2786694158" role="platform"/>
+    <member type="node" ref="2786685242" role="platform"/>
+    <member type="node" ref="2786682420" role="platform"/>
+    <member type="node" ref="2786683192" role="platform"/>
+    <member type="node" ref="2786688613" role="platform"/>
+    <member type="node" ref="2786685824" role="platform"/>
+    <member type="node" ref="2786685841" role="platform"/>
+    <member type="node" ref="2786690067" role="platform"/>
+    <member type="node" ref="2786687611" role="platform"/>
+    <member type="node" ref="2786690298" role="platform"/>
+    <member type="node" ref="2786687236" role="platform"/>
+    <member type="node" ref="2786688558" role="platform"/>
+    <member type="node" ref="2786682075" role="platform"/>
+    <member type="node" ref="2786689578" role="platform"/>
+    <member type="node" ref="2786700863" role="platform"/>
+    <member type="node" ref="2786701693" role="platform"/>
+    <member type="node" ref="2786701971" role="platform"/>
+    <member type="node" ref="2786695077" role="platform"/>
+    <member type="node" ref="2786695282" role="platform"/>
+    <member type="node" ref="2786695425" role="platform"/>
+    <member type="node" ref="2786695599" role="platform"/>
+    <member type="node" ref="2786695648" role="platform"/>
+    <member type="node" ref="2786686176" role="platform"/>
+    <member type="node" ref="2786687650" role="platform"/>
+    <member type="node" ref="2786682622" role="platform"/>
+    <member type="node" ref="2786683104" role="platform"/>
+    <member type="node" ref="2786684378" role="platform"/>
+    <member type="node" ref="2786692477" role="platform"/>
+    <member type="node" ref="4427477703" role="platform"/>
+    <member type="node" ref="4969232782" role="bus_stop"/>
+    <member type="node" ref="2786691403" role=""/>
+    <member type="node" ref="2841702364" role=""/>
+    <member type="node" ref="2786689293" role=""/>
+    <member type="node" ref="2786680402" role=""/>
+    <member type="node" ref="2786680443" role=""/>
+    <member type="node" ref="2786694151" role=""/>
+    <member type="node" ref="2786685241" role=""/>
+    <member type="node" ref="2786682418" role=""/>
+    <member type="node" ref="2786683193" role=""/>
+    <member type="node" ref="2786685822" role=""/>
+    <member type="node" ref="2786685840" role=""/>
+    <member type="node" ref="1234103577" role=""/>
+    <member type="node" ref="2786690070" role=""/>
+    <member type="node" ref="2672706267" role=""/>
+    <member type="node" ref="2672706269" role=""/>
+    <member type="node" ref="2667750602" role=""/>
+    <member type="node" ref="1799459851" role=""/>
+    <member type="node" ref="2786688615" role=""/>
+    <member type="node" ref="2786687613" role=""/>
+    <member type="node" ref="2786694659" role=""/>
+    <member type="node" ref="613132375" role=""/>
+    <member type="node" ref="613131889" role=""/>
+    <member type="node" ref="617231889" role=""/>
+    <member type="node" ref="2786690292" role=""/>
+    <member type="node" ref="2666004411" role=""/>
+    <member type="node" ref="2666004410" role=""/>
+    <member type="node" ref="2667750604" role=""/>
+    <member type="node" ref="1997456424" role=""/>
+    <member type="node" ref="2663907334" role=""/>
+    <member type="node" ref="2786688910" role=""/>
+    <member type="node" ref="1613240806" role=""/>
+    <member type="node" ref="1799562372" role=""/>
+    <member type="node" ref="1792445558" role=""/>
+    <member type="node" ref="1792445584" role=""/>
+    <member type="node" ref="1792445583" role=""/>
+    <member type="node" ref="1792445592" role=""/>
+    <member type="node" ref="739203548" role=""/>
+    <member type="node" ref="739203531" role=""/>
+    <member type="node" ref="739204137" role=""/>
+    <member type="node" ref="739204135" role=""/>
+    <member type="node" ref="2786684088" role=""/>
+    <member type="node" ref="2786682072" role=""/>
+    <member type="node" ref="2786681364" role=""/>
+    <member type="node" ref="2512113621" role=""/>
+    <member type="node" ref="2786701326" role=""/>
+    <member type="node" ref="2786701689" role=""/>
+    <member type="node" ref="2786701967" role=""/>
+    <member type="node" ref="2786695082" role=""/>
+    <member type="node" ref="2786695277" role=""/>
+    <member type="node" ref="2786695423" role=""/>
+    <member type="node" ref="2786695604" role=""/>
+    <member type="node" ref="2786695651" role=""/>
+    <member type="node" ref="2786691506" role=""/>
+    <member type="node" ref="2786687778" role=""/>
+    <member type="node" ref="1234103575" role=""/>
+    <member type="node" ref="2786687232" role=""/>
+    <member type="node" ref="4414535401" role=""/>
+    <member type="node" ref="4415579669" role=""/>
+    <member type="way" ref="249590509" role=""/>
+    <member type="way" ref="314279983" role=""/>
+    <member type="way" ref="282477995" role=""/>
+    <member type="way" ref="282478065" role=""/>
+    <member type="way" ref="282478071" role=""/>
+    <member type="way" ref="236748573" role=""/>
+    <member type="way" ref="284166627" role=""/>
+    <member type="way" ref="284166626" role=""/>
+    <member type="way" ref="284167314" role=""/>
+    <member type="way" ref="280308798" role=""/>
+    <member type="way" ref="314291310" role=""/>
+    <member type="way" ref="387591954" role=""/>
+    <member type="way" ref="387591950" role=""/>
+    <member type="way" ref="284169523" role=""/>
+    <member type="way" ref="276100691" role=""/>
+    <member type="way" ref="44498299" role=""/>
+    <member type="way" ref="284095279" role=""/>
+    <member type="way" ref="561189805" role=""/>
+    <member type="way" ref="44497196" role=""/>
+    <member type="way" ref="284167312" role=""/>
+    <member type="way" ref="44497201" role=""/>
+    <member type="way" ref="32077611" role=""/>
+    <member type="way" ref="314291425" role=""/>
+    <member type="way" ref="44497330" role=""/>
+    <member type="way" ref="44497213" role=""/>
+    <member type="way" ref="51852311" role=""/>
+    <member type="way" ref="46883139" role=""/>
+    <member type="way" ref="387591949" role=""/>
+    <member type="way" ref="189099792" role=""/>
+    <member type="way" ref="260824573" role=""/>
+    <member type="way" ref="10741751" role=""/>
+    <member type="way" ref="189099791" role=""/>
+    <member type="way" ref="11031680" role=""/>
+    <member type="way" ref="234000634" role=""/>
+    <member type="way" ref="10741754" role=""/>
+    <member type="way" ref="222899032" role=""/>
+    <member type="way" ref="10741734" role=""/>
+    <member type="way" ref="284503674" role=""/>
+    <member type="way" ref="32245113" role=""/>
+    <member type="way" ref="24218743" role=""/>
+    <member type="way" ref="189063911" role=""/>
+    <member type="way" ref="10741733" role=""/>
+    <member type="way" ref="309520693" role=""/>
+    <member type="way" ref="32295798" role=""/>
+    <member type="way" ref="23182806" role=""/>
+    <member type="way" ref="52493441" role=""/>
+    <member type="way" ref="52493436" role=""/>
+    <member type="way" ref="52493436" role=""/>
+    <member type="way" ref="260124786" role=""/>
+    <member type="way" ref="168914459" role=""/>
+    <member type="way" ref="167907737" role=""/>
+    <member type="way" ref="316770031" role=""/>
+    <member type="way" ref="168914458" role=""/>
+    <member type="way" ref="299510529" role=""/>
+    <member type="way" ref="299644700" role=""/>
+    <member type="way" ref="298828555" role=""/>
+    <member type="way" ref="170993800" role=""/>
+    <member type="way" ref="227444705" role=""/>
+    <member type="way" ref="295056189" role=""/>
+    <member type="way" ref="259803253" role=""/>
+    <member type="way" ref="167907744" role=""/>
+    <member type="way" ref="295056181" role=""/>
+    <member type="way" ref="295056177" role=""/>
+    <member type="way" ref="284175000" role=""/>
+    <member type="way" ref="201375091" role=""/>
+    <member type="way" ref="27795169" role=""/>
+    <member type="way" ref="284175012" role=""/>
+    <member type="way" ref="23214072" role=""/>
+    <member type="way" ref="94573612" role=""/>
+    <member type="way" ref="32069034" role=""/>
+    <member type="way" ref="201312173" role=""/>
+    <member type="way" ref="222944607" role=""/>
+    <member type="way" ref="169134079" role=""/>
+    <member type="way" ref="99062674" role=""/>
+    <member type="way" ref="299867120" role=""/>
+    <member type="way" ref="32041911" role=""/>
+    <member type="way" ref="201312895" role=""/>
+    <member type="way" ref="535359655" role=""/>
+    <member type="way" ref="94572774" role=""/>
+    <member type="way" ref="97432269" role=""/>
+    <member type="way" ref="302381004" role=""/>
+    <member type="way" ref="215114176" role=""/>
+    <member type="way" ref="295070984" role=""/>
+    <member type="way" ref="295012378" role=""/>
+    <member type="way" ref="295012382" role=""/>
+    <member type="way" ref="299192475" role=""/>
+    <member type="way" ref="302713387" role=""/>
+    <member type="way" ref="302713388" role=""/>
+    <member type="way" ref="302713073" role=""/>
+    <member type="way" ref="215114172" role=""/>
+    <member type="way" ref="284175028" role=""/>
+    <member type="way" ref="284175026" role=""/>
+    <member type="way" ref="249589087" role=""/>
+    <member type="way" ref="58404167" role=""/>
+    <member type="way" ref="117982696" role=""/>
+    <member type="way" ref="303284621" role=""/>
+    <member type="way" ref="307012554" role=""/>
+    <member type="way" ref="58780066" role=""/>
+    <member type="way" ref="295012372" role=""/>
+    <member type="way" ref="27795744" role=""/>
+    <member type="way" ref="126777560" role=""/>
+    <member type="way" ref="561491206" role=""/>
+    <member type="way" ref="582056594" role=""/>
+    <member type="way" ref="284175260" role=""/>
+    <member type="way" ref="260994689" role=""/>
+    <member type="way" ref="48820562" role=""/>
+    <member type="way" ref="561491205" role=""/>
+    <member type="way" ref="284175465" role=""/>
+    <member type="way" ref="31987534" role=""/>
+    <member type="way" ref="284577887" role=""/>
+    <member type="way" ref="49213245" role=""/>
+    <member type="way" ref="48459159" role=""/>
+    <member type="way" ref="284175258" role=""/>
+    <member type="way" ref="562888961" role=""/>
+    <member type="way" ref="243485969" role=""/>
+    <member type="way" ref="243485972" role=""/>
+    <member type="way" ref="168904430" role=""/>
+    <member type="way" ref="284241337" role=""/>
+    <member type="way" ref="310790356" role=""/>
+    <member type="way" ref="243850910" role=""/>
+    <member type="way" ref="167920360" role=""/>
+    <member type="way" ref="23182965" role=""/>
+    <member type="way" ref="207979569" role=""/>
+    <member type="way" ref="168914464" role=""/>
+    <member type="way" ref="167907746" role=""/>
+    <member type="way" ref="207891571" role=""/>
+    <member type="way" ref="52493441" role=""/>
+    <member type="way" ref="284174996" role=""/>
+    <member type="way" ref="295056180" role=""/>
+    <member type="way" ref="295056184" role=""/>
+    <member type="way" ref="299192473" role=""/>
+    <member type="way" ref="51852310" role=""/>
+    <member type="way" ref="314296212" role=""/>
+    <member type="way" ref="314296213" role=""/>
+    <member type="way" ref="49601214" role=""/>
+    <member type="way" ref="184970291" role=""/>
+    <member type="way" ref="48550958" role=""/>
+    <member type="way" ref="572481248" role=""/>
+    <member type="way" ref="572481247" role=""/>
+    <member type="way" ref="42278046" role=""/>
+    <member type="way" ref="48809282" role=""/>
+    <member type="way" ref="44462934" role=""/>
+    <member type="way" ref="50877194" role=""/>
+    <member type="way" ref="48818692" role=""/>
+    <member type="way" ref="31767880" role=""/>
+    <member type="way" ref="50584946" role=""/>
+    <member type="way" ref="141252237" role=""/>
+    <member type="way" ref="141252238" role=""/>
+    <member type="way" ref="49601212" role=""/>
+    <member type="way" ref="42278424" role=""/>
+    <member type="way" ref="572481249" role=""/>
+    <member type="way" ref="572481246" role=""/>
+    <member type="way" ref="49346680" role=""/>
+    <member type="way" ref="236748571" role=""/>
+    <tag k="from" v="-360124"/>
+    <tag k="name" v="732 ΑΓΙΟΣ ΦΑΝΟΥΡΙΟΣ - ΑΚΑΔΗΜΙΑ - ΖΩΟΔΟΧΟΣ ΠΗΓΗ"/>
+    <tag k="network" v="ΟΣΥ"/>
+    <tag k="operator" v="ΟΑΣΑ"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="732"/>
+    <tag k="route" v="bus"/>
+    <tag k="to" v="-140099"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="3648670" version="75" timestamp="2018-04-20T21:57:58Z" changeset="58277546" uid="936280" user="beatnickgr">
+    <member type="node" ref="2786681761" role="platform"/>
+    <member type="node" ref="2786688913" role="platform"/>
+    <member type="node" ref="2786698046" role="platform"/>
+    <member type="node" ref="2786696754" role="platform"/>
+    <member type="node" ref="2786698166" role="platform"/>
+    <member type="node" ref="2786686766" role="platform"/>
+    <member type="node" ref="2786680451" role="platform"/>
+    <member type="node" ref="2786688485" role="platform"/>
+    <member type="node" ref="2786686842" role="platform"/>
+    <member type="node" ref="2786693165" role="platform"/>
+    <member type="node" ref="2786690829" role="platform"/>
+    <member type="node" ref="2786689561" role="platform"/>
+    <member type="node" ref="2786688560" role="platform"/>
+    <member type="node" ref="2786690826" role="platform"/>
+    <member type="node" ref="2786693166" role="platform"/>
+    <member type="node" ref="2786686841" role="platform"/>
+    <member type="node" ref="2786688486" role="platform"/>
+    <member type="node" ref="2786684716" role="platform"/>
+    <member type="node" ref="2786696757" role="platform"/>
+    <member type="node" ref="2786698049" role="platform"/>
+    <member type="node" ref="2786698931" role="platform"/>
+    <member type="node" ref="2786688916" role="platform"/>
+    <member type="node" ref="2786700449" role="platform"/>
+    <member type="node" ref="2786700948" role="platform"/>
+    <member type="node" ref="2786686133" role="platform"/>
+    <member type="node" ref="2786681152" role="platform"/>
+    <member type="node" ref="2786681761" role="platform"/>
+    <member type="node" ref="5006445334" role="bus_stop"/>
+    <member type="node" ref="5006448992" role="bus_stop"/>
+    <member type="node" ref="5006465411" role="bus_stop"/>
+    <member type="node" ref="2571465750" role=""/>
+    <member type="node" ref="2666004458" role=""/>
+    <member type="node" ref="2666004456" role=""/>
+    <member type="node" ref="2666004455" role=""/>
+    <member type="node" ref="2786686842" role=""/>
+    <member type="node" ref="2571465670" role=""/>
+    <member type="node" ref="2571465652" role=""/>
+    <member type="node" ref="2571465659" role=""/>
+    <member type="node" ref="2571465639" role=""/>
+    <member type="node" ref="2571465679" role=""/>
+    <member type="node" ref="2571465687" role=""/>
+    <member type="node" ref="2571465698" role=""/>
+    <member type="node" ref="2571465706" role=""/>
+    <member type="node" ref="2374212428" role=""/>
+    <member type="node" ref="2571465711" role=""/>
+    <member type="node" ref="2571465719" role=""/>
+    <member type="node" ref="2571465726" role=""/>
+    <member type="node" ref="2571465731" role=""/>
+    <member type="node" ref="2571465740" role=""/>
+    <member type="node" ref="2571465736" role=""/>
+    <member type="node" ref="2571465744" role=""/>
+    <member type="node" ref="1997456424" role=""/>
+    <member type="node" ref="2667750604" role=""/>
+    <member type="node" ref="2672706267" role=""/>
+    <member type="node" ref="2672706269" role=""/>
+    <member type="node" ref="2666004410" role=""/>
+    <member type="node" ref="2667750602" role=""/>
+    <member type="node" ref="2666004411" role=""/>
+    <member type="node" ref="2786688563" role=""/>
+    <member type="node" ref="2666004417" role=""/>
+    <member type="node" ref="2666004443" role=""/>
+    <member type="node" ref="2666004438" role=""/>
+    <member type="node" ref="2666004447" role=""/>
+    <member type="node" ref="2666004450" role=""/>
+    <member type="node" ref="2786693166" role=""/>
+    <member type="node" ref="2666004425" role=""/>
+    <member type="node" ref="2666004421" role=""/>
+    <member type="node" ref="2666004429" role=""/>
+    <member type="node" ref="2666004434" role=""/>
+    <member type="way" ref="561491206" role=""/>
+    <member type="way" ref="582056594" role=""/>
+    <member type="way" ref="284175260" role=""/>
+    <member type="way" ref="260994689" role=""/>
+    <member type="way" ref="304760458" role=""/>
+    <member type="way" ref="304760280" role=""/>
+    <member type="way" ref="413880674" role=""/>
+    <member type="way" ref="304758826" role=""/>
+    <member type="way" ref="566457650" role=""/>
+    <member type="way" ref="566457651" role=""/>
+    <member type="way" ref="51571148" role=""/>
+    <member type="way" ref="52074052" role=""/>
+    <member type="way" ref="284175258" role=""/>
+    <member type="way" ref="243485972" role=""/>
+    <member type="way" ref="304240845" role=""/>
+    <member type="way" ref="45341381" role=""/>
+    <member type="way" ref="32077334" role=""/>
+    <member type="way" ref="32071921" role=""/>
+    <member type="way" ref="32071949" role=""/>
+    <member type="way" ref="250323834" role=""/>
+    <member type="way" ref="250323835" role=""/>
+    <member type="way" ref="413880679" role=""/>
+    <member type="way" ref="304240846" role=""/>
+    <member type="way" ref="423200901" role=""/>
+    <member type="way" ref="413880695" role=""/>
+    <member type="way" ref="413880683" role=""/>
+    <member type="way" ref="250323836" role=""/>
+    <member type="way" ref="261671456" role=""/>
+    <member type="way" ref="284197348" role=""/>
+    <member type="way" ref="284197347" role=""/>
+    <member type="way" ref="51510716" role=""/>
+    <member type="way" ref="413880688" role=""/>
+    <member type="way" ref="284208190" role=""/>
+    <member type="way" ref="319308140" role=""/>
+    <member type="way" ref="319367623" role=""/>
+    <member type="way" ref="284230157" role=""/>
+    <member type="way" ref="222900158" role=""/>
+    <member type="way" ref="304761005" role=""/>
+    <member type="way" ref="42268230" role=""/>
+    <member type="way" ref="114036667" role=""/>
+    <member type="way" ref="28647527" role=""/>
+    <member type="way" ref="562888961" role=""/>
+    <member type="way" ref="243485969" role=""/>
+    <member type="way" ref="114036664" role=""/>
+    <member type="way" ref="284589527" role=""/>
+    <member type="way" ref="249590508" role=""/>
+    <member type="way" ref="280007992" role=""/>
+    <member type="way" ref="276100156" role=""/>
+    <member type="way" ref="276100158" role=""/>
+    <member type="way" ref="284230150" role=""/>
+    <member type="way" ref="284230153" role=""/>
+    <member type="way" ref="318571473" role=""/>
+    <member type="way" ref="32077396" role=""/>
+    <member type="way" ref="249590511" role=""/>
+    <member type="way" ref="249592545" role=""/>
+    <member type="way" ref="386789375" role=""/>
+    <member type="way" ref="386789370" role=""/>
+    <member type="way" ref="32273401" role=""/>
+    <member type="way" ref="280104990" role=""/>
+    <member type="way" ref="280105000" role=""/>
+    <member type="way" ref="97748369" role=""/>
+    <member type="way" ref="97748396" role=""/>
+    <member type="way" ref="47860436" role=""/>
+    <member type="way" ref="279992718" role=""/>
+    <member type="way" ref="250773670" role=""/>
+    <member type="way" ref="318433167" role=""/>
+    <member type="way" ref="318433166" role=""/>
+    <member type="way" ref="318433165" role=""/>
+    <member type="way" ref="318433164" role=""/>
+    <member type="way" ref="284464809" role=""/>
+    <member type="way" ref="249590510" role=""/>
+    <member type="way" ref="276100155" role=""/>
+    <member type="way" ref="284230155" role=""/>
+    <member type="way" ref="32077459" role=""/>
+    <member type="way" ref="48820562" role=""/>
+    <member type="way" ref="234000634" role=""/>
+    <member type="way" ref="189099792" role=""/>
+    <member type="way" ref="260124783" role=""/>
+    <member type="way" ref="10741751" role=""/>
+    <member type="way" ref="189099791" role=""/>
+    <member type="way" ref="11031680" role=""/>
+    <member type="way" ref="284503673" role=""/>
+    <member type="way" ref="10741734" role=""/>
+    <member type="way" ref="261671454" role=""/>
+    <member type="way" ref="82682785" role=""/>
+    <member type="way" ref="384593010" role=""/>
+    <member type="way" ref="168725548" role=""/>
+    <member type="way" ref="295083398" role=""/>
+    <member type="way" ref="82619472" role=""/>
+    <member type="way" ref="260124785" role=""/>
+    <member type="way" ref="10741754" role=""/>
+    <member type="way" ref="222899032" role=""/>
+    <member type="way" ref="561491205" role=""/>
+    <member type="way" ref="284175465" role=""/>
+    <member type="way" ref="284175259" role=""/>
+    <tag k="from" v="-250030"/>
+    <tag k="name" v="Γ12 ΚΑΜΑΤΕΡΟ - ΑΓ.ΝΙΚΟΛΑΟΣ - ΙΛΙΟΝ - ΠΟΛ/ΧΝΕΙΟ (ΚΥΚΛΙΚΗ)"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="Γ12"/>
+    <tag k="route" v="bus"/>
+    <tag k="to" v="-250030"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="3768396" version="58" timestamp="2018-04-20T21:57:59Z" changeset="58277546" uid="936280" user="beatnickgr">
+    <member type="node" ref="5006445334" role="bus_stop"/>
+    <member type="node" ref="5006448992" role="bus_stop"/>
+    <member type="node" ref="5006465411" role="bus_stop"/>
+    <member type="node" ref="2786686682" role=""/>
+    <member type="node" ref="2666004458" role=""/>
+    <member type="node" ref="2666004456" role=""/>
+    <member type="node" ref="2666004455" role=""/>
+    <member type="node" ref="2786686842" role=""/>
+    <member type="node" ref="2786686841" role=""/>
+    <member type="node" ref="2786693170" role=""/>
+    <member type="node" ref="2666004417" role=""/>
+    <member type="node" ref="2666004443" role=""/>
+    <member type="node" ref="2666004447" role=""/>
+    <member type="node" ref="2786693166" role=""/>
+    <member type="node" ref="2666004425" role=""/>
+    <member type="node" ref="2666004421" role=""/>
+    <member type="node" ref="2666004429" role=""/>
+    <member type="node" ref="2666004434" role=""/>
+    <member type="node" ref="2786690829" role=""/>
+    <member type="node" ref="2786690826" role=""/>
+    <member type="node" ref="2786688560" role=""/>
+    <member type="node" ref="2786688563" role=""/>
+    <member type="node" ref="2666004411" role=""/>
+    <member type="node" ref="2667750602" role=""/>
+    <member type="node" ref="2672706267" role=""/>
+    <member type="way" ref="114036666" role=""/>
+    <member type="way" ref="48918558" role=""/>
+    <member type="way" ref="284065093" role=""/>
+    <member type="way" ref="114036664" role=""/>
+    <member type="way" ref="28647527" role=""/>
+    <member type="way" ref="304758826" role=""/>
+    <member type="way" ref="413880674" role=""/>
+    <member type="way" ref="304760280" role=""/>
+    <member type="way" ref="304760458" role=""/>
+    <member type="way" ref="261150170" role=""/>
+    <member type="way" ref="32071921" role=""/>
+    <member type="way" ref="32077334" role=""/>
+    <member type="way" ref="250323835" role=""/>
+    <member type="way" ref="304240845" role=""/>
+    <member type="way" ref="413880679" role=""/>
+    <member type="way" ref="413880688" role=""/>
+    <member type="way" ref="304240846" role=""/>
+    <member type="way" ref="423200901" role=""/>
+    <member type="way" ref="413880683" role=""/>
+    <member type="way" ref="250323836" role=""/>
+    <member type="way" ref="413880695" role=""/>
+    <member type="way" ref="250323838" role=""/>
+    <member type="way" ref="32072017" role=""/>
+    <member type="way" ref="51510716" role=""/>
+    <member type="way" ref="284589527" role=""/>
+    <member type="way" ref="566457650" role=""/>
+    <member type="way" ref="566457651" role=""/>
+    <member type="way" ref="51571148" role=""/>
+    <member type="way" ref="52074052" role=""/>
+    <member type="way" ref="284175258" role=""/>
+    <member type="way" ref="562888961" role=""/>
+    <member type="way" ref="243485969" role=""/>
+    <member type="way" ref="243485972" role=""/>
+    <member type="way" ref="561491205" role=""/>
+    <member type="way" ref="284175465" role=""/>
+    <member type="way" ref="284175259" role=""/>
+    <member type="way" ref="561491206" role=""/>
+    <member type="way" ref="582056594" role=""/>
+    <member type="way" ref="284175260" role=""/>
+    <member type="way" ref="260994689" role=""/>
+    <member type="way" ref="48820562" role=""/>
+    <member type="way" ref="10741734" role=""/>
+    <member type="way" ref="222899032" role=""/>
+    <member type="way" ref="10741754" role=""/>
+    <member type="way" ref="234000634" role=""/>
+    <tag k="name" v="Β12 ΜΑΡΝΗ - ΑΝΩ ΛΙΟΣΙΑ"/>
+    <tag k="network" v="ΟΣΥ"/>
+    <tag k="operator" v="ΟΑΣΑ"/>
+    <tag k="ref" v="Β12"/>
+    <tag k="route" v="bus"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="4086567" version="44" timestamp="2018-04-20T21:57:59Z" changeset="58277546" uid="936280" user="beatnickgr">
+    <member type="node" ref="2672706268" role="stop"/>
+    <member type="node" ref="2667750604" role="stop"/>
+    <member type="node" ref="2666004410" role="stop"/>
+    <member type="node" ref="2666004411" role="stop"/>
+    <member type="node" ref="2786688560" role="stop"/>
+    <member type="node" ref="2786690826" role="stop"/>
+    <member type="node" ref="2666004417" role="stop"/>
+    <member type="node" ref="2666004425" role="stop"/>
+    <member type="node" ref="2666004434" role="stop"/>
+    <member type="node" ref="2666004443" role="stop"/>
+    <member type="node" ref="2666004447" role="stop"/>
+    <member type="node" ref="2786693166" role="stop"/>
+    <member type="node" ref="2786686841" role="stop"/>
+    <member type="node" ref="2666004455" role="stop"/>
+    <member type="node" ref="3121157041" role="stop"/>
+    <member type="node" ref="2672706271" role="stop"/>
+    <member type="node" ref="2672706272" role="stop"/>
+    <member type="node" ref="2672706273" role="stop"/>
+    <member type="node" ref="2571465764" role="stop"/>
+    <member type="node" ref="2672706274" role="stop"/>
+    <member type="node" ref="2672706275" role="stop"/>
+    <member type="node" ref="2672706276" role="stop"/>
+    <member type="node" ref="922537339" role="stop"/>
+    <member type="node" ref="2672706280" role="stop"/>
+    <member type="node" ref="2672706284" role="stop"/>
+    <member type="node" ref="2672706288" role="stop"/>
+    <member type="node" ref="2672706289" role="stop"/>
+    <member type="node" ref="2672706290" role="stop"/>
+    <member type="node" ref="2672706291" role="stop"/>
+    <member type="node" ref="2672706292" role="stop"/>
+    <member type="node" ref="3111333896" role="stop"/>
+    <member type="node" ref="2672706294" role="stop"/>
+    <member type="node" ref="2672706295" role="stop"/>
+    <member type="node" ref="2672706296" role="stop"/>
+    <member type="node" ref="2672706297" role="stop"/>
+    <member type="node" ref="5006445334" role="bus_stop"/>
+    <member type="node" ref="5006448992" role="bus_stop"/>
+    <member type="node" ref="5006465411" role="bus_stop"/>
+    <member type="way" ref="306249835" role=""/>
+    <member type="way" ref="261671453" role=""/>
+    <member type="way" ref="82682796" role=""/>
+    <member type="way" ref="384593007" role=""/>
+    <member type="way" ref="284503673" role=""/>
+    <member type="way" ref="210103168" role=""/>
+    <member type="way" ref="54700033" role=""/>
+    <member type="way" ref="189099791" role=""/>
+    <member type="way" ref="11031680" role=""/>
+    <member type="way" ref="234000634" role=""/>
+    <member type="way" ref="48820562" role=""/>
+    <member type="way" ref="260994689" role=""/>
+    <member type="way" ref="284175260" role=""/>
+    <member type="way" ref="582056594" role=""/>
+    <member type="way" ref="561491206" role=""/>
+    <member type="way" ref="561491205" role=""/>
+    <member type="way" ref="284175465" role=""/>
+    <member type="way" ref="284175259" role=""/>
+    <member type="way" ref="51571148" role=""/>
+    <member type="way" ref="566457651" role=""/>
+    <member type="way" ref="566457650" role=""/>
+    <member type="way" ref="284589527" role=""/>
+    <member type="way" ref="114036664" role=""/>
+    <member type="way" ref="28647527" role=""/>
+    <member type="way" ref="304758826" role=""/>
+    <member type="way" ref="413880674" role=""/>
+    <member type="way" ref="304760280" role=""/>
+    <member type="way" ref="304760458" role=""/>
+    <member type="way" ref="261150170" role=""/>
+    <member type="way" ref="32071921" role=""/>
+    <member type="way" ref="32077334" role=""/>
+    <member type="way" ref="250323835" role=""/>
+    <member type="way" ref="250323836" role=""/>
+    <member type="way" ref="413880683" role=""/>
+    <member type="way" ref="413880695" role=""/>
+    <member type="way" ref="423200901" role=""/>
+    <member type="way" ref="304240846" role=""/>
+    <member type="way" ref="261671457" role=""/>
+    <member type="way" ref="307064776" role=""/>
+    <member type="way" ref="283595331" role=""/>
+    <member type="way" ref="52035974" role=""/>
+    <member type="way" ref="27604619" role=""/>
+    <member type="way" ref="306254773" role=""/>
+    <member type="way" ref="306254111" role=""/>
+    <member type="way" ref="249592534" role=""/>
+    <member type="way" ref="27604656" role=""/>
+    <member type="way" ref="261671459" role=""/>
+    <member type="way" ref="280025097" role=""/>
+    <member type="way" ref="284068838" role=""/>
+    <member type="way" ref="317716330" role=""/>
+    <member type="way" ref="250773676" role=""/>
+    <member type="way" ref="47059139" role=""/>
+    <member type="way" ref="27732981" role=""/>
+    <member type="way" ref="387696273" role=""/>
+    <member type="way" ref="250773683" role=""/>
+    <member type="way" ref="47059404" role=""/>
+    <member type="way" ref="284091723" role=""/>
+    <member type="way" ref="284091837" role=""/>
+    <member type="way" ref="261671462" role=""/>
+    <member type="way" ref="261671461" role=""/>
+    <member type="way" ref="261671463" role=""/>
+    <member type="way" ref="284091926" role=""/>
+    <member type="way" ref="27741828" role=""/>
+    <member type="way" ref="47003506" role=""/>
+    <member type="way" ref="27738902" role=""/>
+    <member type="way" ref="27733004" role=""/>
+    <member type="way" ref="306264653" role=""/>
+    <member type="way" ref="45785228" role=""/>
+    <member type="way" ref="45785227" role=""/>
+    <member type="way" ref="306264652" role=""/>
+    <member type="way" ref="45785228" role=""/>
+    <member type="way" ref="27732989" role=""/>
+    <member type="way" ref="51909070" role=""/>
+    <member type="way" ref="94752996" role=""/>
+    <member type="way" ref="94752991" role=""/>
+    <tag k="from" v="Αφετηρία"/>
+    <tag k="name" v="Α11 ΠΛ. ΒΑΘΗΣ - ΙΛΙΟΝ - ΠΕΤΡΟΥΠΟΛΗ (Μέσω ΠΑΝΟΡΑΜΑΤΟΣ)"/>
+    <tag k="network" v="ΟΣΥ"/>
+    <tag k="operator" v="ΟΑΣΑ"/>
+    <tag k="ref" v="Α11"/>
+    <tag k="roundtrip" v="no"/>
+    <tag k="route" v="bus"/>
+    <tag k="to" v="Τέρμα"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="4086769" version="3" timestamp="2016-11-05T21:04:04Z" changeset="43430350" uid="23785" user="greecemapper">
+    <member type="relation" ref="4086567" role=""/>
+    <member type="relation" ref="4086794" role=""/>
+    <tag k="name" v="Πλατεία Βάθης - Ίλιον - Πετρούπολη (μέσω Πανοράματος)"/>
+    <tag k="network" v="ΟΣΥ"/>
+    <tag k="operator" v="ΟΑΣΑ"/>
+    <tag k="ref" v="Α11"/>
+    <tag k="route_master" v="bus"/>
+    <tag k="type" v="route_master"/>
+  </relation>
+  <relation id="4106007" version="16" timestamp="2018-04-20T21:58:00Z" changeset="58277546" uid="936280" user="beatnickgr">
+    <member type="node" ref="2672706268" role="stop"/>
+    <member type="node" ref="2667750604" role="stop"/>
+    <member type="node" ref="2666004410" role="stop"/>
+    <member type="node" ref="2666004411" role="stop"/>
+    <member type="node" ref="2786688560" role="stop"/>
+    <member type="node" ref="2786690826" role="stop"/>
+    <member type="node" ref="2666004417" role="stop"/>
+    <member type="node" ref="2666004425" role="stop"/>
+    <member type="node" ref="2666004434" role="stop"/>
+    <member type="node" ref="2666004443" role="stop"/>
+    <member type="node" ref="2666004447" role="stop"/>
+    <member type="node" ref="2786693166" role="stop"/>
+    <member type="node" ref="2786686841" role="stop"/>
+    <member type="node" ref="2666004455" role="stop"/>
+    <member type="node" ref="2672706270" role="stop"/>
+    <member type="node" ref="2672706271" role="stop"/>
+    <member type="node" ref="2672706272" role="stop"/>
+    <member type="node" ref="2672706273" role="stop"/>
+    <member type="node" ref="2571465764" role="stop"/>
+    <member type="node" ref="2672706274" role="stop"/>
+    <member type="node" ref="2672706275" role="stop"/>
+    <member type="node" ref="2672706276" role="stop"/>
+    <member type="node" ref="922537339" role="stop"/>
+    <member type="node" ref="2672706280" role="stop"/>
+    <member type="node" ref="2672706284" role="stop"/>
+    <member type="node" ref="2672706288" role="stop"/>
+    <member type="node" ref="2672706289" role="stop"/>
+    <member type="node" ref="2672706290" role="stop"/>
+    <member type="node" ref="2672706304" role="stop"/>
+    <member type="node" ref="2672706296" role="stop"/>
+    <member type="node" ref="2672706297" role="stop"/>
+    <member type="node" ref="5006445334" role="bus_stop"/>
+    <member type="node" ref="5006448992" role="bus_stop"/>
+    <member type="node" ref="5006465411" role="bus_stop"/>
+    <member type="way" ref="306249835" role=""/>
+    <member type="way" ref="261671453" role=""/>
+    <member type="way" ref="82682796" role=""/>
+    <member type="way" ref="384593007" role=""/>
+    <member type="way" ref="284503673" role=""/>
+    <member type="way" ref="210103168" role=""/>
+    <member type="way" ref="54700033" role=""/>
+    <member type="way" ref="189099791" role=""/>
+    <member type="way" ref="11031680" role=""/>
+    <member type="way" ref="234000634" role=""/>
+    <member type="way" ref="48820562" role=""/>
+    <member type="way" ref="260994689" role=""/>
+    <member type="way" ref="284175260" role=""/>
+    <member type="way" ref="582056594" role=""/>
+    <member type="way" ref="561491206" role=""/>
+    <member type="way" ref="561491205" role=""/>
+    <member type="way" ref="284175465" role=""/>
+    <member type="way" ref="284175259" role=""/>
+    <member type="way" ref="51571148" role=""/>
+    <member type="way" ref="566457651" role=""/>
+    <member type="way" ref="566457650" role=""/>
+    <member type="way" ref="284589527" role=""/>
+    <member type="way" ref="114036664" role=""/>
+    <member type="way" ref="28647527" role=""/>
+    <member type="way" ref="304758826" role=""/>
+    <member type="way" ref="413880674" role=""/>
+    <member type="way" ref="304760280" role=""/>
+    <member type="way" ref="304760458" role=""/>
+    <member type="way" ref="261150170" role=""/>
+    <member type="way" ref="32071921" role=""/>
+    <member type="way" ref="32077334" role=""/>
+    <member type="way" ref="250323835" role=""/>
+    <member type="way" ref="250323836" role=""/>
+    <member type="way" ref="413880683" role=""/>
+    <member type="way" ref="413880695" role=""/>
+    <member type="way" ref="423200901" role=""/>
+    <member type="way" ref="304240846" role=""/>
+    <member type="way" ref="261671457" role=""/>
+    <member type="way" ref="307064776" role=""/>
+    <member type="way" ref="283595331" role=""/>
+    <member type="way" ref="52035974" role=""/>
+    <member type="way" ref="27604619" role=""/>
+    <member type="way" ref="306254773" role=""/>
+    <member type="way" ref="306254111" role=""/>
+    <member type="way" ref="249592534" role=""/>
+    <member type="way" ref="27604656" role=""/>
+    <member type="way" ref="261671459" role=""/>
+    <member type="way" ref="280025097" role=""/>
+    <member type="way" ref="284068838" role=""/>
+    <member type="way" ref="317716330" role=""/>
+    <member type="way" ref="250773676" role=""/>
+    <member type="way" ref="47059139" role=""/>
+    <member type="way" ref="27732981" role=""/>
+    <member type="way" ref="387696273" role=""/>
+    <member type="way" ref="250773683" role=""/>
+    <member type="way" ref="47059404" role=""/>
+    <member type="way" ref="94752991" role=""/>
+    <member type="way" ref="94752996" role=""/>
+    <member type="way" ref="51909070" role=""/>
+    <member type="way" ref="27732989" role=""/>
+    <member type="way" ref="284091723" role=""/>
+    <member type="way" ref="284091837" role=""/>
+    <member type="way" ref="261671462" role=""/>
+    <member type="way" ref="261671467" role=""/>
+    <member type="way" ref="47003506" role=""/>
+    <member type="way" ref="27738902" role=""/>
+    <member type="way" ref="27733004" role=""/>
+    <member type="way" ref="306264653" role=""/>
+    <member type="way" ref="45785228" role=""/>
+    <member type="way" ref="45785227" role=""/>
+    <member type="way" ref="306264652" role=""/>
+    <member type="way" ref="45785228" role=""/>
+    <tag k="from" v="Αφετηρία Α11"/>
+    <tag k="name" v="Β11 ΠΛ. ΒΑΘΗΣ - ΙΛΙΟΝ - ΠΕΤΡΟΥΠΟΛΗ"/>
+    <tag k="network" v="ΟΣΥ"/>
+    <tag k="operator" v="ΟΑΣΑ"/>
+    <tag k="ref" v="Β11"/>
+    <tag k="roundtrip" v="no"/>
+    <tag k="route" v="bus"/>
+    <tag k="to" v="Τέρμα Α11"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="4106044" version="2" timestamp="2016-11-05T21:04:05Z" changeset="43430350" uid="23785" user="greecemapper">
+    <member type="relation" ref="4106007" role=""/>
+    <member type="relation" ref="4106043" role=""/>
+    <tag k="name" v="Πλατεία Βάθης - Ίλιον - Πετρούπολη"/>
+    <tag k="network" v="ΟΣΥ"/>
+    <tag k="operator" v="ΟΑΣΑ"/>
+    <tag k="ref" v="Β11"/>
+    <tag k="roundtrip" v="no"/>
+    <tag k="route_master" v="bus"/>
+    <tag k="type" v="route_master"/>
+  </relation>
+  <relation id="5720851" version="1" timestamp="2015-12-05T22:36:09Z" changeset="35777504" uid="2700471" user="JayCBR">
+    <member type="node" ref="31179466" role="via"/>
+    <member type="way" ref="384593009" role="from"/>
+    <member type="way" ref="10741734" role="to"/>
+    <tag k="restriction" v="no_left_turn"/>
+    <tag k="type" v="restriction"/>
+  </relation>
+  <relation id="6475006" version="9" timestamp="2017-01-28T09:54:12Z" changeset="45586839" uid="2039188" user="0000FF berries">
+    <member type="relation" ref="3008302" role=""/>
+    <member type="relation" ref="3006634" role=""/>
+    <member type="relation" ref="6291804" role=""/>
+    <member type="relation" ref="3011675" role=""/>
+    <member type="relation" ref="6306399" role=""/>
+    <member type="relation" ref="3011668" role=""/>
+    <member type="relation" ref="5381785" role=""/>
+    <member type="relation" ref="3011658" role=""/>
+    <member type="relation" ref="6308340" role=""/>
+    <member type="relation" ref="5381665" role=""/>
+    <member type="relation" ref="3011657" role=""/>
+    <member type="relation" ref="6228988" role=""/>
+    <member type="relation" ref="3008619" role=""/>
+    <member type="relation" ref="6308441" role=""/>
+    <member type="relation" ref="3010211" role=""/>
+    <member type="relation" ref="367776" role=""/>
+    <member type="relation" ref="3027488" role=""/>
+    <member type="relation" ref="6315287" role=""/>
+    <member type="relation" ref="6315288" role=""/>
+    <member type="relation" ref="6232602" role=""/>
+    <member type="relation" ref="4651886" role=""/>
+    <member type="relation" ref="6232601" role=""/>
+    <member type="relation" ref="6232596" role=""/>
+    <member type="relation" ref="6232597" role=""/>
+    <member type="relation" ref="6346818" role=""/>
+    <member type="relation" ref="6346819" role=""/>
+    <member type="relation" ref="6232709" role=""/>
+    <member type="relation" ref="6356050" role=""/>
+    <member type="relation" ref="6356051" role=""/>
+    <member type="relation" ref="6228989" role=""/>
+    <member type="relation" ref="6356219" role=""/>
+    <member type="relation" ref="6483563" role=""/>
+    <member type="relation" ref="6483564" role=""/>
+    <member type="relation" ref="6483913" role=""/>
+    <member type="relation" ref="6483914" role=""/>
+    <member type="relation" ref="3011681" role=""/>
+    <member type="relation" ref="3011678" role=""/>
+    <member type="relation" ref="6654030" role=""/>
+    <member type="relation" ref="6060570" role=""/>
+    <member type="relation" ref="6060223" role=""/>
+    <member type="relation" ref="6060224" role=""/>
+    <member type="relation" ref="6060275" role=""/>
+    <member type="relation" ref="6670419" role=""/>
+    <member type="relation" ref="6670420" role=""/>
+    <member type="relation" ref="6670421" role=""/>
+    <member type="relation" ref="6670422" role=""/>
+    <member type="relation" ref="6670423" role=""/>
+    <member type="relation" ref="6670424" role=""/>
+    <member type="relation" ref="6670425" role=""/>
+    <member type="relation" ref="6670426" role=""/>
+    <tag k="name" v="Επαρχιακό Οδικό Δίκτυο του Νομού Αττικής"/>
+    <tag k="name:en" v="Attica Provincial Road Network"/>
+    <tag k="name:fr" v="Réseau routier provincial de l'Attique"/>
+    <tag k="network" v="GR:provincial:A1"/>
+    <tag k="type" v="network"/>
+  </relation>
+  <relation id="6661692" version="5" timestamp="2017-01-23T14:07:44Z" changeset="45400453" uid="4763179" user="ika-chan!">
+    <member type="way" ref="448949612" role="outer"/>
+    <member type="way" ref="448949617" role="outer"/>
+    <member type="way" ref="448949623" role="outer"/>
+    <member type="way" ref="448949628" role="outer"/>
+    <member type="way" ref="448949624" role="outer"/>
+    <member type="way" ref="448949627" role="outer"/>
+    <member type="way" ref="448949616" role="outer"/>
+    <member type="way" ref="88432808" role="outer"/>
+    <member type="way" ref="448949618" role="outer"/>
+    <member type="way" ref="448949613" role="outer"/>
+    <member type="way" ref="448949614" role="outer"/>
+    <member type="way" ref="448949629" role="outer"/>
+    <member type="way" ref="448949625" role="outer"/>
+    <member type="way" ref="448949619" role="outer"/>
+    <member type="way" ref="448949621" role="outer"/>
+    <member type="way" ref="448949615" role="outer"/>
+    <member type="way" ref="448949626" role="outer"/>
+    <member type="way" ref="448949620" role="outer"/>
+    <member type="way" ref="448949622" role="outer"/>
+    <member type="way" ref="448949611" role="outer"/>
+    <tag k="alt_name" v="Μικρός Δακτύλιος"/>
+    <tag k="alt_name:en" v="Little Ring"/>
+    <tag k="boundary" v="low_emission_zone"/>
+    <tag k="description" v="Restricted area for motor vehicles"/>
+    <tag k="motor_vehicle:conditional" v="destination @ (Mo-Fr 07:00-20:00 AND weight&gt;2.5)"/>
+    <tag k="name" v="Δακτύλιος Αθηνών"/>
+    <tag k="name:en" v="Athens Ring"/>
+    <tag k="type" v="boundary"/>
+    <tag k="website" v="http://www.odigostoupoliti.eu/daktilios/"/>
+    <tag k="wikidata" v="Q24915178"/>
+    <tag k="wikipedia" v="en:Daktylios"/>
+    <tag k="wikipedia:el" v="Δακτύλιος Αθηνών"/>
+  </relation>
+  <relation id="6715865" version="1" timestamp="2016-11-16T20:10:02Z" changeset="43709656" uid="411246" user="makmar">
+    <member type="way" ref="453818582" role="outer"/>
+    <member type="way" ref="453818581" role="inner"/>
+    <tag k="building" v="yes"/>
+    <tag k="type" v="multipolygon"/>
+  </relation>
+  <relation id="6716919" version="2" timestamp="2017-05-16T00:19:17Z" changeset="48716028" uid="1748423" user="Αντρέ">
+    <member type="way" ref="453914287" role="outer"/>
+    <member type="way" ref="453914282" role="inner"/>
+    <tag k="addr:city" v="Αθήνα"/>
+    <tag k="addr:housenumber" v="2"/>
+    <tag k="addr:street" v="Αχαρνών"/>
+    <tag k="building" v="public"/>
+    <tag k="name" v="Υπουργείο Αγροτικής Ανάπτυξης &amp; Τροφίμων"/>
+    <tag k="type" v="multipolygon"/>
+  </relation>
+
+</osm>
