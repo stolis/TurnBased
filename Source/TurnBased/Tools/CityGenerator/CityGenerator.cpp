@@ -51,6 +51,7 @@ void ACityGenerator::AddStreetSplineComponent()
 	Spline = CreateDefaultSubobject<USplineComponent>(FName(TEXT("StreetSpline")));
 	Spline->SetupAttachment(Root);
 	Spline->ClearSplinePoints(true);
+	Spline->SetClosedLoop(false);
 }
 
 void ACityGenerator::AddStreetSplineMeshComponent()
@@ -105,7 +106,7 @@ void ACityGenerator::GenerateLanduseSplineMeshComponents(int32 index) {
 	landuseMesh->SetMobility(EComponentMobility::Static);
 	landuseMesh->SetupAttachment(Root);
 	landuseMesh->RegisterComponentWithWorld(GetWorld());
-	landuseMesh->SetRelativeScale3D(FVector(1,1,0.5));
+	landuseMesh->SetRelativeScale3D(FVector(1,1,1));
 	LanduseMeshComponents.Add(landuseMesh);
 	FVector ptLocStart, ptTanStart, ptLocEnd, ptTanEnd;
 	Spline->GetLocalLocationAndTangentAtSplinePoint(index - 1, ptLocStart, ptTanStart);
@@ -126,10 +127,12 @@ void ACityGenerator::ToggleStreetAddressComponents()
 void ACityGenerator::ClearStreetSplineMeshComponents()
 {
 	for (USplineMeshComponent *s : HighwayMeshComponents) {
-		s->DestroyComponent();
+		if (s != nullptr)
+			s->DestroyComponent();
 	}
 	for (UTextRenderComponent *s : HighwayAddressComponents) {
-		s->DestroyComponent();
+		if (s != nullptr)
+			s->DestroyComponent();
 	}
 	HighwayMeshComponents.Empty();
 	HighwayAddressComponents.Empty();
@@ -178,12 +181,7 @@ vector<pair<double, double>> ACityGenerator::GetCoordNodes(xml_node root, xml_no
 	vector<pair<double, double>> coords;
 
 	xpath_node_set nodesTags = way.select_nodes(TagValues[(int)ActiveElement].c_str());
-	//if (ActiveElement == Enum_k::building) {
-	//	Spline->SetClosedLoop(true);
-	//}
-	//else {
-		Spline->SetClosedLoop(false);
-	//}
+	
 	
 	for (xpath_node nodeTag : nodesTags) {
 		auto wayNode = nodeTag.parent();
@@ -204,11 +202,12 @@ vector<pair<double, double>> ACityGenerator::GetCoordNodes(xml_node root, xml_no
 			lon = nodeFound.attribute("lon").as_double();
 			CoordinateTools::GeoDeticOffsetInv(refLat, refLon, lat, lon, x, y);
 			Spline->AddSplineWorldPoint(FVector(x*1.5, y*1.5, 0));
-			//if (ActiveElement == Enum_k::building)
-			//	Spline->SetSplinePointType(pointIndex, ESplinePointType::Linear, true);
+			if (ActiveElement == Enum_k::building)
+				Spline->SetSplinePointType(pointIndex, ESplinePointType::Linear, true);
 			if (pointIndex > 0) {
 				switch (ActiveElement) {
 				case Enum_k::highway: {
+					Spline->SetSplinePointType(pointIndex, ESplinePointType::Curve, true);
 					GenerateStreetSplineMeshComponents(pointIndex, address); 
 					break;
 				}
