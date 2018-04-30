@@ -6,8 +6,13 @@
 #include "Runtime/Engine/Classes/Components/TextRenderComponent.h"
 #include "Runtime/Engine/Classes/Components/SplineComponent.h"
 #include "Runtime/Engine/Classes/Components/SplineMeshComponent.h"
+#include "Runtime/Landscape/Classes/LandscapeSplinesComponent.h"
+#include "Runtime/Landscape/Classes/LandscapeSplineSegment.h"
+#include "Runtime/Landscape/Classes/LandscapeSplineControlPoint.h"
 #include "Runtime/Engine/Classes/Components/HierarchicalInstancedStaticMeshComponent.h"
+#include "Runtime/Engine/Public/EngineUtils.h"
 #include "Runtime/CoreUObject/Public/UObject/ConstructorHelpers.h"
+#include "Runtime/Landscape/Classes/Landscape.h"
 #include "GameFramework/Actor.h"
 #include "CityGenerator.generated.h"
 
@@ -48,6 +53,9 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
 		USplineMeshComponent* WallMesh;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
+		ULandscapeSplinesComponent* LSplines;
 
 	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true, BlueprintProtected))
 		bool GenerateStreets = false;
@@ -99,8 +107,6 @@ public:
 	FString FilePath;
 #pragma endregion  
 
-
-
 	virtual void AddStreetSplineComponent();
 
 	virtual void AddStreetSplineMeshComponent();
@@ -110,6 +116,8 @@ public:
 	virtual void GenerateStreetSplineMeshComponents(int32, FString);
 
 	virtual void GenerateLanduseSplineMeshComponents(int32);
+
+	virtual float FindLandscapeZ(float, float);
 
 	virtual void ClearStreetSplineMeshComponents();
 

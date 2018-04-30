@@ -201,7 +201,8 @@ vector<pair<double, double>> ACityGenerator::GetCoordNodes(xml_node root, xml_no
 			lat = nodeFound.attribute("lat").as_double();
 			lon = nodeFound.attribute("lon").as_double();
 			CoordinateTools::GeoDeticOffsetInv(refLat, refLon, lat, lon, x, y);
-			Spline->AddSplineWorldPoint(FVector(x*1.5, y*1.5, 0));
+			float z = FindLandscapeZ(x*1.5, y*1.5);
+			Spline->AddSplineWorldPoint(FVector(x*1.5, y*1.5, z));
 			if (ActiveElement == Enum_k::building)
 				Spline->SetSplinePointType(pointIndex, ESplinePointType::Linear, true);
 			if (pointIndex > 0) {
@@ -229,6 +230,26 @@ vector<pair<double, double>> ACityGenerator::GetCoordNodes(xml_node root, xml_no
 	return coords;
 }
 
+float ACityGenerator::FindLandscapeZ(float x, float y) {
+	FVector rayStart = FVector(x, y, 1000);
+	FVector rayEnd = FVector(x, y, -1000);
+
+	UWorld* world = GetWorld();
+	if (world == nullptr)
+		return 0;
+
+	TActorIterator<ALandscape> landscapeIterator(world);
+	ALandscape *landscape = *landscapeIterator;
+
+	FCollisionQueryParams collisionParams(FName(TEXT("StreetClusterPlacementTrace")), true, this);
+	collisionParams.bReturnPhysicalMaterial = true;
+
+	FHitResult hit(ForceInit);
+	if (landscape->ActorLineTraceSingle(hit, rayStart, rayEnd, ECC_Visibility, collisionParams)) {
+		return hit.ImpactPoint.Z;
+	}
+	else return 0;
+}
 
 
 
