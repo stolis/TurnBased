@@ -201,8 +201,8 @@ vector<pair<double, double>> ACityGenerator::GetCoordNodes(xml_node root, xml_no
 			lat = nodeFound.attribute("lat").as_double();
 			lon = nodeFound.attribute("lon").as_double();
 			CoordinateTools::GeoDeticOffsetInv(refLat, refLon, lat, lon, x, y);
-			float z = FindLandscapeZ(x*1.5, y*1.5);
-			Spline->AddSplineWorldPoint(FVector(x*1.5, y*1.5, z));
+			float z = FindLandscapeZ(x*1.5, -y*1.5);
+			Spline->AddSplineWorldPoint(FVector(x*1.5, -y*1.5, z));
 			if (ActiveElement == Enum_k::building)
 				Spline->SetSplinePointType(pointIndex, ESplinePointType::Linear, true);
 			if (pointIndex > 0) {
@@ -250,6 +250,7 @@ float ACityGenerator::FindLandscapeZ(float x, float y) {
 	}
 	else return 0;
 }
+
 
 
 

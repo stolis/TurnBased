@@ -6,14 +6,14 @@
 #include "Runtime/Engine/Classes/Components/TextRenderComponent.h"
 #include "Runtime/Engine/Classes/Components/SplineComponent.h"
 #include "Runtime/Engine/Classes/Components/SplineMeshComponent.h"
+#include "Runtime/Engine/Classes/Components/HierarchicalInstancedStaticMeshComponent.h"
+#include "Runtime/CoreUObject/Public/UObject/ConstructorHelpers.h"
+#include "GameFramework/Actor.h"
 #include "Runtime/Landscape/Classes/LandscapeSplinesComponent.h"
 #include "Runtime/Landscape/Classes/LandscapeSplineSegment.h"
 #include "Runtime/Landscape/Classes/LandscapeSplineControlPoint.h"
-#include "Runtime/Engine/Classes/Components/HierarchicalInstancedStaticMeshComponent.h"
 #include "Runtime/Engine/Public/EngineUtils.h"
-#include "Runtime/CoreUObject/Public/UObject/ConstructorHelpers.h"
 #include "Runtime/Landscape/Classes/Landscape.h"
-#include "GameFramework/Actor.h"
 #include "CityGenerator.generated.h"
 
 UCLASS(Blueprintable)
@@ -106,6 +106,8 @@ public:
 	//UPROPERTY(VisibleAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
 	FString FilePath;
 #pragma endregion  
+
+
 
 	virtual void AddStreetSplineComponent();
 
