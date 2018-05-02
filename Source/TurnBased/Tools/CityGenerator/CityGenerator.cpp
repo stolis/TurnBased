@@ -149,6 +149,19 @@ void ACityGenerator::ClearLanduseSplineMeshComponents()
 
 void ACityGenerator::LoadMapXML()
 {
+	TSharedRef<IHttpRequest> Request = FHttpModule::Get().CreateRequest();
+	Request->SetVerb(TEXT("GET"));
+	Request->SetURL("https://api.openstreetmap.org/api/0.6/map?bbox=23.72603,37.98262,23.73050,37.98569");
+	Request->SetHeader("Content-Type", "application/xml");
+	Request->SetContentAsString(ReceivedData);
+	Request->OnProcessRequestComplete().BindUObject(this, &ACityGenerator::CompletedHTTPRequest);
+	
+	if (!Request->ProcessRequest())
+	{
+		auto fail = "asdfasfd";
+		// HTTP request failed
+	}
+
 	pugi::xml_document doc;
 	FString contentDir = FPaths::ProjectContentDir();
 	FString mapFile = contentDir + FString(TEXT("/Data/OSM/Athens_Omonoia_Sample5.osm"));
@@ -249,6 +262,25 @@ float ACityGenerator::FindLandscapeZ(float x, float y) {
 		return hit.ImpactPoint.Z;
 	}
 	else return 0;
+}
+
+void ACityGenerator::CompletedHTTPRequest(FHttpRequestPtr request, FHttpResponsePtr response, bool bWasSuccessful) {
+	if (!response.IsValid())
+	{
+		// no valid response
+	}
+	else if (EHttpResponseCodes::IsOk(response->GetResponseCode()))
+	{
+		// valid response
+		FString msg = response->GetContentAsString();
+		FString data = ReceivedData;
+	}
+	else
+	{
+		// HTTP request error
+	}
+	FString msg = response->GetContentAsString();
+
 }
 
 

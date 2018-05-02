@@ -14,6 +14,7 @@
 #include "Runtime/Landscape/Classes/LandscapeSplineControlPoint.h"
 #include "Runtime/Engine/Public/EngineUtils.h"
 #include "Runtime/Landscape/Classes/Landscape.h"
+#include "Runtime/Online/HTTP/Public/Http.h"
 #include "CityGenerator.generated.h"
 
 UCLASS(Blueprintable)
@@ -81,6 +82,8 @@ public:
 	UPROPERTY(EditAnywhere)
 		UHierarchicalInstancedStaticMeshComponent* StreetNetwork;
 
+	FString ReceivedData;
+
 #pragma region debugParms
 	//UPROPERTY(VisibleAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
 	double minLat;
@@ -132,5 +135,7 @@ public:
 	virtual void ToggleStreetAddressComponents();
 
 	virtual void PostEditChangeProperty(struct FPropertyChangedEvent& e) override;
+
+	void CompletedHTTPRequest(FHttpRequestPtr, FHttpResponsePtr, bool);
 };
 
