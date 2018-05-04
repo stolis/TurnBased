@@ -1,5 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 #include "CityGenerator.h"
+//#include "Libraries/OpenStreetMap/OpenStreetMap_API.h"
 
 using namespace pugi;
 using namespace std;
@@ -14,6 +15,8 @@ ACityGenerator::ACityGenerator()
 	ACityGenerator::AddStreetSplineComponent();
 	ACityGenerator::AddStreetSplineMeshComponent();
 	ACityGenerator::AddWallSplineMeshComponent();
+	CurrentMapChunk.mapChunkCoords = "23.72400,37.98216,23.73241,37.98600";
+	Http = &FHttpModule::Get();
 }
 
 void ACityGenerator::PostEditChangeProperty(struct FPropertyChangedEvent& e)
@@ -44,6 +47,10 @@ void ACityGenerator::PostEditChangeProperty(struct FPropertyChangedEvent& e)
 	else if (PropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, ShowAddress)) {
 		ToggleStreetAddressComponents();
 	}
+	else if (PropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, DownloadMapChunk)) {
+		RequestMapChunk(CurrentMapChunk);
+	}
+
 }
 
 void ACityGenerator::AddStreetSplineComponent()
@@ -149,23 +156,11 @@ void ACityGenerator::ClearLanduseSplineMeshComponents()
 
 void ACityGenerator::LoadMapXML()
 {
-	TSharedRef<IHttpRequest> Request = FHttpModule::Get().CreateRequest();
-	Request->SetVerb(TEXT("GET"));
-	Request->SetURL("https://api.openstreetmap.org/api/0.6/map?bbox=23.72603,37.98262,23.73050,37.98569");
-	Request->SetHeader("Content-Type", "application/xml");
-	Request->SetContentAsString(ReceivedData);
-	Request->OnProcessRequestComplete().BindUObject(this, &ACityGenerator::CompletedHTTPRequest);
-	
-	if (!Request->ProcessRequest())
-	{
-		auto fail = "asdfasfd";
-		// HTTP request failed
-	}
-
 	pugi::xml_document doc;
-	FString contentDir = FPaths::ProjectContentDir();
-	FString mapFile = contentDir + FString(TEXT("/Data/OSM/Athens_Omonoia_Sample5.osm"));
-	const char * getFrom = TCHAR_TO_ANSI(*mapFile);
+	//FString contentDir = FPaths::ProjectContentDir();
+	//FString mapFile = contentDir + FString(TEXT("/Data/OSM/Athens_Omonoia_Sample5.osm"));
+	//const char * getFrom = TCHAR_TO_ANSI(*mapFile);
+	const char * getFrom = TCHAR_TO_ANSI(*CurrentMapChunk.mapChunkString);
 	
 	if (doc.load_file(getFrom)) {
 		pugi::xml_node root = doc.child("osm");
@@ -264,25 +259,79 @@ float ACityGenerator::FindLandscapeZ(float x, float y) {
 	else return 0;
 }
 
-void ACityGenerator::CompletedHTTPRequest(FHttpRequestPtr request, FHttpResponsePtr response, bool bWasSuccessful) {
-	if (!response.IsValid())
-	{
-		// no valid response
-	}
-	else if (EHttpResponseCodes::IsOk(response->GetResponseCode()))
-	{
-		// valid response
-		FString msg = response->GetContentAsString();
-		FString data = ReceivedData;
-	}
-	else
-	{
-		// HTTP request error
-	}
-	FString msg = response->GetContentAsString();
+/******************************************************************************************************/
 
+TSharedRef<IHttpRequest> ACityGenerator::RequestWithBoxCoords(FString box_coords) {
+	TSharedRef<IHttpRequest> Request = Http->CreateRequest();
+	Request->SetURL(ApiBaseUrl + box_coords);
+	SetRequestHeaders(Request);
+	return Request;
 }
 
+void ACityGenerator::SetRequestHeaders(TSharedRef<IHttpRequest>& Request) {
+	Request->SetHeader(TEXT("User-Agent"), TEXT("X-UnrealEngine-Agent"));
+	Request->SetHeader(TEXT("Content-Type"), TEXT("application/json"));
+	Request->SetHeader(TEXT("Accepts"), TEXT("application/json"));
+}
+
+TSharedRef<IHttpRequest> ACityGenerator::GetRequest(FString box_coords) {
+	TSharedRef<IHttpRequest> Request = RequestWithBoxCoords(box_coords);
+	Request->SetVerb("GET");
+	return Request;
+}
+
+TSharedRef<IHttpRequest> ACityGenerator::PostRequest(FString box_coords, FString ContentJsonString) {
+	TSharedRef<IHttpRequest> Request = RequestWithBoxCoords(box_coords);
+	Request->SetVerb("POST");
+	Request->SetContentAsString(ContentJsonString);
+	return Request;
+}
+
+void ACityGenerator::Send(TSharedRef<IHttpRequest>& Request) {
+	Request->ProcessRequest();
+}
+
+bool ACityGenerator::ResponseIsValid(FHttpResponsePtr Response, bool bWasSuccessful) {
+	if (!bWasSuccessful || !Response.IsValid()) return false;
+	if (EHttpResponseCodes::IsOk(Response->GetResponseCode())) return true;
+	else {
+		UE_LOG(LogTemp, Warning, TEXT("Http Response returned error code: %d"), Response->GetResponseCode());
+		return false;
+	}
+}
+
+void ACityGenerator::SetAuthorizationHash(FString Hash, TSharedRef<IHttpRequest>& Request) {
+	Request->SetHeader(AuthorizationHeader, Hash);
+}
+
+template <typename StructType>
+void ACityGenerator::GetJsonStringFromStruct(StructType FilledStruct, FString& StringOutput) {
+	FJsonObjectConverter::UStructToJsonObjectString(StructType::StaticStruct(), &FilledStruct, StringOutput, 0, 0);
+}
+
+template <typename StructType>
+void ACityGenerator::GetStructFromJsonString(FHttpResponsePtr Response, StructType& StructOutput) {
+	StructType StructData;
+	FString JsonString = Response->GetContentAsString();
+	CurrentMapChunk.mapChunkString = JsonString;
+}
+
+void ACityGenerator::RequestMapChunk(FMapChunk requestMapChunk) {
+	FString ContentJsonString;
+	
+	TSharedRef<IHttpRequest> Request = GetRequest(requestMapChunk.mapChunkCoords);
+	Request->OnProcessRequestComplete().BindUObject(this, &ACityGenerator::MapChunkResponse);
+	Send(Request);
+}
+
+void ACityGenerator::MapChunkResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful) {
+	if (!ResponseIsValid(Response, bWasSuccessful)) return;
+
+	FMapChunk mapChunkResponse;
+	GetStructFromJsonString<FMapChunk>(Response, mapChunkResponse);
+
+	UE_LOG(LogTemp, Warning, TEXT("MapChunk is: %s"), DownloadedMapChunkString);
+}
 
 
 

@@ -15,7 +15,27 @@
 #include "Runtime/Engine/Public/EngineUtils.h"
 #include "Runtime/Landscape/Classes/Landscape.h"
 #include "Runtime/Online/HTTP/Public/Http.h"
+#include "Runtime/Json/Public/Json.h"
+#include "Runtime/JsonUtilities/Public/JsonUtilities.h"
 #include "CityGenerator.generated.h"
+
+USTRUCT()
+struct FRequest_Login {
+	GENERATED_BODY()
+		UPROPERTY() FString email;
+	UPROPERTY() FString password;
+
+	FRequest_Login() {}
+};
+
+USTRUCT()
+struct FMapChunk {
+	GENERATED_BODY()
+		UPROPERTY() FString mapChunkCoords;
+		UPROPERTY() FString mapChunkString;
+
+	FMapChunk() {}
+};
 
 UCLASS(Blueprintable)
 class TURNBASED_API ACityGenerator : public AActor
@@ -70,6 +90,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true, BlueprintProtected))
 		bool ShowAddress = true;
 
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true, BlueprintProtected))
+		bool DownloadMapChunk = false;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
 		TArray<USplineMeshComponent*> HighwayMeshComponents;
 
@@ -82,7 +105,8 @@ public:
 	UPROPERTY(EditAnywhere)
 		UHierarchicalInstancedStaticMeshComponent* StreetNetwork;
 
-	FString ReceivedData;
+	FMapChunk CurrentMapChunk;
+	const char * DownloadedMapChunkString;
 
 #pragma region debugParms
 	//UPROPERTY(VisibleAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
@@ -109,9 +133,7 @@ public:
 	//UPROPERTY(VisibleAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true))
 	FString FilePath;
 #pragma endregion  
-
-
-
+	
 	virtual void AddStreetSplineComponent();
 
 	virtual void AddStreetSplineMeshComponent();
@@ -136,6 +158,33 @@ public:
 
 	virtual void PostEditChangeProperty(struct FPropertyChangedEvent& e) override;
 
-	void CompletedHTTPRequest(FHttpRequestPtr, FHttpResponsePtr, bool);
+	void RequestMapChunk(FMapChunk MapChunk);
+
+	void MapChunkResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
+
+private:
+	FHttpModule * Http;
+	FString ApiBaseUrl = "https://api.openstreetmap.org/api/0.6/map?bbox=";
+
+	FString AuthorizationHeader = TEXT("Authorization");
+	void SetAuthorizationHash(FString Hash, TSharedRef<IHttpRequest>& Request);
+
+	TSharedRef<IHttpRequest> RequestWithBoxCoords(FString Subroute);
+	void SetRequestHeaders(TSharedRef<IHttpRequest>& Request);
+
+	TSharedRef<IHttpRequest> GetRequest(FString Subroute);
+	TSharedRef<IHttpRequest> PostRequest(FString Subroute, FString ContentJsonString);
+	void Send(TSharedRef<IHttpRequest>& Request);
+
+	bool ResponseIsValid(FHttpResponsePtr Response, bool bWasSuccessful);
+
+	template <typename StructType>
+	void GetJsonStringFromStruct(StructType FilledStruct, FString& StringOutput);
+	template <typename StructType>
+	void GetStructFromJsonString(FHttpResponsePtr Response, StructType& StructOutput);
+
+
 };
+
+
 
