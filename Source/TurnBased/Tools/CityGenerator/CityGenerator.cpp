@@ -198,18 +198,26 @@ void ACityGenerator::ClearLanduseSplineMeshComponents()
 
 void ACityGenerator::LoadMapXML()
 {
-	pugi::xml_document doc;
-	//FString contentDir = FPaths::ProjectContentDir();
-	//FString mapFile = contentDir + FString(TEXT("/Data/OSM/Athens_Omonoia_Sample5.osm"));
-	//const char * getFrom = TCHAR_TO_ANSI(*mapFile);
-	string getFrom = string(TCHAR_TO_ANSI(*CurrentMapChunk->mapChunkString));
-	if (doc.load_string(getFrom.c_str())) {
-	//if (doc.load_file(getFrom)) {
-		pugi::xml_node root = doc.child("osm");
-		pugi::xml_node bounds = root.child("bounds");
-		pugi::xml_node way = root.child("way");
+	xml_document doc;
+	
 
-		GetCoordNodes(root, way);
+	if (FPaths::FileExists(FString(TEXT("/Data/OSM/Athens_Omonoia_Sample5.osm")))) {
+		FString contentDir = FPaths::ProjectContentDir();
+		FString mapFile = contentDir + FString(TEXT("/Data/OSM/Athens_Omonoia_Sample5.osm"));
+		const char * getFrom = TCHAR_TO_ANSI(*mapFile);
+		if (doc.load_file(getFrom)) {
+			xml_node root = doc.child("osm");
+			xml_node way = root.child("way");
+			GetCoordNodes(root, way);
+		}
+	}
+	else {
+		string getFrom = string(TCHAR_TO_ANSI(*CurrentMapChunk->mapChunkString));
+		if (doc.load_string(getFrom.c_str())) {
+			xml_node root = doc.child("osm");
+			xml_node way = root.child("way");
+			GetCoordNodes(root, way);
+		}
 	}
 }
 
@@ -333,6 +341,7 @@ void ACityGenerator::AssignReponseToCurrentMapChunk(FHttpResponsePtr Response) {
 	CurrentMapChunk->mapChunkString = JsonString;
 	UE_LOG(LogTemp, Warning, TEXT("Map is Loaded!!!!"), "");
 	CurrentMapChunk->MapIsLoaded = true;
+	SaveToOSMFile(JsonString, CurrentMapChunk->GetFileName());
 }
 
 void ACityGenerator::RequestMapChunk() {
@@ -346,7 +355,25 @@ void ACityGenerator::RequestMapChunk() {
 void ACityGenerator::MapChunkResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful) {
 	if (!ResponseIsValid(Response, bWasSuccessful)) return;
 	AssignReponseToCurrentMapChunk(Response);
-	UE_LOG(LogTemp, Warning, TEXT("MapChunk is: %s"), string(TCHAR_TO_ANSI(*CurrentMapChunk->mapChunkString)).c_str());
+	//UE_LOG(LogTemp, Warning, TEXT("MapChunk is: %s"), string(TCHAR_TO_ANSI(*CurrentMapChunk->mapChunkString)).c_str());
+}
+
+void ACityGenerator::SaveToOSMFile(FString content, FString fileName) {
+	FString SaveDirectory = FString("C:/Users/zero_/Documents/GitHub/TurnBased/Content/Data/OSM");
+	
+	bool AllowOverwriting = false;
+	IPlatformFile& PlatformFile = FPlatformFileManager::Get().GetPlatformFile();
+	if (PlatformFile.CreateDirectoryTree(*SaveDirectory))
+	{
+		// Get absolute file path
+		FString AbsoluteFilePath = SaveDirectory + "/" + fileName;
+
+		// Allow overwriting or file doesn't already exist
+		//if (AllowOverwriting || !PlatformFile::FileExists(*AbsoluteFilePath))
+		//{
+		FFileHelper::SaveStringToFile(content, *AbsoluteFilePath);
+		//}
+	}
 }
 
 #pragma endregion

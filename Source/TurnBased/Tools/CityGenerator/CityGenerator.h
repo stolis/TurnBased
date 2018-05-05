@@ -32,6 +32,9 @@ struct FMapChunk {
 		FString GetStringCoords() {
 			return "https://api.openstreetmap.org/api/0.6/map?bbox=" + FString::SanitizeFloat(left) + "," + FString::SanitizeFloat(bottom) + "," + FString::SanitizeFloat(right) + "," + FString::SanitizeFloat(top);
 		}
+		FString GetFileName() {
+			return FString::SanitizeFloat(left) + "_" + FString::SanitizeFloat(bottom) + "_" + FString::SanitizeFloat(right) + "_" + FString::SanitizeFloat(top) + ".OSM";
+		}
 	FMapChunk() {}
 };
 
@@ -202,6 +205,8 @@ private:
 	bool ResponseIsValid(FHttpResponsePtr Response, bool bWasSuccessful);
 
 	void AssignReponseToCurrentMapChunk(FHttpResponsePtr Response);
+
+	void SaveToOSMFile(FString, FString);
 
 
 };
