@@ -20,20 +20,18 @@
 #include "CityGenerator.generated.h"
 
 USTRUCT()
-struct FRequest_Login {
-	GENERATED_BODY()
-		UPROPERTY() FString email;
-	UPROPERTY() FString password;
-
-	FRequest_Login() {}
-};
-
-USTRUCT()
 struct FMapChunk {
 	GENERATED_BODY()
-		UPROPERTY() FString mapChunkCoords;
+		UPROPERTY(EditAnywhere) bool GenerateStreets = false;
+		UPROPERTY(VisibleAnywhere) bool MapIsLoaded = false;
+		UPROPERTY(VisibleAnywhere) double left;
+		UPROPERTY(VisibleAnywhere) double bottom;
+		UPROPERTY(VisibleAnywhere) double right;
+		UPROPERTY(VisibleAnywhere) double top;
 		UPROPERTY() FString mapChunkString;
-
+		FString GetStringCoords() {
+			return "https://api.openstreetmap.org/api/0.6/map?bbox=" + FString::SanitizeFloat(left) + "," + FString::SanitizeFloat(bottom) + "," + FString::SanitizeFloat(right) + "," + FString::SanitizeFloat(top);
+		}
 	FMapChunk() {}
 };
 
@@ -62,6 +60,8 @@ public:
 								 "//way/tag[@k='building']"
 	};
 
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
+		TArray<FMapChunk> MapChunks;
 
 	UPROPERTY(VisibleAnywhere)
 		USceneComponent* Root;
@@ -105,7 +105,8 @@ public:
 	UPROPERTY(EditAnywhere)
 		UHierarchicalInstancedStaticMeshComponent* StreetNetwork;
 
-	FMapChunk CurrentMapChunk;
+	FMapChunk* CurrentMapChunk;
+
 	const char * DownloadedMapChunkString;
 
 #pragma region debugParms
@@ -152,36 +153,55 @@ public:
 
 	virtual void LoadMapXML();
 
-	virtual std::vector<std::pair<double, double>> GetCoordNodes(pugi::xml_node, pugi::xml_node, double, double);
+	virtual std::vector<std::pair<double, double>> GetCoordNodes(pugi::xml_node, pugi::xml_node);
 
 	virtual void ToggleStreetAddressComponents();
 
+	virtual void PostEditChangeChainProperty(struct FPropertyChangedChainEvent& e) override;
+
 	virtual void PostEditChangeProperty(struct FPropertyChangedEvent& e) override;
 
-	void RequestMapChunk(FMapChunk MapChunk);
+	void RequestMapChunk();
 
 	void MapChunkResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 
+	void PinCoordsToMapChunk(FMapChunk&, int);
+
 private:
+
+	//300x300.02 meter square around Omonoia
+	const double leftB = 23.72624;
+	const double bottomB = 37.98260;
+	const double rightB = 23.72977;
+	const double topB = 37.98536;
+	const double horizontalDistance = rightB - leftB;
+	const double verticalDistance = topB - bottomB;
+
+	//ToDo: Use Omonoia square for reference coords or pass the boundary start
+	const double refLat = 37.98414;
+	const double refLon = 23.72807;
+
+	const int rowSize = 2;
+
 	FHttpModule * Http;
+
 	FString ApiBaseUrl = "https://api.openstreetmap.org/api/0.6/map?bbox=";
 
 	FString AuthorizationHeader = TEXT("Authorization");
+	
 	void SetAuthorizationHash(FString Hash, TSharedRef<IHttpRequest>& Request);
 
 	TSharedRef<IHttpRequest> RequestWithBoxCoords(FString Subroute);
+	
 	void SetRequestHeaders(TSharedRef<IHttpRequest>& Request);
 
-	TSharedRef<IHttpRequest> GetRequest(FString Subroute);
-	TSharedRef<IHttpRequest> PostRequest(FString Subroute, FString ContentJsonString);
+	TSharedRef<IHttpRequest> GetRequest();
+	
 	void Send(TSharedRef<IHttpRequest>& Request);
 
 	bool ResponseIsValid(FHttpResponsePtr Response, bool bWasSuccessful);
 
-	template <typename StructType>
-	void GetJsonStringFromStruct(StructType FilledStruct, FString& StringOutput);
-	template <typename StructType>
-	void GetStructFromJsonString(FHttpResponsePtr Response, StructType& StructOutput);
+	void AssignReponseToCurrentMapChunk(FHttpResponsePtr Response);
 
 
 };

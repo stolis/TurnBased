@@ -15,16 +15,46 @@ ACityGenerator::ACityGenerator()
 	ACityGenerator::AddStreetSplineComponent();
 	ACityGenerator::AddStreetSplineMeshComponent();
 	ACityGenerator::AddWallSplineMeshComponent();
-	CurrentMapChunk.mapChunkCoords = "23.72400,37.98216,23.73241,37.98600";
+	//CurrentMapChunk.mapChunkCoords = "23.72624,37.98260,23.72977,37.98536";
 	Http = &FHttpModule::Get();
+}
+
+void ACityGenerator::PostEditChangeChainProperty(struct FPropertyChangedChainEvent& e)
+{
+	int32 index = e.GetArrayIndex(TEXT("MapChunks")); //checks skipped
+	UE_LOG(LogTemp, Warning, TEXT("MapChunks index is: %d"), index);
+	FMapChunk& fMapChunk = MapChunks[index];
+
+	if (e.ChangeType == EPropertyChangeType::ArrayAdd) {
+		PinCoordsToMapChunk(fMapChunk, index);
+		CurrentMapChunk = &fMapChunk;
+		RequestMapChunk();
+	}
+	else if (e.ChangeType == EPropertyChangeType::ArrayClear) {
+		
+	}
+	else if (e.ChangeType == EPropertyChangeType::ValueSet) {
+		FString propertyName = (e.Property != NULL) ? e.Property->GetNameCPP() : "";
+		if (propertyName == "GenerateStreets") {
+			if (fMapChunk.GenerateStreets) {
+				CurrentMapChunk = &fMapChunk;
+				LoadMapXML();
+				UE_LOG(LogTemp, Warning, TEXT("GenereateStreets is: true"), "");
+			}
+			else {
+				UE_LOG(LogTemp, Warning, TEXT("GenereateStreets is false"), "");
+			}
+		}
+	}
+	Super::PostEditChangeChainProperty(e);
 }
 
 void ACityGenerator::PostEditChangeProperty(struct FPropertyChangedEvent& e)
 {
 	Super::PostEditChangeProperty(e);
 
-	FName PropertyName = (e.Property != NULL) ? e.Property->GetFName() : NAME_None;
-	if (PropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, GenerateStreets)) {
+	FName memberPropertyName = (e.Property != NULL) ? e.MemberProperty->GetFName() : NAME_None;
+	if (memberPropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, GenerateStreets)) {
 		if (this->GenerateStreets) {
 			ActiveElement = Enum_k::highway;
 			LoadMapXML();
@@ -34,7 +64,7 @@ void ACityGenerator::PostEditChangeProperty(struct FPropertyChangedEvent& e)
 			Spline->ClearSplinePoints(true);
 		}
 	}
-	else if (PropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, GenerateRealEstate)) {
+	else if (memberPropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, GenerateRealEstate)) {
 		if (this->GenerateRealEstate) {
 			ActiveElement = Enum_k::building;
 			LoadMapXML();
@@ -44,13 +74,25 @@ void ACityGenerator::PostEditChangeProperty(struct FPropertyChangedEvent& e)
 			Spline->ClearSplinePoints(true);
 		}
 	}
-	else if (PropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, ShowAddress)) {
+	else if (memberPropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, ShowAddress)) {
 		ToggleStreetAddressComponents();
 	}
-	else if (PropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, DownloadMapChunk)) {
-		RequestMapChunk(CurrentMapChunk);
+	else if (memberPropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, DownloadMapChunk)) {
+		RequestMapChunk();
 	}
+}
 
+void ACityGenerator::PinCoordsToMapChunk(FMapChunk& fMapChunk, int index) {
+	double moveToBottomDelta = 0;
+	double moveToRightDelta = 0;
+
+	moveToBottomDelta = verticalDistance * (index / 2);
+    moveToRightDelta = horizontalDistance * (index % rowSize);
+
+	fMapChunk.left = leftB + moveToRightDelta;
+	fMapChunk.right = fMapChunk.left + horizontalDistance;
+	fMapChunk.top = topB + moveToBottomDelta;
+	fMapChunk.bottom = fMapChunk.top - verticalDistance;
 }
 
 void ACityGenerator::AddStreetSplineComponent()
@@ -160,36 +202,24 @@ void ACityGenerator::LoadMapXML()
 	//FString contentDir = FPaths::ProjectContentDir();
 	//FString mapFile = contentDir + FString(TEXT("/Data/OSM/Athens_Omonoia_Sample5.osm"));
 	//const char * getFrom = TCHAR_TO_ANSI(*mapFile);
-	const char * getFrom = TCHAR_TO_ANSI(*CurrentMapChunk.mapChunkString);
-	
-	if (doc.load_file(getFrom)) {
+	string getFrom = string(TCHAR_TO_ANSI(*CurrentMapChunk->mapChunkString));
+	if (doc.load_string(getFrom.c_str())) {
+	//if (doc.load_file(getFrom)) {
 		pugi::xml_node root = doc.child("osm");
 		pugi::xml_node bounds = root.child("bounds");
 		pugi::xml_node way = root.child("way");
 
-		minLon = bounds.attribute("minlon").as_double();
-		minLat = bounds.attribute("minlat").as_double();
-		maxLon = bounds.attribute("maxlon").as_double();
-		maxLat = bounds.attribute("maxlat").as_double();
-
-		const auto latitude1 = minLat, longitude1 = minLon,
-			latitude2 = maxLat, longitude2 = maxLon;
-
-		GetCoordNodes(root, way, minLat, minLon);
+		GetCoordNodes(root, way);
 	}
 }
 
-vector<pair<double, double>> ACityGenerator::GetCoordNodes(xml_node root, xml_node way, double refLat, double refLon)
+vector<pair<double, double>> ACityGenerator::GetCoordNodes(xml_node root, xml_node way)
 {
-	//ToDo: Use Omonoia square for reference coords or pass the boundary start
-	refLat = 37.98414;
-	refLon = 23.72807;
 	double lat, lon, x, y;
 	int32 streetIndex = 0, pointIndex = 0;
 	vector<pair<double, double>> coords;
 
 	xpath_node_set nodesTags = way.select_nodes(TagValues[(int)ActiveElement].c_str());
-	
 	
 	for (xpath_node nodeTag : nodesTags) {
 		auto wayNode = nodeTag.parent();
@@ -259,11 +289,12 @@ float ACityGenerator::FindLandscapeZ(float x, float y) {
 	else return 0;
 }
 
-/******************************************************************************************************/
+#pragma region OpenStreetAPI
 
 TSharedRef<IHttpRequest> ACityGenerator::RequestWithBoxCoords(FString box_coords) {
 	TSharedRef<IHttpRequest> Request = Http->CreateRequest();
-	Request->SetURL(ApiBaseUrl + box_coords);
+	//Request->SetURL(ApiBaseUrl + box_coords);
+	Request->SetURL(box_coords);
 	SetRequestHeaders(Request);
 	return Request;
 }
@@ -274,16 +305,9 @@ void ACityGenerator::SetRequestHeaders(TSharedRef<IHttpRequest>& Request) {
 	Request->SetHeader(TEXT("Accepts"), TEXT("application/json"));
 }
 
-TSharedRef<IHttpRequest> ACityGenerator::GetRequest(FString box_coords) {
-	TSharedRef<IHttpRequest> Request = RequestWithBoxCoords(box_coords);
+TSharedRef<IHttpRequest> ACityGenerator::GetRequest() {
+	TSharedRef<IHttpRequest> Request = RequestWithBoxCoords(CurrentMapChunk->GetStringCoords());
 	Request->SetVerb("GET");
-	return Request;
-}
-
-TSharedRef<IHttpRequest> ACityGenerator::PostRequest(FString box_coords, FString ContentJsonString) {
-	TSharedRef<IHttpRequest> Request = RequestWithBoxCoords(box_coords);
-	Request->SetVerb("POST");
-	Request->SetContentAsString(ContentJsonString);
 	return Request;
 }
 
@@ -304,34 +328,28 @@ void ACityGenerator::SetAuthorizationHash(FString Hash, TSharedRef<IHttpRequest>
 	Request->SetHeader(AuthorizationHeader, Hash);
 }
 
-template <typename StructType>
-void ACityGenerator::GetJsonStringFromStruct(StructType FilledStruct, FString& StringOutput) {
-	FJsonObjectConverter::UStructToJsonObjectString(StructType::StaticStruct(), &FilledStruct, StringOutput, 0, 0);
-}
-
-template <typename StructType>
-void ACityGenerator::GetStructFromJsonString(FHttpResponsePtr Response, StructType& StructOutput) {
-	StructType StructData;
+void ACityGenerator::AssignReponseToCurrentMapChunk(FHttpResponsePtr Response) {
 	FString JsonString = Response->GetContentAsString();
-	CurrentMapChunk.mapChunkString = JsonString;
+	CurrentMapChunk->mapChunkString = JsonString;
+	UE_LOG(LogTemp, Warning, TEXT("Map is Loaded!!!!"), "");
+	CurrentMapChunk->MapIsLoaded = true;
 }
 
-void ACityGenerator::RequestMapChunk(FMapChunk requestMapChunk) {
+void ACityGenerator::RequestMapChunk() {
 	FString ContentJsonString;
 	
-	TSharedRef<IHttpRequest> Request = GetRequest(requestMapChunk.mapChunkCoords);
+	TSharedRef<IHttpRequest> Request = GetRequest();
 	Request->OnProcessRequestComplete().BindUObject(this, &ACityGenerator::MapChunkResponse);
 	Send(Request);
 }
 
 void ACityGenerator::MapChunkResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful) {
 	if (!ResponseIsValid(Response, bWasSuccessful)) return;
-
-	FMapChunk mapChunkResponse;
-	GetStructFromJsonString<FMapChunk>(Response, mapChunkResponse);
-
-	UE_LOG(LogTemp, Warning, TEXT("MapChunk is: %s"), DownloadedMapChunkString);
+	AssignReponseToCurrentMapChunk(Response);
+	UE_LOG(LogTemp, Warning, TEXT("MapChunk is: %s"), string(TCHAR_TO_ANSI(*CurrentMapChunk->mapChunkString)).c_str());
 }
+
+#pragma endregion
 
 
 
