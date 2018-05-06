@@ -5,6 +5,7 @@
 using namespace pugi;
 using namespace std;
 
+
 static const double earthDiameterMeters = 6371.0 * 2 * 1000;
 
 // Sets default values
@@ -28,7 +29,7 @@ void ACityGenerator::PostEditChangeChainProperty(struct FPropertyChangedChainEve
 	if (e.ChangeType == EPropertyChangeType::ArrayAdd) {
 		PinCoordsToMapChunk(fMapChunk, index);
 		CurrentMapChunk = &fMapChunk;
-		RequestMapChunk();
+		RequestMapChunk(CurrentMapChunk->GetFileName());
 	}
 	else if (e.ChangeType == EPropertyChangeType::ArrayClear) {
 		
@@ -36,13 +37,29 @@ void ACityGenerator::PostEditChangeChainProperty(struct FPropertyChangedChainEve
 	else if (e.ChangeType == EPropertyChangeType::ValueSet) {
 		FString propertyName = (e.Property != NULL) ? e.Property->GetNameCPP() : "";
 		if (propertyName == "GenerateStreets") {
+			ActiveElement = Enum_k::highway;
 			if (fMapChunk.GenerateStreets) {
 				CurrentMapChunk = &fMapChunk;
 				LoadMapXML();
 				UE_LOG(LogTemp, Warning, TEXT("GenereateStreets is: true"), "");
 			}
 			else {
+				CurrentMapChunk = &fMapChunk;
+				ClearStreetSplineMeshComponents();
 				UE_LOG(LogTemp, Warning, TEXT("GenereateStreets is false"), "");
+			}
+		}
+		if (propertyName == "GenerateBuildings") {
+			ActiveElement = Enum_k::building;
+			if (fMapChunk.GenerateBuildings) {
+				CurrentMapChunk = &fMapChunk;
+				LoadMapXML();
+				UE_LOG(LogTemp, Warning, TEXT("GenereateBuildings is: true"), "");
+			}
+			else {
+				CurrentMapChunk = &fMapChunk;
+				ClearBuildingSplineMeshComponents();
+				UE_LOG(LogTemp, Warning, TEXT("GenereateBuildings is false"), "");
 			}
 		}
 	}
@@ -70,15 +87,12 @@ void ACityGenerator::PostEditChangeProperty(struct FPropertyChangedEvent& e)
 			LoadMapXML();
 		}
 		else {
-			ClearLanduseSplineMeshComponents();
+			ClearBuildingSplineMeshComponents();
 			Spline->ClearSplinePoints(true);
 		}
 	}
 	else if (memberPropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, ShowAddress)) {
 		ToggleStreetAddressComponents();
-	}
-	else if (memberPropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, DownloadMapChunk)) {
-		RequestMapChunk();
 	}
 }
 
@@ -115,7 +129,7 @@ void ACityGenerator::AddWallSplineMeshComponent()
 	WallMesh->SetupAttachment(Root);
 }
 
-void ACityGenerator::GenerateStreetSplineMeshComponents(int32 index, FString address)
+void ACityGenerator::GenerateStreetSplineMeshComponents(int32 index, FString address, USplineComponent* spline)
 {
 	USplineMeshComponent* streetMesh;
 	UTextRenderComponent* streetAddress;
@@ -125,10 +139,10 @@ void ACityGenerator::GenerateStreetSplineMeshComponents(int32 index, FString add
 	streetMesh->SetMobility(EComponentMobility::Static);
 	streetMesh->SetupAttachment(Root);
 	streetMesh->RegisterComponentWithWorld(GetWorld());
-	HighwayMeshComponents.Add(streetMesh);
+	CurrentMapChunk->highwayMeshComponents.Add(streetMesh);
 	FVector ptLocStart, ptTanStart, ptLocEnd, ptTanEnd;
-	Spline->GetLocalLocationAndTangentAtSplinePoint(index - 1, ptLocStart, ptTanStart);
-	Spline->GetLocalLocationAndTangentAtSplinePoint(index, ptLocEnd, ptTanEnd);
+	spline->GetLocalLocationAndTangentAtSplinePoint(index - 1, ptLocStart, ptTanStart);
+	spline->GetLocalLocationAndTangentAtSplinePoint(index, ptLocEnd, ptTanEnd);
 	UStaticMesh *sm_Street = StreetMesh->GetStaticMesh(); 
 	streetMesh->SetStaticMesh(sm_Street);
 	streetMesh->SetMaterial(0, StreetMesh->GetMaterial(0));
@@ -143,27 +157,28 @@ void ACityGenerator::GenerateStreetSplineMeshComponents(int32 index, FString add
 	streetAddress->SetWorldLocation(ptLocStart);
 	streetAddress->SetWorldRotation(FQuat(0, -90, 90, 1));
 	streetAddress->SetWorldScale3D(FVector(10, 10, 10));
-	HighwayAddressComponents.Add(streetAddress);
+	//HighwayAddressComponents.Add(streetAddress);
+	CurrentMapChunk->highwayAddressComponents.Add(streetAddress);
 	
 }
 
-void ACityGenerator::GenerateLanduseSplineMeshComponents(int32 index) {
-	USplineMeshComponent* landuseMesh;
+void ACityGenerator::GenerateBuildingSplineMeshComponents(int32 index, USplineComponent* spline) {
+	USplineMeshComponent* buildingMesh;
 
-	landuseMesh = NewObject<USplineMeshComponent>();
-	landuseMesh->CreationMethod = EComponentCreationMethod::UserConstructionScript;
-	landuseMesh->SetMobility(EComponentMobility::Static);
-	landuseMesh->SetupAttachment(Root);
-	landuseMesh->RegisterComponentWithWorld(GetWorld());
-	landuseMesh->SetRelativeScale3D(FVector(1,1,1));
-	LanduseMeshComponents.Add(landuseMesh);
+	buildingMesh = NewObject<USplineMeshComponent>();
+	buildingMesh->CreationMethod = EComponentCreationMethod::UserConstructionScript;
+	buildingMesh->SetMobility(EComponentMobility::Static);
+	buildingMesh->SetupAttachment(Root);
+	buildingMesh->RegisterComponentWithWorld(GetWorld());
+	buildingMesh->SetRelativeScale3D(FVector(1,1,1));
+	CurrentMapChunk->buildingMeshComponents.Add(buildingMesh);
 	FVector ptLocStart, ptTanStart, ptLocEnd, ptTanEnd;
-	Spline->GetLocalLocationAndTangentAtSplinePoint(index - 1, ptLocStart, ptTanStart);
-	Spline->GetLocalLocationAndTangentAtSplinePoint(index, ptLocEnd, ptTanEnd);
+	spline->GetLocalLocationAndTangentAtSplinePoint(index - 1, ptLocStart, ptTanStart);
+	spline->GetLocalLocationAndTangentAtSplinePoint(index, ptLocEnd, ptTanEnd);
 	UStaticMesh *sm_LandusePart = WallMesh->GetStaticMesh();
-	landuseMesh->SetStaticMesh(sm_LandusePart);
-	landuseMesh->SetMaterial(0, StreetMesh->GetMaterial(0));
-	landuseMesh->SetStartAndEnd(ptLocStart, ptTanStart, ptLocEnd, ptTanEnd);
+	buildingMesh->SetStaticMesh(sm_LandusePart);
+	buildingMesh->SetMaterial(0, StreetMesh->GetMaterial(0));
+	buildingMesh->SetStartAndEnd(ptLocStart, ptTanStart, ptLocEnd, ptTanEnd);
 }
 
 void ACityGenerator::ToggleStreetAddressComponents() 
@@ -175,50 +190,50 @@ void ACityGenerator::ToggleStreetAddressComponents()
 
 void ACityGenerator::ClearStreetSplineMeshComponents()
 {
-	for (USplineMeshComponent *s : HighwayMeshComponents) {
+	for (USplineComponent *s : CurrentMapChunk->highwaySplineComponents) {
 		if (s != nullptr)
 			s->DestroyComponent();
 	}
-	for (UTextRenderComponent *s : HighwayAddressComponents) {
+	for (USplineMeshComponent *s : CurrentMapChunk->highwayMeshComponents) {
 		if (s != nullptr)
 			s->DestroyComponent();
 	}
-	HighwayMeshComponents.Empty();
-	HighwayAddressComponents.Empty();
+	for (UTextRenderComponent *s : CurrentMapChunk->highwayAddressComponents) {
+		if (s != nullptr)
+			s->DestroyComponent();
+	}
+	CurrentMapChunk->highwaySplineComponents.Empty();
+	CurrentMapChunk->highwayMeshComponents.Empty();
+	CurrentMapChunk->highwayAddressComponents.Empty();
 }
 
-void ACityGenerator::ClearLanduseSplineMeshComponents()
+void ACityGenerator::ClearBuildingSplineMeshComponents()
 {
-	for (USplineMeshComponent *s : LanduseMeshComponents) {
+	for (USplineComponent *s : CurrentMapChunk->buildingSplineComponents) {
 		if (s != nullptr)
 			s->DestroyComponent();
 	}
-	LanduseMeshComponents.Empty();
+	for (USplineMeshComponent *s : CurrentMapChunk->buildingMeshComponents) {
+		if (s != nullptr)
+			s->DestroyComponent();
+	}
+	CurrentMapChunk->buildingSplineComponents.Empty();
+	CurrentMapChunk->buildingMeshComponents.Empty();
 }
 
 void ACityGenerator::LoadMapXML()
 {
 	xml_document doc;
+	FString filePathName = osmFilePath + CurrentMapChunk->GetFileName();
+	FString fileContent;
 	
-
-	if (FPaths::FileExists(FString(TEXT("/Data/OSM/Athens_Omonoia_Sample5.osm")))) {
-		FString contentDir = FPaths::ProjectContentDir();
-		FString mapFile = contentDir + FString(TEXT("/Data/OSM/Athens_Omonoia_Sample5.osm"));
-		const char * getFrom = TCHAR_TO_ANSI(*mapFile);
-		if (doc.load_file(getFrom)) {
-			xml_node root = doc.child("osm");
-			xml_node way = root.child("way");
-			GetCoordNodes(root, way);
-		}
+	string getFrom = string(TCHAR_TO_ANSI(*CurrentMapChunk->mapChunkString));
+	if (doc.load_string(getFrom.c_str())) {
+		xml_node root = doc.child("osm");
+		xml_node way = root.child("way");
+		GetCoordNodes(root, way);
 	}
-	else {
-		string getFrom = string(TCHAR_TO_ANSI(*CurrentMapChunk->mapChunkString));
-		if (doc.load_string(getFrom.c_str())) {
-			xml_node root = doc.child("osm");
-			xml_node way = root.child("way");
-			GetCoordNodes(root, way);
-		}
-	}
+	
 }
 
 vector<pair<double, double>> ACityGenerator::GetCoordNodes(xml_node root, xml_node way)
@@ -239,6 +254,12 @@ vector<pair<double, double>> ACityGenerator::GetCoordNodes(xml_node root, xml_no
 		FString address = addressTag.attribute("v").as_string();
 		xpath_query query_way_nd("//way[@id=string($id)]/nd", &vars);
 		xpath_node_set nodesNd = way.select_nodes(query_way_nd);
+		USplineComponent* spline = NewObject<USplineComponent>();
+		spline->CreationMethod = EComponentCreationMethod::UserConstructionScript;
+		spline->SetClosedLoop(false);
+		spline->SetupAttachment(Root);
+		spline->RegisterComponentWithWorld(GetWorld());
+		spline->ClearSplinePoints();
 		pointIndex = 0;
 		for (xpath_node nodeNd : nodesNd) {
 			auto nodeFound = root.find_child_by_attribute("id", nodeNd.node().attribute("ref").as_string());
@@ -248,19 +269,19 @@ vector<pair<double, double>> ACityGenerator::GetCoordNodes(xml_node root, xml_no
 			lon = nodeFound.attribute("lon").as_double();
 			CoordinateTools::GeoDeticOffsetInv(refLat, refLon, lat, lon, x, y);
 			float z = FindLandscapeZ(x*1.5, -y*1.5);
-			Spline->AddSplineWorldPoint(FVector(x*1.5, -y*1.5, z));
+			spline->AddSplineWorldPoint(FVector(x*1.5, -y*1.5, z));
 			if (ActiveElement == Enum_k::building)
-				Spline->SetSplinePointType(pointIndex, ESplinePointType::Linear, true);
+				spline->SetSplinePointType(pointIndex, ESplinePointType::Linear, true);
 			if (pointIndex > 0) {
 				switch (ActiveElement) {
 				case Enum_k::highway: {
-					Spline->SetSplinePointType(pointIndex, ESplinePointType::Curve, true);
-					GenerateStreetSplineMeshComponents(pointIndex, address); 
+					spline->SetSplinePointType(pointIndex, ESplinePointType::Curve, true);
+					GenerateStreetSplineMeshComponents(pointIndex, address, spline); 
 					break;
 				}
 				case Enum_k::building: {
-					Spline->SetSplinePointType(pointIndex, ESplinePointType::Linear, true);
-					GenerateLanduseSplineMeshComponents(pointIndex);
+					spline->SetSplinePointType(pointIndex, ESplinePointType::Linear, true);
+					GenerateBuildingSplineMeshComponents(pointIndex, spline);
 					break;
 				}
 				default:break;
@@ -270,7 +291,8 @@ vector<pair<double, double>> ACityGenerator::GetCoordNodes(xml_node root, xml_no
 			coords.push_back(pair<double, double>(x, y));
 			pointIndex++;
 		}
-		Spline->ClearSplinePoints(false);
+		CurrentMapChunk->highwaySplineComponents.Add(spline);
+		//Spline->ClearSplinePoints(false);
 		streetIndex++;
 	}
 	return coords;
@@ -301,8 +323,7 @@ float ACityGenerator::FindLandscapeZ(float x, float y) {
 
 TSharedRef<IHttpRequest> ACityGenerator::RequestWithBoxCoords(FString box_coords) {
 	TSharedRef<IHttpRequest> Request = Http->CreateRequest();
-	//Request->SetURL(ApiBaseUrl + box_coords);
-	Request->SetURL(box_coords);
+	Request->SetURL(ApiBaseUrl + box_coords);
 	SetRequestHeaders(Request);
 	return Request;
 }
@@ -339,17 +360,24 @@ void ACityGenerator::SetAuthorizationHash(FString Hash, TSharedRef<IHttpRequest>
 void ACityGenerator::AssignReponseToCurrentMapChunk(FHttpResponsePtr Response) {
 	FString JsonString = Response->GetContentAsString();
 	CurrentMapChunk->mapChunkString = JsonString;
-	UE_LOG(LogTemp, Warning, TEXT("Map is Loaded!!!!"), "");
+	UE_LOG(LogTemp, Warning, TEXT("Map is Loaded from Web!!!!"), "");
 	CurrentMapChunk->MapIsLoaded = true;
 	SaveToOSMFile(JsonString, CurrentMapChunk->GetFileName());
 }
 
-void ACityGenerator::RequestMapChunk() {
-	FString ContentJsonString;
-	
-	TSharedRef<IHttpRequest> Request = GetRequest();
-	Request->OnProcessRequestComplete().BindUObject(this, &ACityGenerator::MapChunkResponse);
-	Send(Request);
+void ACityGenerator::RequestMapChunk(FString filename) {
+	FString fileContent;
+	if (FPlatformFileManager::Get().GetPlatformFile().FileExists(*(osmFilePath + filename))) {
+		FFileHelper::LoadFileToString(fileContent, *(osmFilePath + filename));
+		CurrentMapChunk->mapChunkString = fileContent;
+		UE_LOG(LogTemp, Warning, TEXT("Map is Loaded from File!!!!"), "");
+		CurrentMapChunk->MapIsLoaded = true;
+	}
+	else {
+		TSharedRef<IHttpRequest> Request = GetRequest();
+		Request->OnProcessRequestComplete().BindUObject(this, &ACityGenerator::MapChunkResponse);
+		Send(Request);
+	}
 }
 
 void ACityGenerator::MapChunkResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful) {
@@ -365,14 +393,8 @@ void ACityGenerator::SaveToOSMFile(FString content, FString fileName) {
 	IPlatformFile& PlatformFile = FPlatformFileManager::Get().GetPlatformFile();
 	if (PlatformFile.CreateDirectoryTree(*SaveDirectory))
 	{
-		// Get absolute file path
 		FString AbsoluteFilePath = SaveDirectory + "/" + fileName;
-
-		// Allow overwriting or file doesn't already exist
-		//if (AllowOverwriting || !PlatformFile::FileExists(*AbsoluteFilePath))
-		//{
 		FFileHelper::SaveStringToFile(content, *AbsoluteFilePath);
-		//}
 	}
 }
 

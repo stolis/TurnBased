@@ -22,15 +22,29 @@
 USTRUCT()
 struct FMapChunk {
 	GENERATED_BODY()
-		UPROPERTY(EditAnywhere) bool GenerateStreets = false;
-		UPROPERTY(VisibleAnywhere) bool MapIsLoaded = false;
+		UPROPERTY(EditAnywhere, meta = (EditCondition = "MapIsLoaded")) bool GenerateStreets = false;
+		UPROPERTY(EditAnywhere, meta = (EditCondition = "MapIsLoaded")) bool GenerateBuildings = false;
+		UPROPERTY() bool MapIsLoaded = false;
 		UPROPERTY(VisibleAnywhere) double left;
 		UPROPERTY(VisibleAnywhere) double bottom;
 		UPROPERTY(VisibleAnywhere) double right;
 		UPROPERTY(VisibleAnywhere) double top;
+
+		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
+			TArray<USplineComponent*> highwaySplineComponents;
+		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
+			TArray<USplineMeshComponent*> highwayMeshComponents;
+		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
+			TArray<UTextRenderComponent*> highwayAddressComponents;
+
+		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
+			TArray<USplineComponent*> buildingSplineComponents;
+		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
+			TArray<USplineMeshComponent*> buildingMeshComponents;
+
 		UPROPERTY() FString mapChunkString;
 		FString GetStringCoords() {
-			return "https://api.openstreetmap.org/api/0.6/map?bbox=" + FString::SanitizeFloat(left) + "," + FString::SanitizeFloat(bottom) + "," + FString::SanitizeFloat(right) + "," + FString::SanitizeFloat(top);
+			return FString::SanitizeFloat(left) + "," + FString::SanitizeFloat(bottom) + "," + FString::SanitizeFloat(right) + "," + FString::SanitizeFloat(top);
 		}
 		FString GetFileName() {
 			return FString::SanitizeFloat(left) + "_" + FString::SanitizeFloat(bottom) + "_" + FString::SanitizeFloat(right) + "_" + FString::SanitizeFloat(top) + ".OSM";
@@ -144,15 +158,15 @@ public:
 
 	virtual void AddWallSplineMeshComponent();
 
-	virtual void GenerateStreetSplineMeshComponents(int32, FString);
+	virtual void GenerateStreetSplineMeshComponents(int32, FString, USplineComponent*);
 
-	virtual void GenerateLanduseSplineMeshComponents(int32);
+	virtual void GenerateBuildingSplineMeshComponents(int32, USplineComponent*);
 
 	virtual float FindLandscapeZ(float, float);
 
 	virtual void ClearStreetSplineMeshComponents();
 
-	virtual void ClearLanduseSplineMeshComponents();
+	virtual void ClearBuildingSplineMeshComponents();
 
 	virtual void LoadMapXML();
 
@@ -164,7 +178,7 @@ public:
 
 	virtual void PostEditChangeProperty(struct FPropertyChangedEvent& e) override;
 
-	void RequestMapChunk();
+	void RequestMapChunk(FString);
 
 	void MapChunkResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 
@@ -185,6 +199,8 @@ private:
 	const double refLon = 23.72807;
 
 	const int rowSize = 2;
+	
+	const FString osmFilePath = "C:/Users/zero_/Documents/GitHub/TurnBased/Content/Data/OSM/";
 
 	FHttpModule * Http;
 
