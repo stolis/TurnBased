@@ -72,7 +72,7 @@ public:
 	};
 
 	Enum_k ActiveElement;
-	std::string TagValues[3] = { "//way/tag[@k='highway' and (@v='tertiary' or @v='secondary' or @v='secondary_link' or @v='primary')]",
+	std::string TagValues[3] = { "//way/tag[@k='highway' and (@v='tertiary' or @v='secondary' or @v='secondary_link' or @v='primary' or @v='crossing' or @v='residential' or @v='pedestrian')]",
 							     "//way/tag[@k='landuse']",
 								 "//way/tag[@k='building']"
 	};
