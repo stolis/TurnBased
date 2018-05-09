@@ -22,24 +22,24 @@
 USTRUCT()
 struct FMapChunk {
 	GENERATED_BODY()
-		UPROPERTY(EditAnywhere, Category = Inertia_CityGen, meta = (EditCondition = "MapIsLoaded")) bool GenerateStreets = false;
-		UPROPERTY(EditAnywhere, Category = Inertia_CityGen, meta = (EditCondition = "MapIsLoaded")) bool GenerateBuildings = false;
+		UPROPERTY(EditAnywhere, meta = (EditCondition = "MapIsLoaded")) bool GenerateStreets = false;
+		UPROPERTY(EditAnywhere, meta = (EditCondition = "MapIsLoaded")) bool GenerateBuildings = false;
 		UPROPERTY() bool MapIsLoaded = false;
 		UPROPERTY(VisibleAnywhere) double left;
 		UPROPERTY(VisibleAnywhere) double bottom;
 		UPROPERTY(VisibleAnywhere) double right;
 		UPROPERTY(VisibleAnywhere) double top;
 
-		UPROPERTY(VisibleAnywhere, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
+		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
 			TArray<USplineComponent*> highwaySplineComponents;
-		UPROPERTY(VisibleAnywhere, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
+		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
 			TArray<USplineMeshComponent*> highwayMeshComponents;
-		UPROPERTY(VisibleAnywhere, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
+		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
 			TArray<UTextRenderComponent*> highwayAddressComponents;
 
-		UPROPERTY(VisibleAnywhere, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
+		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
 			TArray<USplineComponent*> buildingSplineComponents;
-		UPROPERTY(VisibleAnywhere, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
+		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
 			TArray<USplineMeshComponent*> buildingMeshComponents;
 
 		UPROPERTY() FString mapChunkString;
@@ -77,46 +77,46 @@ public:
 								 "//way/tag[@k='building']"
 	};
 
-	UPROPERTY(EditAnywhere, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
 		TArray<FMapChunk> MapChunks;
 
 	UPROPERTY(VisibleAnywhere)
 		USceneComponent* Root;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
 		USplineComponent* Spline;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
 		USplineMeshComponent* StreetMesh;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
 		USplineMeshComponent* WallMesh;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
 		ULandscapeSplinesComponent* LSplines;
 
-	UPROPERTY(EditAnywhere, Category = Inertia_CityGen, Meta = (MakeEditWidget = true, BlueprintProtected))
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true, BlueprintProtected))
 		bool GenerateStreets = false;
 
-	UPROPERTY(EditAnywhere, Category = Inertia_CityGen, Meta = (MakeEditWidget = true, BlueprintProtected))
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true, BlueprintProtected))
 		bool GenerateRealEstate = false;
 
 	/*UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true, BlueprintProtected))
 		bool GenerateBuildings = false;*/
 	
-	UPROPERTY(EditAnywhere, Category = Inertia_CityGen, Meta = (MakeEditWidget = true, BlueprintProtected))
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true, BlueprintProtected))
 		bool ShowAddress = true;
 
-	UPROPERTY(EditAnywhere, Category = Inertia_CityGen, Meta = (MakeEditWidget = true, BlueprintProtected))
+	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (MakeEditWidget = true, BlueprintProtected))
 		bool DownloadMapChunk = false;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
 		TArray<USplineMeshComponent*> HighwayMeshComponents;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
 		TArray<UTextRenderComponent*> HighwayAddressComponents;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
 		TArray<USplineMeshComponent*> LanduseMeshComponents;
 
 	UPROPERTY(EditAnywhere)
