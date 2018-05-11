@@ -27,24 +27,24 @@
 USTRUCT()
 struct FMapChunk {
 	GENERATED_BODY()
-		UPROPERTY(EditAnywhere, meta = (EditCondition = "MapIsLoaded")) bool GenerateStreets = false;
-		UPROPERTY(EditAnywhere, meta = (EditCondition = "MapIsLoaded")) bool GenerateBuildings = false;
+		UPROPERTY(EditAnywhere, Category = Inertia_CityGen, meta = (EditCondition = "MapIsLoaded")) bool GenerateStreets = false;
+		UPROPERTY(EditAnywhere, Category = Inertia_CityGen, meta = (EditCondition = "MapIsLoaded")) bool GenerateBuildings = false;
 		UPROPERTY() bool MapIsLoaded = false;
 		UPROPERTY(VisibleAnywhere) double left;
 		UPROPERTY(VisibleAnywhere) double bottom;
 		UPROPERTY(VisibleAnywhere) double right;
 		UPROPERTY(VisibleAnywhere) double top;
 
-		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
+		UPROPERTY(VisibleAnywhere, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
 			TArray<USplineComponent*> highwaySplineComponents;
-		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
+		UPROPERTY(VisibleAnywhere, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
 			TArray<USplineMeshComponent*> highwayMeshComponents;
-		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
+		UPROPERTY(VisibleAnywhere, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
 			TArray<UTextRenderComponent*> highwayAddressComponents;
 
-		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
+		UPROPERTY(VisibleAnywhere, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
 			TArray<USplineComponent*> buildingSplineComponents;
-		UPROPERTY(VisibleAnywhere, Category = Highways, Meta = (AllowPrivateAccess = true))
+		UPROPERTY(VisibleAnywhere, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
 			TArray<USplineMeshComponent*> buildingMeshComponents;
 
 		UPROPERTY() FString mapChunkString;
@@ -84,7 +84,7 @@ public:
 								 "//way/tag[@k='building']"
 	};
 
-	UPROPERTY(EditAnywhere, Category = CityGenerator, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(EditAnywhere, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
 		TArray<FMapChunk> MapChunks;
 
 	UPROPERTY(VisibleAnywhere)

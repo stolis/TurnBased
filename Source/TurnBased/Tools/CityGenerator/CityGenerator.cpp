@@ -22,13 +22,12 @@ ACityGenerator::ACityGenerator()
 
 void ACityGenerator::PostEditChangeChainProperty(struct FPropertyChangedChainEvent& e)
 {
-<<<<<<< HEAD
 	const FString& fieldCat = e.Property->GetMetaData(TEXT("Category"));
-	
+
 	if (fieldCat == "Inertia_CityGen") {
 		int32 index = e.GetArrayIndex(TEXT("MapChunks")); //checks skipped
 		UE_LOG(LogTemp, Warning, TEXT("MapChunks index is: %d"), index);
-		
+
 		if (MapChunks.IsValidIndex(index)) {
 			FMapChunk& fMapChunk = MapChunks[index];
 
@@ -42,11 +41,13 @@ void ACityGenerator::PostEditChangeChainProperty(struct FPropertyChangedChainEve
 					FString preppedName = L"/Game/Maps/SubLevels/Level_Block_" + FString::FromInt(index);
 					if (FPlatformFileManager::Get().GetPlatformFile().FileExists(*(preppedName))) {
 						ULevelStreaming* levelStreaming = EditorLevelUtils::AddLevelToWorld(editorWorld, *preppedName, ULevelStreamingKismet::StaticClass());
+						levelStreaming->bShouldBeLoaded = true;
 						CurrentMapChunk->MapLevel = levelStreaming->GetLoadedLevel();
 						//levelStreaming->BroadcastLevelLoadedStatus(editorWorld, FName(*preppedName), true);
 					}
 					else {
 						ULevelStreaming* levelStreaming = EditorLevelUtils::CreateNewStreamingLevelForWorld(*editorWorld, ULevelStreamingKismet::StaticClass(), preppedName);
+						levelStreaming->bShouldBeLoaded = true;
 						if (levelStreaming->GetLoadedLevel())
 						{
 							FEditorFileUtils::SaveLevel(levelStreaming->GetLoadedLevel());
@@ -54,7 +55,7 @@ void ACityGenerator::PostEditChangeChainProperty(struct FPropertyChangedChainEve
 							//levelStreaming->BroadcastLevelLoadedStatus(editorWorld, FName(*preppedName), true);
 						}
 					}
-					
+
 				}
 			}
 			else if (e.ChangeType == EPropertyChangeType::ArrayRemove) {
@@ -91,88 +92,49 @@ void ACityGenerator::PostEditChangeChainProperty(struct FPropertyChangedChainEve
 						UE_LOG(LogTemp, Warning, TEXT("GenereateBuildings is false"), "");
 					}
 				}
-=======
-	int32 index = e.GetArrayIndex(TEXT("MapChunks")); //checks skipped
-	UE_LOG(LogTemp, Warning, TEXT("MapChunks index is: %d"), index);
-	FMapChunk& fMapChunk = MapChunks[index];
-
-	if (e.ChangeType == EPropertyChangeType::ArrayAdd) {
-		PinCoordsToMapChunk(fMapChunk, index);
-		CurrentMapChunk = &fMapChunk;
-		RequestMapChunk(CurrentMapChunk->GetFileName());
-	}
-	else if (e.ChangeType == EPropertyChangeType::ArrayClear) {
-		
-	}
-	else if (e.ChangeType == EPropertyChangeType::ValueSet) {
-		FString propertyName = (e.Property != NULL) ? e.Property->GetNameCPP() : "";
-		if (propertyName == "GenerateStreets") {
-			ActiveElement = Enum_k::highway;
-			if (fMapChunk.GenerateStreets) {
-				CurrentMapChunk = &fMapChunk;
-				LoadMapXML();
-				UE_LOG(LogTemp, Warning, TEXT("GenereateStreets is: true"), "");
 			}
-			else {
-				CurrentMapChunk = &fMapChunk;
-				ClearStreetSplineMeshComponents();
-				UE_LOG(LogTemp, Warning, TEXT("GenereateStreets is false"), "");
-			}
-		}
-		if (propertyName == "GenerateBuildings") {
-			ActiveElement = Enum_k::building;
-			if (fMapChunk.GenerateBuildings) {
-				CurrentMapChunk = &fMapChunk;
-				LoadMapXML();
-				UE_LOG(LogTemp, Warning, TEXT("GenereateBuildings is: true"), "");
-			}
-			else {
-				CurrentMapChunk = &fMapChunk;
-				ClearBuildingSplineMeshComponents();
-				UE_LOG(LogTemp, Warning, TEXT("GenereateBuildings is false"), "");
->>>>>>> f031e87cf86409d3527a01d334a1b7cb8b8169f9
-			}
+			Super::PostEditChangeChainProperty(e);
 		}
 	}
-	Super::PostEditChangeChainProperty(e);
 }
-/*void ACityGenerator::PreEditChange(UProperty* PropertyThatWillChange) 
-{
-	
-	FName dd = PropertyThatWillChange->GetFName();
-	FMapChunk* toBeDeletedChunk = Cast<FMapChunk>(&PropertyThatWillChange);
-	EditorLevelUtils::RemoveLevelFromWorld(toBeDeletedChunk->MapLevel);
-	Super::PreEditChange(PropertyThatWillChange);
-}
-/*void ACityGenerator::PostEditChangeProperty(struct FPropertyChangedEvent& e)
-{
-	Super::PostEditChangeProperty(e);
 
-	FName memberPropertyName = (e.Property != NULL) ? e.MemberProperty->GetFName() : NAME_None;
-	if (memberPropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, GenerateStreets)) {
-		if (this->GenerateStreets) {
-			ActiveElement = Enum_k::highway;
-			LoadMapXML();
+/*void ACityGenerator::PreEditChange(UProperty* PropertyThatWillChange)
+		{
+
+			FName dd = PropertyThatWillChange->GetFName();
+			FMapChunk* toBeDeletedChunk = Cast<FMapChunk>(&PropertyThatWillChange);
+			EditorLevelUtils::RemoveLevelFromWorld(toBeDeletedChunk->MapLevel);
+			Super::PreEditChange(PropertyThatWillChange);
 		}
-		else {
-			ClearStreetSplineMeshComponents();
-			Spline->ClearSplinePoints(true);
-		}
-	}
-	else if (memberPropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, GenerateRealEstate)) {
-		if (this->GenerateRealEstate) {
-			ActiveElement = Enum_k::building;
-			LoadMapXML();
-		}
-		else {
-			ClearBuildingSplineMeshComponents();
-			Spline->ClearSplinePoints(true);
-		}
-	}
-	else if (memberPropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, ShowAddress)) {
-		ToggleStreetAddressComponents();
-	}
-}*/
+		/*void ACityGenerator::PostEditChangeProperty(struct FPropertyChangedEvent& e)
+		{
+			Super::PostEditChangeProperty(e);
+
+			FName memberPropertyName = (e.Property != NULL) ? e.MemberProperty->GetFName() : NAME_None;
+			if (memberPropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, GenerateStreets)) {
+				if (this->GenerateStreets) {
+					ActiveElement = Enum_k::highway;
+					LoadMapXML();
+				}
+				else {
+					ClearStreetSplineMeshComponents();
+					Spline->ClearSplinePoints(true);
+				}
+			}
+			else if (memberPropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, GenerateRealEstate)) {
+				if (this->GenerateRealEstate) {
+					ActiveElement = Enum_k::building;
+					LoadMapXML();
+				}
+				else {
+					ClearBuildingSplineMeshComponents();
+					Spline->ClearSplinePoints(true);
+				}
+			}
+			else if (memberPropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, ShowAddress)) {
+				ToggleStreetAddressComponents();
+			}
+		}*/
 
 void ACityGenerator::PinCoordsToMapChunk(FMapChunk& fMapChunk, int index) {
 	double moveToBottomDelta = 0;
@@ -216,7 +178,7 @@ void ACityGenerator::GenerateStreetSplineMeshComponents(int32 index, FString add
 	streetMesh->CreationMethod = EComponentCreationMethod::UserConstructionScript;
 	streetMesh->SetMobility(EComponentMobility::Static);
 	streetMesh->SetupAttachment(Root);
-	streetMesh->RegisterComponentWithWorld(GetWorld());
+	streetMesh->RegisterComponentWithWorld(CurrentMapChunk->MapLevel->GetWorld());
 	CurrentMapChunk->highwayMeshComponents.Add(streetMesh);
 	FVector ptLocStart, ptTanStart, ptLocEnd, ptTanEnd;
 	spline->GetLocalLocationAndTangentAtSplinePoint(index - 1, ptLocStart, ptTanStart);
