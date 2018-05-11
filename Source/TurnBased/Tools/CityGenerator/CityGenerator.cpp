@@ -22,6 +22,7 @@ ACityGenerator::ACityGenerator()
 
 void ACityGenerator::PostEditChangeChainProperty(struct FPropertyChangedChainEvent& e)
 {
+<<<<<<< HEAD
 	const FString& fieldCat = e.Property->GetMetaData(TEXT("Category"));
 	
 	if (fieldCat == "Inertia_CityGen") {
@@ -90,6 +91,46 @@ void ACityGenerator::PostEditChangeChainProperty(struct FPropertyChangedChainEve
 						UE_LOG(LogTemp, Warning, TEXT("GenereateBuildings is false"), "");
 					}
 				}
+=======
+	int32 index = e.GetArrayIndex(TEXT("MapChunks")); //checks skipped
+	UE_LOG(LogTemp, Warning, TEXT("MapChunks index is: %d"), index);
+	FMapChunk& fMapChunk = MapChunks[index];
+
+	if (e.ChangeType == EPropertyChangeType::ArrayAdd) {
+		PinCoordsToMapChunk(fMapChunk, index);
+		CurrentMapChunk = &fMapChunk;
+		RequestMapChunk(CurrentMapChunk->GetFileName());
+	}
+	else if (e.ChangeType == EPropertyChangeType::ArrayClear) {
+		
+	}
+	else if (e.ChangeType == EPropertyChangeType::ValueSet) {
+		FString propertyName = (e.Property != NULL) ? e.Property->GetNameCPP() : "";
+		if (propertyName == "GenerateStreets") {
+			ActiveElement = Enum_k::highway;
+			if (fMapChunk.GenerateStreets) {
+				CurrentMapChunk = &fMapChunk;
+				LoadMapXML();
+				UE_LOG(LogTemp, Warning, TEXT("GenereateStreets is: true"), "");
+			}
+			else {
+				CurrentMapChunk = &fMapChunk;
+				ClearStreetSplineMeshComponents();
+				UE_LOG(LogTemp, Warning, TEXT("GenereateStreets is false"), "");
+			}
+		}
+		if (propertyName == "GenerateBuildings") {
+			ActiveElement = Enum_k::building;
+			if (fMapChunk.GenerateBuildings) {
+				CurrentMapChunk = &fMapChunk;
+				LoadMapXML();
+				UE_LOG(LogTemp, Warning, TEXT("GenereateBuildings is: true"), "");
+			}
+			else {
+				CurrentMapChunk = &fMapChunk;
+				ClearBuildingSplineMeshComponents();
+				UE_LOG(LogTemp, Warning, TEXT("GenereateBuildings is false"), "");
+>>>>>>> f031e87cf86409d3527a01d334a1b7cb8b8169f9
 			}
 		}
 	}
@@ -306,7 +347,7 @@ vector<pair<double, double>> ACityGenerator::GetCoordNodes(xml_node root, xml_no
 			lon = nodeFound.attribute("lon").as_double();
 			CoordinateTools::GeoDeticOffsetInv(refLat, refLon, lat, lon, x, y);
 			float z = FindLandscapeZ(x*1.5, -y*1.5);
-			spline->AddSplineWorldPoint(FVector(x*1.5, -y*1.5, z + 0.1));
+			spline->AddSplineWorldPoint(FVector(x*1.5, -y*1.5, z));
 			if (ActiveElement == Enum_k::building)
 				spline->SetSplinePointType(pointIndex, ESplinePointType::Linear, true);
 			if (pointIndex > 0) {
