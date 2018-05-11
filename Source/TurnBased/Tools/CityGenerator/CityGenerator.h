@@ -17,6 +17,11 @@
 #include "Runtime/Online/HTTP/Public/Http.h"
 #include "Runtime/Json/Public/Json.h"
 #include "Runtime/JsonUtilities/Public/JsonUtilities.h"
+#include "Runtime/Engine/Classes/Engine/World.h"
+#include "Editor/UnrealEd/Classes/Editor/EditorEngine.h"
+#include "Editor/UnrealEd/Public/FileHelpers.h"
+#include "Editor/UnrealEd/Public/UnrealEd.h"
+#include "Editor/UnrealEd/Public/EditorLevelUtils.h"
 #include "CityGenerator.generated.h"
 
 USTRUCT()
@@ -49,7 +54,9 @@ struct FMapChunk {
 		FString GetFileName() {
 			return FString::SanitizeFloat(left) + "_" + FString::SanitizeFloat(bottom) + "_" + FString::SanitizeFloat(right) + "_" + FString::SanitizeFloat(top) + ".OSM";
 		}
+		ULevel* MapLevel;
 	FMapChunk() {}
+	~FMapChunk() { EditorLevelUtils::RemoveLevelFromWorld(MapLevel); }
 };
 
 UCLASS(Blueprintable)
@@ -176,7 +183,8 @@ public:
 
 	virtual void PostEditChangeChainProperty(struct FPropertyChangedChainEvent& e) override;
 
-	virtual void PostEditChangeProperty(struct FPropertyChangedEvent& e) override;
+	//virtual void PostEditChangeProperty(struct FPropertyChangedEvent& e) override;
+	//virtual void PreEditChange(UProperty* PropertyThatWillChange) override;
 
 	void RequestMapChunk(FString);
 

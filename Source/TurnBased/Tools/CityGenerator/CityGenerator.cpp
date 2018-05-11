@@ -27,50 +27,83 @@ void ACityGenerator::PostEditChangeChainProperty(struct FPropertyChangedChainEve
 	if (fieldCat == "Inertia_CityGen") {
 		int32 index = e.GetArrayIndex(TEXT("MapChunks")); //checks skipped
 		UE_LOG(LogTemp, Warning, TEXT("MapChunks index is: %d"), index);
-		FMapChunk& fMapChunk = MapChunks[index];
-	
-		if (e.ChangeType == EPropertyChangeType::ArrayAdd) {
-			PinCoordsToMapChunk(fMapChunk, index);
-			CurrentMapChunk = &fMapChunk;
-			RequestMapChunk(CurrentMapChunk->GetFileName());
-		}
-		else if (e.ChangeType == EPropertyChangeType::ArrayClear) {
+		
+		if (MapChunks.IsValidIndex(index)) {
+			FMapChunk& fMapChunk = MapChunks[index];
 
-		}
-		else if (e.ChangeType == EPropertyChangeType::ValueSet) {
-			FString propertyName = (e.Property != NULL) ? e.Property->GetNameCPP() : "";
-			if (propertyName == "GenerateStreets") {
-				ActiveElement = Enum_k::highway;
-				if (fMapChunk.GenerateStreets) {
-					CurrentMapChunk = &fMapChunk;
-					LoadMapXML();
-					UE_LOG(LogTemp, Warning, TEXT("GenereateStreets is: true"), "");
-				}
-				else {
-					CurrentMapChunk = &fMapChunk;
-					ClearStreetSplineMeshComponents();
-					UE_LOG(LogTemp, Warning, TEXT("GenereateStreets is false"), "");
+			if (e.ChangeType == EPropertyChangeType::ArrayAdd) {
+				PinCoordsToMapChunk(fMapChunk, index);
+				CurrentMapChunk = &fMapChunk;
+				RequestMapChunk(CurrentMapChunk->GetFileName());
+				UWorld* editorWorld = GEditor->GetEditorWorldContext().World();
+				if (editorWorld)
+				{
+					FString preppedName = L"/Game/Maps/SubLevels/Level_Block_" + FString::FromInt(index);
+					if (FPlatformFileManager::Get().GetPlatformFile().FileExists(*(preppedName))) {
+						ULevelStreaming* levelStreaming = EditorLevelUtils::AddLevelToWorld(editorWorld, *preppedName, ULevelStreamingKismet::StaticClass());
+						CurrentMapChunk->MapLevel = levelStreaming->GetLoadedLevel();
+						//levelStreaming->BroadcastLevelLoadedStatus(editorWorld, FName(*preppedName), true);
+					}
+					else {
+						ULevelStreaming* levelStreaming = EditorLevelUtils::CreateNewStreamingLevelForWorld(*editorWorld, ULevelStreamingKismet::StaticClass(), preppedName);
+						if (levelStreaming->GetLoadedLevel())
+						{
+							FEditorFileUtils::SaveLevel(levelStreaming->GetLoadedLevel());
+							CurrentMapChunk->MapLevel = levelStreaming->GetLoadedLevel();
+							//levelStreaming->BroadcastLevelLoadedStatus(editorWorld, FName(*preppedName), true);
+						}
+					}
+					
 				}
 			}
-			if (propertyName == "GenerateBuildings") {
-				ActiveElement = Enum_k::building;
-				if (fMapChunk.GenerateBuildings) {
-					CurrentMapChunk = &fMapChunk;
-					LoadMapXML();
-					UE_LOG(LogTemp, Warning, TEXT("GenereateBuildings is: true"), "");
+			else if (e.ChangeType == EPropertyChangeType::ArrayRemove) {
+
+			}
+			else if (e.ChangeType == EPropertyChangeType::ArrayClear) {
+
+			}
+			else if (e.ChangeType == EPropertyChangeType::ValueSet) {
+				FString propertyName = (e.Property != NULL) ? e.Property->GetNameCPP() : "";
+				if (propertyName == "GenerateStreets") {
+					ActiveElement = Enum_k::highway;
+					if (fMapChunk.GenerateStreets) {
+						CurrentMapChunk = &fMapChunk;
+						LoadMapXML();
+						UE_LOG(LogTemp, Warning, TEXT("GenereateStreets is: true"), "");
+					}
+					else {
+						CurrentMapChunk = &fMapChunk;
+						ClearStreetSplineMeshComponents();
+						UE_LOG(LogTemp, Warning, TEXT("GenereateStreets is false"), "");
+					}
 				}
-				else {
-					CurrentMapChunk = &fMapChunk;
-					ClearBuildingSplineMeshComponents();
-					UE_LOG(LogTemp, Warning, TEXT("GenereateBuildings is false"), "");
+				if (propertyName == "GenerateBuildings") {
+					ActiveElement = Enum_k::building;
+					if (fMapChunk.GenerateBuildings) {
+						CurrentMapChunk = &fMapChunk;
+						LoadMapXML();
+						UE_LOG(LogTemp, Warning, TEXT("GenereateBuildings is: true"), "");
+					}
+					else {
+						CurrentMapChunk = &fMapChunk;
+						ClearBuildingSplineMeshComponents();
+						UE_LOG(LogTemp, Warning, TEXT("GenereateBuildings is false"), "");
+					}
 				}
 			}
 		}
 	}
 	Super::PostEditChangeChainProperty(e);
 }
-
-void ACityGenerator::PostEditChangeProperty(struct FPropertyChangedEvent& e)
+/*void ACityGenerator::PreEditChange(UProperty* PropertyThatWillChange) 
+{
+	
+	FName dd = PropertyThatWillChange->GetFName();
+	FMapChunk* toBeDeletedChunk = Cast<FMapChunk>(&PropertyThatWillChange);
+	EditorLevelUtils::RemoveLevelFromWorld(toBeDeletedChunk->MapLevel);
+	Super::PreEditChange(PropertyThatWillChange);
+}
+/*void ACityGenerator::PostEditChangeProperty(struct FPropertyChangedEvent& e)
 {
 	Super::PostEditChangeProperty(e);
 
@@ -98,7 +131,7 @@ void ACityGenerator::PostEditChangeProperty(struct FPropertyChangedEvent& e)
 	else if (memberPropertyName == GET_MEMBER_NAME_CHECKED(ACityGenerator, ShowAddress)) {
 		ToggleStreetAddressComponents();
 	}
-}
+}*/
 
 void ACityGenerator::PinCoordsToMapChunk(FMapChunk& fMapChunk, int index) {
 	double moveToBottomDelta = 0;

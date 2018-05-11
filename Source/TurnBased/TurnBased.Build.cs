@@ -10,7 +10,7 @@ public class TurnBased : ModuleRules
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Landscape" });
 
-		PrivateDependencyModuleNames.AddRange(new string[] { "Http", "Json", "JsonUtilities" });
+		PrivateDependencyModuleNames.AddRange(new string[] { "Http", "Json", "JsonUtilities", "UnrealEd" });
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
