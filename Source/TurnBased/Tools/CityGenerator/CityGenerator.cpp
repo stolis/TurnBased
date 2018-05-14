@@ -44,6 +44,7 @@ void ACityGenerator::PostEditChangeChainProperty(struct FPropertyChangedChainEve
 						levelStreaming->bShouldBeLoaded = true;
 						CurrentMapChunk->MapLevel = levelStreaming->GetLoadedLevel();
 						CurrentMapChunk->Root = NewObject<USceneComponent>(CurrentMapChunk->MapLevel->GetWorld());
+						CurrentMapChunk->Root->SetMobility(EComponentMobility::Static);
 						CurrentMapChunk->Root->DetachFromParent(true);
 						CurrentMapChunk->Root->RegisterComponentWithWorld(CurrentMapChunk->MapLevel->GetWorld());
 						//levelStreaming->BroadcastLevelLoadedStatus(editorWorld, FName(*preppedName), true);
@@ -56,6 +57,7 @@ void ACityGenerator::PostEditChangeChainProperty(struct FPropertyChangedChainEve
 							FEditorFileUtils::SaveLevel(levelStreaming->GetLoadedLevel());
 							CurrentMapChunk->MapLevel = levelStreaming->GetLoadedLevel();
 							CurrentMapChunk->Root = NewObject<USceneComponent>(CurrentMapChunk->MapLevel->GetWorld());
+							CurrentMapChunk->Root->SetMobility(EComponentMobility::Static);
 							CurrentMapChunk->Root->DetachFromParent(true);
 							CurrentMapChunk->Root->RegisterComponentWithWorld(CurrentMapChunk->MapLevel->GetWorld());
 							//levelStreaming->BroadcastLevelLoadedStatus(editorWorld, FName(*preppedName), true);
