@@ -34,7 +34,8 @@ struct FMapChunk {
 		UPROPERTY(VisibleAnywhere) double bottom;
 		UPROPERTY(VisibleAnywhere) double right;
 		UPROPERTY(VisibleAnywhere) double top;
-
+		UPROPERTY(VisibleAnywhere)
+			USceneComponent* Root;
 		UPROPERTY(VisibleAnywhere, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))
 			TArray<USplineComponent*> highwaySplineComponents;
 		UPROPERTY(VisibleAnywhere, Category = Inertia_CityGen, Meta = (AllowPrivateAccess = true))

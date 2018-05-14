@@ -43,6 +43,9 @@ void ACityGenerator::PostEditChangeChainProperty(struct FPropertyChangedChainEve
 						ULevelStreaming* levelStreaming = EditorLevelUtils::AddLevelToWorld(editorWorld, *preppedName, ULevelStreamingKismet::StaticClass());
 						levelStreaming->bShouldBeLoaded = true;
 						CurrentMapChunk->MapLevel = levelStreaming->GetLoadedLevel();
+						CurrentMapChunk->Root = NewObject<USceneComponent>(CurrentMapChunk->MapLevel->GetWorld());
+						CurrentMapChunk->Root->DetachFromParent(true);
+						CurrentMapChunk->Root->RegisterComponentWithWorld(CurrentMapChunk->MapLevel->GetWorld());
 						//levelStreaming->BroadcastLevelLoadedStatus(editorWorld, FName(*preppedName), true);
 					}
 					else {
@@ -52,6 +55,9 @@ void ACityGenerator::PostEditChangeChainProperty(struct FPropertyChangedChainEve
 						{
 							FEditorFileUtils::SaveLevel(levelStreaming->GetLoadedLevel());
 							CurrentMapChunk->MapLevel = levelStreaming->GetLoadedLevel();
+							CurrentMapChunk->Root = NewObject<USceneComponent>(CurrentMapChunk->MapLevel->GetWorld());
+							CurrentMapChunk->Root->DetachFromParent(true);
+							CurrentMapChunk->Root->RegisterComponentWithWorld(CurrentMapChunk->MapLevel->GetWorld());
 							//levelStreaming->BroadcastLevelLoadedStatus(editorWorld, FName(*preppedName), true);
 						}
 					}
@@ -177,7 +183,8 @@ void ACityGenerator::GenerateStreetSplineMeshComponents(int32 index, FString add
 	streetMesh = NewObject<USplineMeshComponent>();
 	streetMesh->CreationMethod = EComponentCreationMethod::UserConstructionScript;
 	streetMesh->SetMobility(EComponentMobility::Static);
-	streetMesh->SetupAttachment(Root);
+	//CurrentMapChunk->Root->Rename(CurrentMapChunk->MapLevel->StaticPackage(), CurrentMapChunk->MapLevel->GetWorld());
+	streetMesh->SetupAttachment(CurrentMapChunk->Root);
 	streetMesh->RegisterComponentWithWorld(CurrentMapChunk->MapLevel->GetWorld());
 	CurrentMapChunk->highwayMeshComponents.Add(streetMesh);
 	FVector ptLocStart, ptTanStart, ptLocEnd, ptTanEnd;
